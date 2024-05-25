@@ -158,6 +158,7 @@ void menuViajes()
     case 0:
         {
             printf("LISTA DE VIAJES\n\n");
+            mostrarArchivoViaje();
             //mostrarOrdenV();
             break;
         }
@@ -175,6 +176,7 @@ void menuViajes()
         {
             int id;
             printf("LISTA DE VIAJES \n\n");
+            mostrarArchivoViaje();
             //mostrarOrdenV();
 
             printf("Ingrese la ID del viaje a modificar:\n");

@@ -25,7 +25,7 @@ stViaje modificarTransporteV(stViaje A);
 stViaje modificarPrecioV(stViaje A);
 stViaje modificarEstadoV(stViaje A);
 void modificarViaje (int id);
-
+stViaje modificarDatosViaje(stViaje aux);
 // dar baja viaje
 
 stViaje darDeBajaViaje (int id);
