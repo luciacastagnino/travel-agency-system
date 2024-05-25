@@ -116,8 +116,12 @@ stCliente cargarCliente()
     printf("Ingrese el domicilio del cliente\n");
     A.dom = cargarDomicilio();
 
-    printf("Ingrese el viaje del cliente\n");
-    ///A.v = ///busqueda idViaje
+    printf("Ingrese el viaje del cliente por ID\n\n");
+    int id;
+    mostrarArchivoViaje();
+    printf("ID: ");
+    scanf("%d", &id);
+    A.v=buscarViajePorID(id);
 
     A.estado=1;
 
@@ -592,4 +596,3 @@ if(buff){
 }
 
 
-//prueba

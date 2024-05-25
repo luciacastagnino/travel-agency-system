@@ -167,6 +167,7 @@ void menuViajes()
             system("pause");
             system("cls");
             printf("LISTA DE VIAJES\n\n");
+            mostrarArchivoViaje();
             //mostrarOrdenV();
             break;
         }
@@ -257,7 +258,7 @@ void menuViajes()
                 printf("Desea ver otro mes? s/n"); ///Se le pregunta al usiario si desea continuar viendo otros meses///
                 fflush(stdin);
                 scanf("%c",&controlCalendario);
-
+             }
         }
 
     }

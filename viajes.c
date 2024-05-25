@@ -14,9 +14,15 @@ stViaje cargarViaje()
 {
     stViaje A;
 
-    printf("Ingrese el ID del viaje\n");
-    fflush(stdin);
-    scanf("%d", &A.id);
+    do {
+        printf("Ingrese el ID del viaje\n");
+        fflush(stdin);
+        scanf("%d", &A.id);
+
+        if (verificarIDViaje(A.id)) {
+            printf("El ID del viaje ya existe. Ingrese un ID diferente:\n");
+        }
+    } while (verificarIDViaje(A.id));
 
     printf("Ingrese el destino\n");
     fflush(stdin);
@@ -55,7 +61,7 @@ void cargarArchivoViaje()
 
             fwrite(&A, sizeof(stViaje), 1, bufViaje);
 
-            printf("¿Quiere seguir cargando clientes?\n");
+            printf("¿Quiere seguir cargando viajes?\n");
             fflush(stdin);
             scanf("%c", &control);
         }
@@ -79,6 +85,32 @@ void mostrarViaje(stViaje A)
     printf("\n");
 
 }
+
+///Mostrar Archivo Viaje
+
+void mostrarArchivoViaje()
+{
+    stViaje A;
+
+    FILE* buff;
+    buff = fopen(archViaje, "rb");
+
+    if(buff)
+    {
+        while(fread(&A, sizeof(stViaje), 1, buff))
+        {
+
+            mostrarViaje(A);
+            printf("\n");
+        }
+        fclose(buff);
+    }
+    else
+    {
+        printf("El archivo no pudo abrirse\n");
+    }
+}
+
 
 ///Modificar Viaje////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void modificarViaje (int id){
@@ -329,3 +361,46 @@ if(buff){
     }
 }
 
+///Buscar el ID para cargarlo en el cliente
+stViaje buscarViajePorID(int id){
+    stViaje A;
+    int flag = 0;
+
+    do {
+        FILE *bufViaje = fopen(archViaje, "rb");
+        if (bufViaje) {
+            while (fread(&A, sizeof(stViaje), 1, bufViaje) && flag == 0) {
+                if (A.id == id) {
+                    flag = 1;
+                }
+            }
+            fclose(bufViaje);
+        }
+
+        if (flag == 0) {
+            printf("ID de viaje no encontrado. Por favor, ingrese un ID valido:\n");
+            scanf("%d", &id);
+        }
+
+    } while (flag == 0);
+
+    return A;
+}
+
+///Verificar que el ID ingresado no existe
+int verificarIDViaje(int id){
+    stViaje A;
+    int encontrado = 0;
+
+    FILE *bufViaje = fopen(archViaje, "rb");
+    if (bufViaje) {
+        while (fread(&A, sizeof(stViaje), 1, bufViaje) && !encontrado) {
+            if (A.id == id) {
+                encontrado = 1;
+            }
+        }
+        fclose(bufViaje);
+    }
+
+    return encontrado;
+}
