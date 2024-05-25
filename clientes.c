@@ -11,6 +11,7 @@ const char archCliente[] = {"archivoCliente.bin"};
 ///CLIENTE ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void mostrarOrdenC()
 {
+            mostrarArchivoCliente();
             stCliente *arrDinC;
             int validos=0;
             validos=ArchivoToArregloCliente(&arrDinC, validos);

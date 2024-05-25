@@ -95,3 +95,108 @@
 	"viajes.h"
 	"ordenamientos.h"
 
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\calendario.c
+	"calendario.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\calendario.h
+
+1716661756 source:c:\users\acer\desktop\utn\tp-final-prog\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\clientes.h
+	"viajes.h"
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\viajes.h
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\empleados.h
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"ordenamientos.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1716661652 c:\users\acer\desktop\utn\tp-final-prog\menu.h
+
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+	"calendario.h"
+
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"ventas.h"
+	"viajes.h"
+
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\pila.c
+	"pila.h"
+
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1716661652 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+
