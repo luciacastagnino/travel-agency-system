@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1716651033 source:c:\users\brend\desktop\utn\tp final\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1716589156 c:\users\brend\desktop\utn\tp final\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1716651018 c:\users\brend\desktop\utn\tp final\empleados.h
+
+1716651746 c:\users\brend\desktop\utn\tp final\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1716651180 source:c:\users\brend\desktop\utn\tp final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"ordenamientos.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1716651735 c:\users\brend\desktop\utn\tp final\menu.h
+
+1716589156 source:c:\users\brend\desktop\utn\tp final\pila.c
+	"pila.h"
+
+1716650294 c:\users\brend\desktop\utn\tp final\clientes.h
+	"viajes.h"
+
+1716649450 c:\users\brend\desktop\utn\tp final\viajes.h
+
+1716650282 source:c:\users\brend\desktop\utn\tp final\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+
+1716651707 source:c:\users\brend\desktop\utn\tp final\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+
+1716652097 c:\users\brend\desktop\utn\tp final\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1716651752 source:c:\users\brend\desktop\utn\tp final\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"ventas.h"
+	"viajes.h"
+
+1716652023 source:c:\users\brend\desktop\utn\tp final\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1716651523 source:c:\users\brend\desktop\utn\tp final\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+

@@ -1,0 +1,331 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "pila.h"
+#include <string.h>
+#include "viajes.h"
+#include "ordenamientos.h"
+
+const char archViaje[] = {"archivoViaje.bin"};
+
+///VIAJES EN ORDEN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///Cargar Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+stViaje cargarViaje()
+{
+    stViaje A;
+
+    printf("Ingrese el ID del viaje\n");
+    fflush(stdin);
+    scanf("%d", &A.id);
+
+    printf("Ingrese el destino\n");
+    fflush(stdin);
+    gets(A.destino);
+
+    printf("Ingrese la duracion del viaje en cantidad de dias\n");
+    fflush(stdin);
+    scanf("%d", &A.duracion);
+
+    printf("Ingrese el transporte\n");
+    fflush(stdin);
+    gets(A.transporte);
+
+    printf("Ingrese el precio del viaje\n");
+    fflush(stdin);
+    scanf("%d", &A.precio);
+
+    A.estado = 1;
+
+    return A;
+}
+
+void cargarArchivoViaje()
+{
+    stViaje A;
+    char control = 's';
+
+    FILE* bufViaje;
+    bufViaje = fopen(archViaje, "ab");
+
+    if(bufViaje)
+    {
+        while(control == 's')
+        {
+            A = cargarViaje();
+
+            fwrite(&A, sizeof(stViaje), 1, bufViaje);
+
+            printf("¿Quiere seguir cargando clientes?\n");
+            fflush(stdin);
+            scanf("%c", &control);
+        }
+        fclose(bufViaje);
+    }
+    else
+    {
+        printf("El archivo no pudo abrirse\n");
+    }
+}
+
+///Mostrar Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void mostrarViaje(stViaje A)
+{
+    printf("ID: %d\n", A.id);
+    printf("Destino: %s\n", A.destino);
+    printf("Duracion: %d\n", A.duracion);
+    printf("Transporte: %s\n", A.transporte);
+    printf("Precio: %d\n", A.precio);
+    printf("\n");
+
+}
+
+///Modificar Viaje////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void modificarViaje (int id){
+
+    FILE* bufViaje;
+    bufViaje=fopen(archViaje, "r+b");
+
+    stViaje aux;
+    int flag=0;
+    char control='n';
+
+    if(bufViaje){
+        while(fread(&aux, sizeof(stViaje), 1, bufViaje)>0 && flag==0){
+            if(aux.id == id){
+                flag=1;
+            }
+        }
+
+        if (flag==1){
+            mostrarViaje(aux);
+
+            printf("1.Desea modificar la ID?\n");
+            fflush(stdin);
+            scanf("%c", &control);
+
+            if(control=='s')
+            {
+               modificarIdV(aux);
+            }
+
+
+            printf("2.Desea modificar el destino?.\n");
+            fflush(stdin);
+            scanf("%c", &control);
+
+            if(control=='s')
+            {
+               modificarDestinoV(aux);
+            }
+
+            printf("3. Desea modificar la duracion?.\n");
+            fflush(stdin);
+            scanf("%c", &control);
+
+            if(control=='s')
+            {
+               modificarDuracionV(aux);
+            }
+
+            printf("4.Desea modificar el transporte.\n");
+            fflush(stdin);
+            scanf("%c", &control);
+
+            if(control=='s')
+            {
+               modificarTransporteV(aux);
+            }
+
+            printf("5.Desea modificar el precio?.\n");
+            fflush(stdin);
+            scanf("%c", &control);
+
+            if(control=='s')
+            {
+               modificarPrecioV(aux);
+            }
+        }
+
+        fseek(bufViaje, sizeof(stViaje)*(-1), SEEK_CUR);
+        fwrite(&aux, sizeof(stViaje), 1, bufViaje);
+
+        fclose(bufViaje);
+    }else{
+        printf("No se pudo abrir el archivo.\n");
+    }
+
+    if(flag==0){
+        printf("El viaje no existe.\n");
+    }
+}
+
+stViaje modificarIdV(stViaje A)
+{
+    printf("Ingrese la id para modificar la anterior: \n");
+	fflush(stdin);
+	scanf("%d", &A.id);
+
+	return A;
+}
+
+stViaje modificarDestinoV(stViaje A)
+{
+    printf("Ingrese el destino para modificar el anterior: \n");
+	fflush(stdin);
+	gets(A.destino);
+
+	return A;
+}
+
+stViaje modificarDuracionV(stViaje A)
+{
+    printf("Ingrese la duracion para modificar la anterior: \n");
+	fflush(stdin);
+	scanf("%d", &A.duracion);
+
+	return A;
+}
+
+stViaje modificarTransporteV(stViaje A)
+{
+    printf("Ingrese el transporte para modificar el anterior: \n");
+	fflush(stdin);
+	gets(A.transporte);
+
+	return A;
+}
+
+stViaje modificarPrecioV(stViaje A)
+{
+    printf("Ingrese la duracion para modificar la anterior: \n");
+	fflush(stdin);
+	scanf("%d", &A.precio);
+
+	return A;
+}
+
+///Dar Baja Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+stViaje darDeBajaViaje (int id){
+
+    FILE* bufViaje;
+    bufViaje=fopen(archViaje, "r+b");
+    stViaje viaje;
+    int flag=0;
+
+    if(bufViaje){
+        while(fread(&viaje, sizeof(stViaje), 1, bufViaje)>0 && flag==0){
+            if(viaje.id==id){
+                viaje.estado=0;
+                flag=1;
+                fseek(bufViaje, sizeof(stViaje)*(-1), SEEK_CUR);
+                fwrite(&viaje, sizeof(stViaje), 1, bufViaje);
+            }
+        }
+
+        fclose(bufViaje);
+    }
+
+    return viaje;
+
+}
+
+
+///BUSCAR VIAJE///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+stViaje encontrarViajeId(int id)
+{
+stViaje A;
+int flag = 0;
+
+FILE *bufViaje;
+bufViaje = fopen(archViaje, "rb");
+
+if(bufViaje){
+       while(fread(&A, sizeof(stViaje), 1, bufViaje) && flag == 0)
+        {
+            if(A.id == id)
+                {
+                    flag = 1;
+                }
+        }
+
+    fclose(bufViaje);
+}
+else{
+    printf("El archivo no se pudo abrir\n");
+}
+return A;
+}
+
+///FILTRAR VIAJES///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///Filtrar Viaje por Transporte
+void filtrarViajeTransporte(char T[10]){
+    stViaje A;
+    int encontrado = 0;
+    FILE *buff = fopen("archViaje", "rb");
+
+    if (buff) {
+        while (fread(&A, sizeof(stViaje), 1, buff)) {
+            if (strcmpi(A.transporte, T) == 0) {
+                mostrarViaje(A);
+                encontrado = 1;
+            }
+        }
+        fclose(buff);
+        if (!encontrado) {
+            printf("No se encontraron viajes que utilizaran el transporte %s\n", T);
+        }
+    } else {
+        printf("El archivo de viajes no se pudo abrir\n");
+    }
+}
+
+///Filtrar Viaje por Destino
+void filtrarViajeDestino(char D[10]){
+    stViaje A;
+    int encontrado = 0;
+    FILE *buff = fopen("archViaje", "rb");
+
+    if (buff) {
+        while (fread(&A, sizeof(stViaje), 1, buff)) {
+            if (strcmpi(A.destino, D) == 0) {
+                mostrarViaje(A);
+                encontrado = 1;
+            }
+        }
+        fclose(buff);
+        if (!encontrado) {
+            printf("No se encontraron viajes que viajen al destino %s\n", D);
+        }
+    } else {
+        printf("El archivo de viajes no se pudo abrir\n");
+    }
+}
+
+///Filtrar viaje por Estado
+void filtrarViajeEstado(int E)
+{
+stViaje A;
+int encontrado=0;
+FILE *buff;
+buff = fopen(archViaje, "rb");
+
+if(buff){
+       while(fread(&A, sizeof(stViaje), 1, buff))
+        {
+            if(A.estado == E)
+                {
+                    mostrarViaje(A);
+                    encontrado=1;
+                }
+        }
+        fclose(buff);
+     if (!encontrado){
+            printf("El estado ingresado no fue encontrado\n");
+        }
+}
+    else{
+        printf("El archivo no se pudo abrir\n");
+    }
+}
+

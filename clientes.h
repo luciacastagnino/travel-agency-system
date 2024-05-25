@@ -1,0 +1,65 @@
+#ifndef CLIENTES_H_INCLUDED
+#define CLIENTES_H_INCLUDED
+#include "viajes.h"
+
+typedef struct{
+char calle[20];
+int num;
+char localidad[20];
+}stDomicilio;
+
+typedef struct{
+char nYa[30];
+char fechaNac[10];
+char genero;
+char dni[10];
+char tel[10];
+stDomicilio dom;
+stViaje v;
+int estado;
+}stCliente;
+
+///PROTOTIPOS CLIENTE(alta, baja, mostrar, modificacion)///////////////////////////////////////////////////////////////////
+stCliente cargarCliente();
+void mostrarCliente(stCliente A);
+void mostrarOrdenC();
+void mostrarArchivoCliente();
+
+///modificar cliente//////////////////////////////////////////////////////////////////////////////////////////////////////
+void modificarCliente (char nYa[]);
+stCliente modificarDatosCliente(stCliente aux);
+stCliente modificarNyAC(stCliente A);
+stCliente modificarFechaNacC(stCliente A);
+stCliente modificarGeneroC(stCliente A);
+stCliente modificarDniC(stCliente A);
+stCliente modificarTelC(stCliente A);
+stCliente modificarDomicilioC(stCliente A);
+stCliente modificarViajeC(stCliente A);
+
+///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
+stCliente darBajaCliente (char nYa[30]);
+
+///PROTOTIPOS DOMICILIO/////////////////////////////////////////////////////////////////////////////////////////////////////
+stDomicilio cargarDomicilio();
+void mostrarDomicilio(stDomicilio A);
+stDomicilio modificarDomicilio(stDomicilio A);
+
+///PROTOTIPOS ARCHIVOS/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void cargarArchivoCliente();
+void encontrarClienteN(char N[30]);
+void encontrarClienteDni(char D[10]);
+void MostrarArreglo(stCliente A[], int validos);
+
+/// ORDENAMIENTO CLIENTES/////////////////////////////////////////////////////////////////////////////////////////////////////
+int calcularRegistrosC();
+int ArchivoToArregloCliente(stCliente** arrD, int validos);
+void ordenarArrDinamicoClientes (stCliente** arrD, int validos);
+
+
+///Filtrar Clientes/////////////////////////////////////////////////////////////////////////////////////////////////////////
+void filtrarClienteGenero(char G);
+void filtrarClienteEstado(int E);
+void filtrarClienteViaje(int ID);
+
+#endif // CLIENTES_H_INCLUDED
