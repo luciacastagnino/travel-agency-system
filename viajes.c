@@ -22,7 +22,7 @@ stViaje cargarViaje()
         if (verificarIDViaje(A.id)) {
             printf("El ID del viaje ya existe. Ingrese un ID diferente:\n");
         }
-    } while (verificarIDViaje(A.id));
+    }while (verificarIDViaje(A.id));
 
     printf("Ingrese el destino\n");
     fflush(stdin);
@@ -135,7 +135,7 @@ void modificarViaje (int id){
 
         aux = modificarDatosViaje(aux);
 
-        fseek(buf, sizeof(stViaje)* pos, SEEK_CUR);
+        fseek(buf, sizeof(stViaje)* pos, SEEK_SET);
         fwrite(&aux, sizeof(stViaje), 1, buf);
         fclose(buf);
     }
@@ -146,14 +146,21 @@ stViaje modificarDatosViaje(stViaje aux)
 
 char control = 's';
 
-        printf("1. Desea modificar el ID?.\n");
+       do {
+        printf("1. Desea modificar el ID? (s/n)\n");
         fflush(stdin);
-        scanf("%c", &control);
+        scanf(" %c", &control);
 
-        if(control=='s')
-        {
-            aux = modificarIdV(aux);
+        if(control == 's') {
+            do {
+                aux = modificarIdV(aux);
+                if (verificarIDViaje(aux.id)) {
+                    printf("El ID del viaje ya existe. Ingrese un ID diferente:\n");
+                }
+            } while (verificarIDViaje(aux.id));
         }
+    } while (control == 's' && verificarIDViaje(aux.id));
+
 
         printf("2. Desea modificar el destino?.\n");
         fflush(stdin);
