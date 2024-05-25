@@ -196,8 +196,6 @@ char control = 's';
         return aux;
 }
 
-
-
 stViaje modificarIdV(stViaje A)
 {
     printf("Ingrese la id para modificar la anterior: \n");
