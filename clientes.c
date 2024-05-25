@@ -590,3 +590,6 @@ if(buff){
         printf("El archivo no se pudo abrir\n");
     }
 }
+
+
+//prueba
