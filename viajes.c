@@ -111,6 +111,8 @@ void mostrarArchivoViaje()
     }
 }
 
+
+/// Modificar Viaje
 void modificarViaje (int id){
 
     stViaje aux;
@@ -194,85 +196,7 @@ char control = 's';
         return aux;
 }
 
-///Modificar Viaje////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//void modificarViaje (int id){
-//
-//    FILE* bufViaje;
-//    bufViaje=fopen(archViaje, "r+b");
-//
-//    stViaje aux;
-//    int flag=0;
-//    char control='n';
-//
-//    if(bufViaje){
-//        while(fread(&aux, sizeof(stViaje), 1, bufViaje)>0 && flag==0){
-//            if(aux.id == id){
-//                flag=1;
-//            }
-//        }
-//
-//        if (flag==1){
-//            mostrarViaje(aux);
-//
-//            printf("1.Desea modificar la ID?\n");
-//            fflush(stdin);
-//            scanf("%c", &control);
-//
-//            if(control=='s')
-//            {
-//               modificarIdV(aux);
-//            }
-//
-//
-//            printf("2.Desea modificar el destino?.\n");
-//            fflush(stdin);
-//            scanf("%c", &control);
-//
-//            if(control=='s')
-//            {
-//               modificarDestinoV(aux);
-//            }
-//
-//            printf("3. Desea modificar la duracion?.\n");
-//            fflush(stdin);
-//            scanf("%c", &control);
-//
-//            if(control=='s')
-//            {
-//               modificarDuracionV(aux);
-//            }
-//
-//            printf("4.Desea modificar el transporte.\n");
-//            fflush(stdin);
-//            scanf("%c", &control);
-//
-//            if(control=='s')
-//            {
-//               modificarTransporteV(aux);
-//            }
-//
-//            printf("5.Desea modificar el precio?.\n");
-//            fflush(stdin);
-//            scanf("%c", &control);
-//
-//            if(control=='s')
-//            {
-//               modificarPrecioV(aux);
-//            }
-//        }
-//
-//        fseek(bufViaje, sizeof(stViaje)*(-1), SEEK_CUR);
-//        fwrite(&aux, sizeof(stViaje), 1, bufViaje);
-//
-//        fclose(bufViaje);
-//    }else{
-//        printf("No se pudo abrir el archivo.\n");
-//    }
-//
-//    if(flag==0){
-//        printf("El viaje no existe.\n");
-//    }
-//}
+
 
 stViaje modificarIdV(stViaje A)
 {
