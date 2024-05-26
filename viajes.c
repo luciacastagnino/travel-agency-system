@@ -7,7 +7,84 @@
 
 const char archViaje[] = {"archivoViaje.bin"};
 
-///VIAJES EN ORDEN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///VIAJES EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int calcularRegistrosV(char archViaje[]){
+
+    int cant=0;
+
+    FILE *buf;
+    buf = fopen(archViaje, "rb");
+
+    if(buf){
+        fseek(buf, 0, 2);
+
+        cant = ftell(buf)/ sizeof(stViaje);
+
+    fclose(buf);
+
+    }else{
+
+    printf("El archivo no se pudo abrir");
+
+}
+    return cant;
+}
+
+int ArchivoToArregloViaje (stViaje** arrD, int validos){
+
+    FILE* bufViaje;
+    stViaje A;
+
+    int cantRegistrosV = calcularRegistrosV(archViaje);
+
+    *arrD = (stViaje*)malloc(sizeof(stViaje)*cantRegistrosV);
+
+    if (*arrD == NULL) {
+        printf("No se pudo asignar memoria\n");
+        return validos;
+    }
+
+    bufViaje = fopen(archViaje, "rb");
+
+    if (bufViaje){
+        while(fread(&A, sizeof(stViaje), 1, bufViaje) > 0 && validos < cantRegistrosV){
+            (*arrD)[validos] = A;
+            validos++;
+        }
+        fclose(bufViaje);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+
+    return validos;
+}
+
+void ordenarArrDinamicoViaje (stViaje** arrD, int validos){
+
+    ordenamientoInserccion(arrD, validos);
+    MostrarArregloViaje(arrD, validos);
+
+}
+
+void MostrarArregloViaje(stViaje A[], int validos){
+
+    int i;
+
+    for(i=0; i<validos; i++){
+        mostrarViaje(A[i]);
+    }
+}
+
+void mostrarOrdenV(){
+
+        stViaje *arrDinV;
+        int validosV=0;
+        validosV=ArchivoToArregloViaje(&arrDinV, validosV);
+        printf("ARREGLO DINAMICO VIAJES ORDENADO:\n");
+        ordenamientoInserccion(arrDinV, validosV);
+        MostrarArregloViaje(arrDinV, validosV);
+}
 
 ///Cargar Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 stViaje cargarViaje()

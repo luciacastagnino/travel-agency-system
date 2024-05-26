@@ -36,6 +36,15 @@ void filtrarViajeDestino(char D[10]);
 void filtrarViajeEstado(int E);
 
 ///PROTOTIPO ARCHIVO
+
+/// ordenar viajes
+
+int calcularRegistrosV(char archViaje[]);
+int ArchivoToArregloViaje (stViaje** arrD, int validos);
+void ordenarArrDinamicoViaje (stViaje** arrD, int validos);
+void MostrarArregloViaje(stViaje A[], int validos);
+void mostrarOrdenV();
+
 void cargarArchivoViaje();
 stViaje encontrarViajeId(int id);
 #endif // VIAJES_H_INCLUDED

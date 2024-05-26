@@ -17,4 +17,7 @@ void ordenamientoSeleccionCliente(stCliente* A, int cantRegistrosC);
 
 ///ORDENAMIENTO POR INSERCION/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void insertar (stViaje* A, int u, stViaje aux);
+void ordenamientoInserccion (stViaje* A, int cantRegistrosV);
+
 #endif // ORDENAMIENTOS_H_INCLUDED

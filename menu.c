@@ -159,7 +159,7 @@ void menuViajes()
         {
             printf("LISTA DE VIAJES\n\n");
             mostrarArchivoViaje();
-            //mostrarOrdenV();
+            mostrarOrdenV();
             break;
         }
     case 1:
@@ -169,7 +169,8 @@ void menuViajes()
             system("cls");
             printf("LISTA DE VIAJES\n\n");
             mostrarArchivoViaje();
-            //mostrarOrdenV();
+            mostrarOrdenV();
+
             break;
         }
     case 2:

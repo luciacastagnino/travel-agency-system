@@ -97,4 +97,35 @@ void ordenamientoSeleccionCliente(stCliente* A, int cantRegistrosC){
      }
 }
 
-/// ORDENAMIENTOS INSERCION/////////////////////////////////////////////////////////////////////////////////////////////////
+/// ORDENAMIENTOS INSERCION////////////////////////////////////////////////////////////////////////////////////////
+
+/// ORDENAMIENTO VIAJES ///////////////////////////////////////////////////////////////////////////////////////////
+
+int cantRegistrosV=0;
+
+void insertar (stViaje* A, int u, stViaje aux){
+
+    int i=u;
+
+    while(i>=0 && A[i].id > aux.id){
+        A[i+1]=A[i];
+        i--;
+
+    }
+
+    A[i+1]=aux;
+
+}
+
+void ordenamientoInserccion (stViaje* A, int cantRegistrosV){
+
+    int i=0;
+
+
+    while(i<cantRegistrosV-1){
+        stViaje aux=A[i];
+        insertar(A, i, aux);
+        i++;
+    }
+
+}
