@@ -12,10 +12,8 @@ void mostrarOrdenE()
 {
         stEmpleado* arrDinE;
         int validosE=0;
-
         validosE=ArchivoToArregloEmpleados(&arrDinE, validosE);
-
-        printf("ARREGLO DINAMICO EMPLEADOS ORDENADO:\n");
+        //printf("LISTA DE EMPLEADOS ORDENADOS:\n");
         ordenamientoSeleccionEmpleado(arrDinE, validosE);
         MostrarArregloEmpleados(arrDinE, validosE);
 }

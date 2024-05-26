@@ -12,11 +12,10 @@ const char archCliente[] = {"archivoCliente.bin"};
 
 void mostrarOrdenC()
 {
-            mostrarArchivoCliente();
             stCliente *arrDinC;
             int validos=0;
             validos=ArchivoToArregloCliente(&arrDinC, validos);
-            printf("ARREGLO DINAMICO CLIENTES ORDENADO:\n");
+            //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validos);
             MostrarArreglo(arrDinC, validos);
 }

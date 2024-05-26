@@ -81,7 +81,7 @@ void mostrarOrdenV(){
         stViaje *arrDinV;
         int validosV=0;
         validosV=ArchivoToArregloViaje(&arrDinV, validosV);
-        printf("ARREGLO DINAMICO VIAJES ORDENADO:\n");
+        //printf("LISTA DE VIAJES ORDENADOS: \n");
         ordenamientoInserccion(arrDinV, validosV);
         MostrarArregloViaje(arrDinV, validosV);
 }
