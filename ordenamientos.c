@@ -124,7 +124,7 @@ void ordenamientoInserccion (stViaje* A, int cantRegistrosV){
 
     while(i<cantRegistrosV-1){
         stViaje aux=A[i];
-        insertar(A, i, aux);
+        insertar(A, i, A[i+1]);
         i++;
     }
 
