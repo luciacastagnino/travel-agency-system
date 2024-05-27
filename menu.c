@@ -107,7 +107,7 @@ void menuEmpleados()
                filtrarEmpleadoPuesto(P);
             }else{
                 int E;
-                printf("Ingrese el estado que desea filtrar: \n");
+                printf("Ingrese el estado que desea filtrar (0. Inactivo | 1. Activo): \n");
                 fflush(stdin);
                 scanf("%d", &E);
                 filtrarEmpleadoEstado(E);
