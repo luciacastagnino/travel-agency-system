@@ -217,7 +217,7 @@ void modificarCliente (char nYa[30]){
 
         aux = modificarDatosCliente(aux);
 
-        fseek(buf, sizeof(stCliente)* pos, SEEK_CUR);
+        fseek(buf, sizeof(stCliente)* (-1), SEEK_CUR);
         fwrite(&aux, sizeof(stCliente), 1, buf);
         fclose(buf);
     }

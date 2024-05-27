@@ -225,7 +225,7 @@ void modificarEmpleado (char nYa[30]){
 
         aux = modificarDatosEmpleado(aux);
 
-        fseek(buf, sizeof(stEmpleado)* pos, SEEK_CUR);
+        fseek(buf, sizeof(stEmpleado)* (-1), SEEK_CUR);
         fwrite(&aux, sizeof(stEmpleado), 1, buf);
         fclose(buf);
     }

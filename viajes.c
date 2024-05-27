@@ -212,7 +212,7 @@ void modificarViaje (int id){
 
         aux = modificarDatosViaje(aux);
 
-        fseek(buf, sizeof(stViaje)* pos, SEEK_SET);
+        fseek(buf, sizeof(stViaje)* (-1), SEEK_CUR);
         fwrite(&aux, sizeof(stViaje), 1, buf);
         fclose(buf);
     }
