@@ -382,7 +382,7 @@ return A;
 void filtrarViajeTransporte(char T[10]){
     stViaje A;
     int encontrado = 0;
-    FILE *buff = fopen("archViaje", "rb");
+    FILE *buff = fopen(archViaje, "rb");
 
     if (buff) {
         while (fread(&A, sizeof(stViaje), 1, buff)) {
@@ -404,7 +404,7 @@ void filtrarViajeTransporte(char T[10]){
 void filtrarViajeDestino(char D[10]){
     stViaje A;
     int encontrado = 0;
-    FILE *buff = fopen("archViaje", "rb");
+    FILE *buff = fopen(archViaje, "rb");
 
     if (buff) {
         while (fread(&A, sizeof(stViaje), 1, buff)) {

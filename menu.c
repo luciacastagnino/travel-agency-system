@@ -225,14 +225,14 @@ void menuViajes()
             }
             else if(opcion == 2){
                 char T[20];
-                printf("Ingrese el transporte que desea filtrar: \n");
+                printf("Ingrese el transporte que desea filtrar: (Avion | Tren | Micro): \n");
                 fflush(stdin);
                 gets(T);
                 filtrarViajeTransporte(T);
             }
             else if(opcion == 3){
                 int E;
-                printf("Ingrese el estado que desea filtrar: \n");
+                printf("Ingrese el estado que desea filtrar (0. Inactivo | 1. Activo): \n");
                 fflush(stdin);
                 scanf("%d", &E);
                 filtrarViajeEstado(E);
@@ -381,7 +381,7 @@ void menuClientes()
                filtrarClienteGenero(G);
             }else if(opcion == 2){
                 int E;
-                printf("Ingrese el estado que desea filtrar: ");
+                printf("Ingrese el estado que desea filtrar (0. Inactivo | 1. Activo): ");
                 fflush(stdin);
                 scanf("%d", &E);
                 filtrarClienteEstado(E);
