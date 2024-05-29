@@ -178,7 +178,7 @@ void menuViajes()
             system("cls");
             printf("LISTA DE VIAJES\n\n");
             mostrarArchivoViaje();
-            mostrarOrdenV();
+            mostrarOrdenActivosV();
 
             break;
         }
@@ -187,7 +187,7 @@ void menuViajes()
             int id;
             printf("LISTA DE VIAJES \n\n");
             //mostrarArchivoViaje();
-            mostrarOrdenV();
+            mostrarOrdenActivosV();
 
             printf("Ingrese la ID del viaje a modificar:\n");
             fflush(stdin);
@@ -250,10 +250,25 @@ void menuViajes()
         }
     case 5:
         {
-            ///dar de baja
-             break;
+            int id;
+
+            printf("Ingrese la ID del viaje que desea dar de baja: \n");
+            fflush(stdin);
+            scanf("%d", &id);
+
+            system("pause");
+            system("cls");
+
+            //darBajaVJ(id);
+            break;
         }
     case 6:
+        {
+            printf("LISTA DE VIAJES DADOS DE BAJA\n\n");
+            //mostrarOrdenBajaV();
+            break;
+        }
+    case 7:
         {
             int calendario[6][7]; ///Invoco la matriz de calendario///
 

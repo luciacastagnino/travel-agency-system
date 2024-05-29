@@ -1,6 +1,6 @@
+#include "viajes.h"
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
-#include "viajes.h"
 
 static const char archCliente[] = {"archivoCliente.bin"};
 

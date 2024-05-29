@@ -28,9 +28,10 @@ stViaje modificarPrecioV(stViaje A);
 stViaje modificarEstadoV(stViaje A);
 void modificarViaje (int id);
 stViaje modificarDatosViaje(stViaje aux);
-// dar baja viaje
 
-stViaje darDeBajaViaje (int id);
+// dar baja viaje
+///void darDeBajaViaje (int id)
+///stViaje darBajaVJ(stViaje aux);
 
 //Filtrar Viajes
 void filtrarViajeTransporte(char transporte[10]);
@@ -43,9 +44,13 @@ void filtrarViajeEstado(int E);
 
 int calcularRegistrosV();
 int ArchivoToArregloViaje (stViaje** arrD, int validos);
+int ArchivoToArregloViajeActivo(stViaje** arrD, int validos);
+int ArchivoToArregloViajeInactivo(stViaje** arrD, int validos);
 void ordenarArrDinamicoViaje (stViaje** arrD, int validos);
 void MostrarArregloViaje(stViaje A[], int validos);
 void mostrarOrdenV();
+void mostrarOrdenActivosV();
+void mostrarOrdenBajaV();
 
 void cargarArchivoViaje();
 stViaje encontrarViajeId(int id);

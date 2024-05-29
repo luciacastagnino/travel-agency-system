@@ -29,8 +29,63 @@ int calcularRegistrosV(){
     return cant;
 }
 
+int calcularRegistrosActivosV()
+{
+
+    int cant = 0;
+    stViaje A;
+
+    FILE *buff;
+    buff = fopen(archViaje, "rb");
+
+    if(buff){
+        while(fread(&A, sizeof(stViaje), 1, buff))
+        {
+            if(A.estado == 1){
+                cant++;
+            }
+        }
+
+    fclose(buff);
+
+    }else{
+
+    printf("El archivo no se pudo abrir");
+
+}
+    return cant;
+}
+
+int calcularRegistrosInactivosV()
+{
+    int cant = 0;
+    stViaje A;
+
+    FILE *buff;
+    buff = fopen(archViaje, "rb");
+
+    if(buff){
+        while(fread(&A, sizeof(stViaje), 1, buff))
+        {
+            if(A.estado == 0)
+            {
+                cant++;
+            }
+        }
+
+    fclose(buff);
+
+    }else{
+
+    printf("El archivo no se pudo abrir");
+
+}
+    return cant;
+}
+
 ///pasar de archivo a arreglo/////////////////
-int ArchivoToArregloViaje (stViaje** arrD, int validos){
+int ArchivoToArregloViaje (stViaje** arrD, int validos)
+{
 
     FILE* bufViaje;
     stViaje A;
@@ -50,6 +105,72 @@ int ArchivoToArregloViaje (stViaje** arrD, int validos){
         while(fread(&A, sizeof(stViaje), 1, bufViaje) > 0 && validos < cantRegistrosV){
             (*arrD)[validos] = A;
             validos++;
+        }
+        fclose(bufViaje);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+
+    return validos;
+}
+
+int ArchivoToArregloViajeActivo(stViaje** arrD, int validos)
+{
+
+    FILE* bufViaje;
+    stViaje A;
+
+    int cantRegistrosV = calcularRegistrosActivosV();
+
+    *arrD = (stViaje*)malloc(sizeof(stViaje)*cantRegistrosV);
+
+    if (*arrD == NULL) {
+        printf("No se pudo asignar memoria\n");
+        return validos;
+    }
+
+    bufViaje = fopen(archViaje, "rb");
+
+    if (bufViaje){
+        while(fread(&A, sizeof(stViaje), 1, bufViaje) > 0 && validos < cantRegistrosV){
+            if(A.estado == 1)
+                {
+                    (*arrD)[validos] = A;
+                     validos++;
+                }
+        }
+        fclose(bufViaje);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+
+    return validos;
+}
+
+int ArchivoToArregloViajeInactivo(stViaje** arrD, int validos)
+{
+
+    FILE* bufViaje;
+    stViaje A;
+
+    int cantRegistrosV = calcularRegistrosInactivosV();
+
+    *arrD = (stViaje*)malloc(sizeof(stViaje)*cantRegistrosV);
+
+    if (*arrD == NULL) {
+        printf("No se pudo asignar memoria\n");
+        return validos;
+    }
+
+    bufViaje = fopen(archViaje, "rb");
+
+    if (bufViaje){
+        while(fread(&A, sizeof(stViaje), 1, bufViaje) > 0 && validos < cantRegistrosV){
+            if(A.estado == 0)
+                {
+                    (*arrD)[validos] = A;
+                     validos++;
+                }
         }
         fclose(bufViaje);
     }else{
@@ -82,6 +203,28 @@ void mostrarOrdenV(){
         stViaje *arrDinV;
         int validosV=0;
         validosV=ArchivoToArregloViaje(&arrDinV, validosV);
+        //printf("LISTA DE VIAJES ORDENADOS: \n");
+        ordenamientoInserccion(arrDinV, validosV);
+        MostrarArregloViaje(arrDinV, validosV);
+}
+
+void mostrarOrdenActivosV()
+{
+
+        stViaje *arrDinV;
+        int validosV=0;
+        validosV=ArchivoToArregloViajeActivo(&arrDinV, validosV);
+        //printf("LISTA DE VIAJES ORDENADOS: \n");
+        ordenamientoInserccion(arrDinV, validosV);
+        MostrarArregloViaje(arrDinV, validosV);
+}
+
+void mostrarOrdenBajaV()
+{
+
+        stViaje *arrDinV;
+        int validosV=0;
+        validosV=ArchivoToArregloViajeInactivo(&arrDinV, validosV);
         //printf("LISTA DE VIAJES ORDENADOS: \n");
         ordenamientoInserccion(arrDinV, validosV);
         MostrarArregloViaje(arrDinV, validosV);
@@ -327,30 +470,57 @@ stViaje modificarPrecioV(stViaje A)
 }
 
 ///Dar Baja Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-stViaje darDeBajaViaje (int id){
 
-    FILE* bufViaje;
-    bufViaje=fopen(archViaje, "r+b");
-    stViaje viaje;
-    int flag=0;
+/*
+void darDeBajaViaje (int id)
+{
+    stViaje aux;
+    int flag = 0;
+    int pos=0;
 
-    if(bufViaje){
-        while(fread(&viaje, sizeof(stViaje), 1, bufViaje)>0 && flag==0){
-            if(viaje.id==id){
-                viaje.estado=0;
-                flag=1;
-                fseek(bufViaje, sizeof(stViaje)*(-1), SEEK_CUR);
-                fwrite(&viaje, sizeof(stViaje), 1, bufViaje);
+    FILE* buf;
+    buf = fopen(archViaje, "r+b");
+
+    if(buf){
+        while((fread(&aux, sizeof(stViaje), 1, buf)>0)&& flag==0){
+            if(aux.id == id){
+                flag = 1;
+            }else{
+                pos++;
             }
         }
+        fseek(buf, sizeof(stViaje) * pos, SEEK_SET);
+        fread(&aux, sizeof(stViaje), 1, buf);
 
-        fclose(bufViaje);
+        aux = darBajaVJ(aux);
+
+        fseek(buf, sizeof(stViaje)* (-1), SEEK_CUR);
+        fwrite(&aux, sizeof(stViaje), 1, buf);
+        fclose(buf);
     }
-
-    return viaje;
 
 }
 
+stViaje darBajaVJ(stViaje aux)
+{
+
+       char control = 's';
+
+        printf("¿Desea dar de baja este viaje?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux.estado = 0;
+        }
+
+        printf("Asi quedo modificado el viaje: \n");
+        mostrarViaje(aux);
+
+        return aux;
+}
+*/
 
 ///BUSCAR VIAJE///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 stViaje encontrarViajeId(int id)
