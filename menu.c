@@ -301,6 +301,7 @@ void menuClientes()
     printf("3. Buscar un cliente.\n");
     printf("4. Filtrar un cliente.\n");
     printf("5. Dar de baja clientes\n");
+    printf("6. Mostrar clientes dados de baja\n");
     fflush(stdin);
     scanf("%d", &opcion);
     system("pause");
@@ -310,7 +311,7 @@ void menuClientes()
         case 0:
         {
             printf("LISTA DE CLIENTES \n\n");
-            mostrarOrdenC();
+            mostrarOrdenCActivo();
             break;
         }
 
@@ -319,7 +320,7 @@ void menuClientes()
             cargarArchivoCliente();
             system("pause");
             system("cls");
-            mostrarOrdenC();
+            mostrarOrdenCActivo();
 
             ///Cargar clientes tal vez tendria que ser en ventas
 
@@ -329,7 +330,7 @@ void menuClientes()
         {
             char nYa[30];
             printf("LISTA DE CLIENTES \n\n");
-            mostrarOrdenC();
+            mostrarOrdenCActivo();
 
             printf("Ingrese el nombre del cliente a modificar:\n");
             fflush(stdin);
@@ -399,7 +400,7 @@ void menuClientes()
             char nYa[30];
 
             printf("LISTA DE CLIENTES \n\n");
-            mostrarOrdenC();
+            mostrarOrdenCActivo();
 
             printf("Ingrese el nombre del cliente a dar de baja:\n");
             fflush(stdin);
@@ -411,6 +412,13 @@ void menuClientes()
             darBajaCliente(nYa);
            break;
         }
+        case 6:
+            {
+                printf("LISTA DE CLIENTES DADOS DE BAJA\n\n");
+                mostrarOrdenBajaC();
+                break;
+
+            }
         default:
             printf("La opcion no existe.\n");
     }

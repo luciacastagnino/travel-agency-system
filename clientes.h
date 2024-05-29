@@ -25,6 +25,8 @@ int estado;
 stCliente cargarCliente();
 void mostrarCliente(stCliente A);
 void mostrarOrdenC();
+void mostrarOrdenBajaC();
+void mostrarOrdenCActivo();
 void mostrarArchivoCliente();
 
 ///modificar cliente//////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,7 +41,8 @@ stCliente modificarDomicilioC(stCliente A);
 stCliente modificarViajeC(stCliente A);
 
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
-stCliente darBajaCliente (char nYa[30]);
+void darBajaCliente (char nYa[30]);
+stCliente darBajaC(stCliente aux);
 
 ///PROTOTIPOS DOMICILIO/////////////////////////////////////////////////////////////////////////////////////////////////////
 stDomicilio cargarDomicilio();
@@ -56,6 +59,8 @@ void MostrarArreglo(stCliente A[], int validos);
 /// ORDENAMIENTO CLIENTES/////////////////////////////////////////////////////////////////////////////////////////////////////
 int calcularRegistrosC();
 int ArchivoToArregloCliente(stCliente** arrD, int validos);
+int ArchivoToArregloClienteActivo(stCliente** arrD, int validos);
+int ArchivoToArregloBajaClientes(stCliente** arrD, int validos);
 void ordenarArrDinamicoClientes (stCliente** arrD, int validos);
 
 

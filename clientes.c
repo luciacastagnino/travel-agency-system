@@ -8,16 +8,38 @@
 
 ///CLIENTE ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void mostrarOrdenC()
+void mostrarOrdenCActivo()
 {
             stCliente *arrDinC;
             int validos=0;
-            validos=ArchivoToArregloCliente(&arrDinC, validos);
+            validos= ArchivoToArregloClienteActivo(&arrDinC, validos);
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validos);
             MostrarArreglo(arrDinC, validos);
 }
 
+void mostrarOrdenBajaC()
+{
+            stCliente *arrDinC;
+            int validos = 0;
+            validos = ArchivoToArregloBajaClientes(&arrDinC, validos);
+            //printf("LISTA DE CLIENTES ORDENADOS:\n");
+            ordenamientoSeleccionCliente(arrDinC, validos);
+            MostrarArreglo(arrDinC, validos);
+}
+
+///muestra archivo completo///
+void mostrarOrdenC()
+{
+            stCliente *arrDinC;
+            int validos=0;
+            validos= ArchivoToArregloCliente(&arrDinC, validos);
+            //printf("LISTA DE CLIENTES ORDENADOS:\n");
+            ordenamientoSeleccionCliente(arrDinC, validos);
+            MostrarArreglo(arrDinC, validos);
+}
+
+///calcular registros/////////////////////////////
 int calcularRegistrosC(){
 
     int cant=0;
@@ -40,6 +62,59 @@ int calcularRegistrosC(){
     return cant;
 }
 
+int calcularRegistrosActivosC(){
+
+    int cant = 0;
+    stCliente A;
+
+    FILE *buf;
+    buf = fopen(archCliente, "rb");
+
+    if(buf){
+        while(fread(&A, sizeof(stCliente), 1, buf))
+        {
+            if(A.estado == 1){
+                cant++;
+            }
+        }
+
+    fclose(buf);
+
+    }else{
+
+    printf("El archivo no se pudo abrir");
+
+}
+    return cant;
+}
+
+int calcularRegistrosInactivosC(){
+
+    int cant = 0;
+    stCliente A;
+
+    FILE *buf;
+    buf = fopen(archCliente, "rb");
+
+    if(buf){
+        while(fread(&A, sizeof(stCliente), 1, buf))
+        {
+            if(A.estado == 0){
+                cant++;
+            }
+        }
+
+    fclose(buf);
+
+    }else{
+
+    printf("El archivo no se pudo abrir");
+
+}
+    return cant;
+}
+
+///pasar de archivo a arreglo////////////////////
 int ArchivoToArregloCliente(stCliente** arrD, int validos){
 
     FILE* buf;
@@ -69,12 +144,81 @@ int ArchivoToArregloCliente(stCliente** arrD, int validos){
     return validos;
 }
 
-void ordenarArrDinamicoClientes (stCliente** arrD, int validos){
+int ArchivoToArregloClienteActivo(stCliente** arrD, int validos)
+{
 
-    ordenamientoSeleccionCliente(&arrD, validos);
+    FILE* buf;
+    stCliente A;
 
+    int cantRegistrosC = calcularRegistrosActivosC();
+
+    *arrD = (stCliente*)malloc(sizeof(stCliente)*cantRegistrosC);
+
+    if (*arrD == NULL) {
+        printf("No se pudo asignar memoria\n");
+        return validos;
+    }
+
+    buf = fopen(archCliente, "rb");
+
+    if (buf){
+        while(fread(&A, sizeof(stCliente), 1, buf) > 0 && validos < cantRegistrosC){
+            if(A.estado == 1)
+                {
+                   (*arrD)[validos] = A;
+                   validos++;
+
+                }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+
+    return validos;
 }
 
+int ArchivoToArregloBajaClientes(stCliente** arrD, int validos)
+{
+
+    FILE* buf;
+    stCliente A;
+
+    int cantRegistrosC = calcularRegistrosInactivosC();
+
+    *arrD = (stCliente*)malloc(sizeof(stCliente)*cantRegistrosC);
+
+    if (*arrD == NULL) {
+        printf("No se pudo asignar memoria\n");
+        return validos;
+    }
+
+    buf = fopen(archCliente, "rb");
+
+    if (buf){
+        while(fread(&A, sizeof(stCliente), 1, buf) > 0 && validos < cantRegistrosC){
+            if(A.estado == 0)
+                {
+                    (*arrD)[validos] = A;
+                     validos++;
+                }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+
+    return validos;
+}
+
+///ordenar arreglo/////////////////////////////////
+
+void ordenarArrDinamicoClientes (stCliente** arrD, int validos){
+
+    ordenamientoSeleccionCliente(*arrD, validos);
+
+}
+///mostrar arreglo/////////////////////////////////////////////////
 void MostrarArreglo(stCliente A[], int validos){
 
 int i;
@@ -360,29 +504,54 @@ stCliente modificarViajeC(stCliente A)
 }
 
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
-stCliente darBajaCliente (char nYa[]){
+void darBajaCliente (char nYa[]){
+
+    stCliente aux;
+    int flag = 0;
+    int pos=0;
 
     FILE* buf;
     buf = fopen(archCliente, "r+b");
-    stCliente cliente;
-    int flag=0;
 
     if(buf){
-        while((fread(&cliente, sizeof(stCliente), 1, buf) > 0) && (flag == 0))
-        {
-            if(strcmp(cliente.nYa, nYa) == 0)
-            {
-                cliente.estado = 0;
+        while((fread(&aux, sizeof(stCliente), 1, buf)>0)&& flag==0){
+            if(strcmpi(aux.nYa, nYa) == 0){
                 flag = 1;
-
-                fseek(buf, sizeof(stCliente)*(-1), SEEK_CUR);
-                fwrite(&cliente, sizeof(cliente), 1, buf);
+            }else{
+                pos++;
             }
         }
+        fseek(buf, sizeof(stCliente) * pos, SEEK_SET);
+        fread(&aux, sizeof(stCliente), 1, buf);
+
+        aux = darBajaC(aux);
+
+        fseek(buf, sizeof(stCliente)* (-1), SEEK_CUR);
+        fwrite(&aux, sizeof(stCliente), 1, buf);
         fclose(buf);
     }
-   return cliente;
 }
+
+stCliente darBajaC(stCliente aux)
+{
+
+    char control = 's';
+
+        printf("1. Desea dar de baja este cliente?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux.estado = 0;
+        }
+
+        printf("Asi quedo modificado el cliente: \n");
+        mostrarCliente(aux);
+
+        return aux;
+}
+
 
 ///DOMICILIO////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -72,7 +72,7 @@ int ArchivoToArregloEmpleados (stEmpleado** arrD, int validos){
 
 void ordenarArrDinamicoEmpleados (stEmpleado** arrD, int validos){
 
-    ordenamientoSeleccionEmpleado(&arrD, validos);
+    ordenamientoSeleccionEmpleado(*arrD, validos);
 
 }
 

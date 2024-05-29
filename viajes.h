@@ -41,7 +41,7 @@ void filtrarViajeEstado(int E);
 
 /// ordenar viajes
 
-int calcularRegistrosV(char archViaje[]);
+int calcularRegistrosV();
 int ArchivoToArregloViaje (stViaje** arrD, int validos);
 void ordenarArrDinamicoViaje (stViaje** arrD, int validos);
 void MostrarArregloViaje(stViaje A[], int validos);

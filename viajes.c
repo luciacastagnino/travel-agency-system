@@ -6,8 +6,8 @@
 #include "ordenamientos.h"
 
 ///VIAJES EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-int calcularRegistrosV(char archViaje[]){
+///calcular registros//////////////
+int calcularRegistrosV(){
 
     int cant=0;
 
@@ -29,12 +29,13 @@ int calcularRegistrosV(char archViaje[]){
     return cant;
 }
 
+///pasar de archivo a arreglo/////////////////
 int ArchivoToArregloViaje (stViaje** arrD, int validos){
 
     FILE* bufViaje;
     stViaje A;
 
-    int cantRegistrosV = calcularRegistrosV(archViaje);
+    int cantRegistrosV = calcularRegistrosV();
 
     *arrD = (stViaje*)malloc(sizeof(stViaje)*cantRegistrosV);
 
@@ -58,13 +59,15 @@ int ArchivoToArregloViaje (stViaje** arrD, int validos){
     return validos;
 }
 
+///ordenar arreglo///
 void ordenarArrDinamicoViaje (stViaje** arrD, int validos){
 
-    ordenamientoInserccion(arrD, validos);
-    MostrarArregloViaje(arrD, validos);
+    ordenamientoInserccion(*arrD, validos);
+    MostrarArregloViaje(*arrD, validos);
 
 }
 
+///mostrar arreglo///
 void MostrarArregloViaje(stViaje A[], int validos){
 
     int i;
