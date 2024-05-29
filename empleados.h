@@ -16,6 +16,8 @@ int estado;
 ///PROTOTIPO EMPLEADOS(alta, baja, mostrar, modificacion)///////////////////////////////////////////////////////////////////////
 stEmpleado cargarEmpleado ();
 void mostrarOrdenE();
+void mostrarOrdenBajaE();
+void mostrarOrdenEActivo();
 void mostrarEmpleado(stEmpleado A);
 
 ///modificar empleado//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,11 +38,16 @@ void mostrarArchivoEmpleado();
 /// ORDENAMIENTO EMPLEADOS////////////////////////////////////////////////////////////////////////////////////////////////////
 void MostrarArregloEmpleados(stEmpleado A[], int validos);
 int calcularRegistrosE();
-int ArchivoToArregloEmpleados (stEmpleado** arrD, int validos);
+int calcularRegistrosActivosE();
+int calcularRegistrosInactivosE();
+int ArchivoToArregloEmpleados(stEmpleado** arrD, int validos);
+int ArchivoToArregloEmpleadosActivo (stEmpleado** arrD, int validos);
+int ArchivoToArregloEmpleadosInactivos(stEmpleado** arrD, int validos);
 void ordenarArrDinamicoEmpleados (stEmpleado** arrD, int validos);
 
 /// dar baja empleado/////////////////////////////////////////////////////////////////////////////////////////////////////////
-stEmpleado darBajaEmpleado (char nYa[]);
+void darBajaEmpleado(char nYa[]);
+stEmpleado darBajaE(stEmpleado aux);
 
 ///Filtrar Empleados//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void filtrarEmpleadoEstado(int E);

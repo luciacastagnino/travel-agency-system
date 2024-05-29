@@ -11,24 +11,6 @@
 
 /// ORDENAMIENTO EMPLEADOS/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int contarCantidadRegistrosE (char archEmpleado[]){
-
-    FILE* buff;
-    buff=fopen(archEmpleado, "rb");
-    int contador=0;
-
-    if(buff){
-      fseek(buff, 0, 2);
-      contador=ftell(buff)/sizeof(stEmpleado);
-
-      fclose(buff);
-    }
-
-    return contador;
-}
-
-int cantRegistrosE=0;
-
 int buscarPosMenorEmpleado (stEmpleado* A, int pos, int cantRegistrosE){
 
     int posMenor=pos, i;

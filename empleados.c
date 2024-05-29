@@ -9,14 +9,33 @@
 void mostrarOrdenE()
 {
         stEmpleado* arrDinE;
-        int validosE=0;
-        validosE=ArchivoToArregloEmpleados(&arrDinE, validosE);
+        int validosE = 0;
+        validosE = ArchivoToArregloEmpleados(&arrDinE, validosE);
         //printf("LISTA DE EMPLEADOS ORDENADOS:\n");
         ordenamientoSeleccionEmpleado(arrDinE, validosE);
         MostrarArregloEmpleados(arrDinE, validosE);
 }
 
+void mostrarOrdenBajaE()
+{
+        stEmpleado* arrDinE;
+        int validosE = 0;
+        validosE = ArchivoToArregloEmpleadosInactivos(&arrDinE, validosE);
+        ordenamientoSeleccionEmpleado(arrDinE, validosE);
+        MostrarArregloEmpleados(arrDinE, validosE);
+}
 
+void mostrarOrdenEActivo()
+{
+        stEmpleado* arrDinE;
+        int validosE = 0;
+        validosE = ArchivoToArregloEmpleadosActivo(&arrDinE, validosE);
+        //printf("LISTA DE EMPLEADOS ORDENADOS:\n");
+        ordenamientoSeleccionEmpleado(arrDinE, validosE);
+        MostrarArregloEmpleados(arrDinE, validosE);
+}
+
+///calcular registros//////
 int calcularRegistrosE(){
 
     int cant=0;
@@ -39,7 +58,61 @@ int calcularRegistrosE(){
     return cant;
 }
 
+int calcularRegistrosActivosE()
+{
 
+    int cant = 0;
+    stEmpleado A;
+
+    FILE *buff;
+    buff = fopen(archEmpleado, "rb");
+
+    if(buff){
+        while(fread(&A, sizeof(stEmpleado), 1, buff))
+        {
+            if(A.estado == 1){
+                cant++;
+            }
+        }
+
+    fclose(buff);
+
+    }else{
+
+    printf("El archivo no se pudo abrir");
+
+}
+    return cant;
+}
+
+int calcularRegistrosInactivosE()
+{
+    int cant = 0;
+    stEmpleado A;
+
+    FILE *buff;
+    buff = fopen(archEmpleado, "rb");
+
+    if(buff){
+        while(fread(&A, sizeof(stEmpleado), 1, buff))
+        {
+            if(A.estado == 0)
+            {
+                cant++;
+            }
+        }
+
+    fclose(buff);
+
+    }else{
+
+    printf("El archivo no se pudo abrir");
+
+}
+    return cant;
+}
+
+///pasar de archivo a arreglo/////
 int ArchivoToArregloEmpleados (stEmpleado** arrD, int validos){
 
     FILE* buf;
@@ -69,6 +142,74 @@ int ArchivoToArregloEmpleados (stEmpleado** arrD, int validos){
 
     return validos;
 }
+
+int ArchivoToArregloEmpleadosActivo (stEmpleado** arrD, int validos)
+{
+
+    FILE* buf;
+    stEmpleado A;
+
+    int cantRegistrosE = calcularRegistrosActivosE();
+
+    *arrD = (stEmpleado*)malloc(sizeof(stEmpleado)*cantRegistrosE);
+
+    if (*arrD == NULL) {
+        printf("No se pudo asignar memoria\n");
+        return validos;
+    }
+
+    buf = fopen(archEmpleado, "rb");
+
+    if (buf){
+        while(fread(&A, sizeof(stEmpleado), 1, buf) > 0 && validos < cantRegistrosE){
+            if(A.estado == 1)
+                {
+                    (*arrD)[validos] = A;
+                     validos++;
+                }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+
+
+    return validos;
+}
+
+int ArchivoToArregloEmpleadosInactivos(stEmpleado** arrD, int validos)
+{
+
+    FILE* buf;
+    stEmpleado A;
+
+    int cantRegistrosE = calcularRegistrosInactivosE();
+
+    *arrD = (stEmpleado*)malloc(sizeof(stEmpleado)*cantRegistrosE);
+
+    if (*arrD == NULL) {
+        printf("No se pudo asignar memoria\n");
+        return validos;
+    }
+
+    buf = fopen(archEmpleado, "rb");
+
+    if (buf){
+        while(fread(&A, sizeof(stEmpleado), 1, buf) > 0 && validos < cantRegistrosE){
+            if(A.estado == 0)
+                {
+                    (*arrD)[validos] = A;
+                     validos++;
+                }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+
+    return validos;
+}
+
 
 void ordenarArrDinamicoEmpleados (stEmpleado** arrD, int validos){
 
@@ -417,33 +558,53 @@ void mostrarArchivoEmpleado()
 }
 
 /// Dar de baja un empleado////////////////////////////////////////////////////////////////////////////////////////////////////
-stEmpleado darBajaEmpleado (char nYa[30]){
-
-    FILE* buff;
-    buff = fopen(archEmpleado, "r+b");
-
-    stEmpleado empleado;
+void darBajaEmpleado(char nYa[])
+{
+    stEmpleado aux;
     int flag = 0;
+    int pos=0;
 
-    if(buff){
-        while(fread(&empleado, sizeof(stEmpleado), 1, buff)>0 && flag == 0){
-            if(strcmpi(empleado.nYa, nYa) == 0){
+    FILE* buf;
+    buf = fopen(archEmpleado, "r+b");
 
-                empleado.estado=0;
-
+    if(buf){
+        while((fread(&aux, sizeof(stEmpleado), 1, buf)>0)&& flag==0){
+            if(strcmpi(aux.nYa, nYa) == 0){
                 flag = 1;
-
-                fseek(buff, sizeof(stEmpleado)*(-1), SEEK_CUR);
-                fwrite(&empleado, sizeof(stEmpleado), 1, buff);
+            }else{
+                pos++;
             }
         }
+        fseek(buf, sizeof(stEmpleado) * pos, SEEK_SET);
+        fread(&aux, sizeof(stEmpleado), 1, buf);
 
-        fclose(buff);
-    }
-    else
-    {
-        printf("El archivo no pudo abrirse\n");
-    }
+        aux = darBajaE(aux);
 
-    return empleado;
+        fseek(buf, sizeof(stEmpleado)* (-1), SEEK_CUR);
+        fwrite(&aux, sizeof(stEmpleado), 1, buf);
+        fclose(buf);
+    }
+    else{
+        printf("El archivo no se pudo abrir");
+    }
+}
+
+stEmpleado darBajaE(stEmpleado aux)
+{
+
+       char control = 's';
+
+        printf("¿Desea dar de baja este empleado?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux.estado = 0;
+        }
+
+        printf("Asi quedo modificado el empleado: \n");
+        mostrarEmpleado(aux);
+
+        return aux;
 }

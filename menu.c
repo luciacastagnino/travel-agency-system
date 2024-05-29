@@ -21,7 +21,8 @@ void menuEmpleados()
     printf("2. Modificar datos del empleado.\n");
     printf("3. Buscar un empleado\n");
     printf("4. Filtrar empleados\n");
-    printf("5. Dar de baja empleado.\n");
+    printf("5. Dar de baja empleado.\n");\
+    printf("6. Mostrar empleados dados de baja.\n");
 
     fflush(stdin);
     scanf("%d", &opcion);
@@ -42,7 +43,7 @@ void menuEmpleados()
             system("pause");
             system("cls");
             printf("LISTA DE EMPLEADOS\n\n");
-            mostrarOrdenE();
+            mostrarOrdenEActivo();
 
             break;
         }
@@ -50,7 +51,7 @@ void menuEmpleados()
         {
             char nYa[30];
             printf("LISTA DE EMPLEADOS \n\n");
-            mostrarOrdenE();
+            mostrarOrdenEActivo();
 
             printf("Ingrese el nombre del empleado a modificar:\n");
             fflush(stdin);
@@ -117,18 +118,26 @@ void menuEmpleados()
     case 5:
         {
 
-            char nYa[30];
-            printf("LISTA DE CLIENTES \n\n");
-            mostrarOrdenE();
+             char nYa[30];
 
-            printf("Ingrese el nombre del empleado a modificar:\n");
+            printf("LISTA DE EMPLEADOS \n\n");
+            mostrarOrdenEActivo();
+
+            printf("Ingrese el nombre del empleado a dar de baja:\n");
             fflush(stdin);
             gets(nYa);
+
             system("pause");
             system("cls");
 
-            modificarEmpleado(nYa);
-             break;
+            darBajaEmpleado(nYa);
+           break;
+        }
+    case 6:
+        {
+            printf("LISTA DE EMPLEADOS DADOS DE BAJA\n\n");
+            mostrarOrdenBajaE();
+            break;
         }
     default:
         printf("La opcion no existe.\n");
