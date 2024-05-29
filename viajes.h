@@ -1,6 +1,8 @@
 #ifndef VIAJES_H_INCLUDED
 #define VIAJES_H_INCLUDED
 
+static const char archViaje[] = {"archivoViaje.bin"};
+
 typedef struct{
 int id;
 char destino[30];

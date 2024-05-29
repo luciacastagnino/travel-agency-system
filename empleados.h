@@ -1,6 +1,8 @@
 #ifndef EMPLEADOS_H_INCLUDED
 #define EMPLEADOS_H_INCLUDED
 
+static const char archEmpleado[] = {"archivoEmpleado.bin"};
+
 typedef struct{
 char nYa[30];
 char dni[10];

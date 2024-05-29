@@ -5,8 +5,6 @@
 #include "viajes.h"
 #include "ordenamientos.h"
 
-const char archViaje[] = {"archivoViaje.bin"};
-
 ///VIAJES EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int calcularRegistrosV(char archViaje[]){

@@ -2,6 +2,8 @@
 #define CLIENTES_H_INCLUDED
 #include "viajes.h"
 
+static const char archCliente[] = {"archivoCliente.bin"};
+
 typedef struct{
 char calle[20];
 int num;
