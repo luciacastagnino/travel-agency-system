@@ -143,7 +143,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1717082704 source:c:\users\acer\desktop\utn\tp-final-prog\main.c
+1717087227 source:c:\users\acer\desktop\utn\tp-final-prog\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -157,7 +157,7 @@
 
 1717082704 c:\users\acer\desktop\utn\tp-final-prog\menu.h
 
-1717084981 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
+1717087232 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

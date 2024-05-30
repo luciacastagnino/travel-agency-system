@@ -13,9 +13,9 @@
 ///MENU EMPLEADOS////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void menuEmpleados()
 {
-    int opcion;
+    int opcion, op;
 
-    printf("Ingrese una opcion.\n");
+    printf("Ingrese una opcion.\n\n");
     printf("0. Ver la lista de empleados.\n");
     printf("1. Cargar un empleados.\n");
     printf("2. Modificar datos del empleado.\n");
@@ -32,9 +32,24 @@ void menuEmpleados()
     {
     case 0:
         {
-            printf("LISTA DE EMPLEADOS\n\n");
-            mostrarOrdenAlfabE();
-            mostrarOrdenDniE();
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por DNI.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE EMPLEADOS\n\n");
+                mostrarOrdenAlfabE();
+            }else if (op==2){
+                printf("LISTA DE EMPLEADOS\n\n");
+                mostrarOrdenDniE();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+
             break;
         }
 
@@ -149,9 +164,9 @@ void menuEmpleados()
 
 void menuViajes()
 {
-     int opcion;
+     int opcion, op;
 
-    printf("Ingrese una opcion:\n");
+    printf("Ingrese una opcion:\n\n");
     printf("0. Mostrar lista de viajes\n");
     printf("1. Ingresar viaje.\n");
     printf("2. Modificar viaje.\n");
@@ -167,10 +182,23 @@ void menuViajes()
     {
     case 0:
         {
-            printf("LISTA DE VIAJES\n\n");
-            //mostrarArchivoViaje();
-            mostrarOrdenIDV();
-            //mostrarOrdenDestinoV();
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por ID.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE VIAJES\n\n");
+                mostrarOrdenDestinoV();
+            }else if (op==2){
+                printf("LISTA DE VIAJES\n\n");
+                mostrarOrdenIDV();
+            }else{
+                printf("No existe la opcion.\n");
+            }
             break;
         }
     case 1:
@@ -298,7 +326,7 @@ void menuVentas()
 {
      int opcion;
 
-    printf("Ingrese una opcion:\n");
+    printf("Ingrese una opcion:\n\n");
     printf("0. Mostrar lista de ventas\n");
     printf("1. Ingresar venta.\n");
     printf("2. Modificar venta.\n");
@@ -319,9 +347,9 @@ void menuVentas()
 
 void menuClientes()
 {
-    int opcion;
+    int opcion, op;
 
-    printf("0. Ver la lista de clientes.\n");
+    printf("0. Ver la lista de clientes.\n\n");
     printf("1. Cargar clientes.\n");
     printf("2. Modificar datos del cliente.\n");
     printf("3. Buscar un cliente.\n");
@@ -336,9 +364,23 @@ void menuClientes()
     switch(opcion){
         case 0:
         {
-            printf("LISTA DE CLIENTES \n\n");
-            //mostrarOrdenAlfabCActivo();
-            //mostrarOrdenDNIC();
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por DNI.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE CLIENTES\n\n");
+                mostrarOrdenAlfabC();
+            }else if (op==2){
+                printf("LISTA DE CLIENTES\n\n");
+                mostrarOrdenDNIC();
+            }else{
+                printf("No existe la opcion.\n");
+            }
             break;
         }
 

@@ -14,7 +14,7 @@ int main()
 {
     int op;
 
-    printf("Ingrese con que area va a trabajar\n");
+    printf("Ingrese con que area va a trabajar\n\n");
     printf("1. Empleados\n");
     printf("2. Viajes\n");
     printf("3. Ventas\n");
