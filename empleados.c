@@ -6,17 +6,16 @@
 #include "ordenamientos.h"
 
 ///EMPLEADOS EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void mostrarOrdenE()
+void mostrarOrdenAlfabE()
 {
         stEmpleado* arrDinE;
         int validosE = 0;
         validosE = ArchivoToArregloEmpleados(&arrDinE, validosE);
-        //printf("LISTA DE EMPLEADOS ORDENADOS:\n");
         ordenamientoSeleccionEmpleado(arrDinE, validosE);
         MostrarArregloEmpleados(arrDinE, validosE);
 }
 
-void mostrarOrdenBajaE()
+void mostrarOrdenAlfabBajaE()
 {
         stEmpleado* arrDinE;
         int validosE = 0;
@@ -25,7 +24,7 @@ void mostrarOrdenBajaE()
         MostrarArregloEmpleados(arrDinE, validosE);
 }
 
-void mostrarOrdenEActivo()
+void mostrarOrdenAlfabEActivo()
 {
         stEmpleado* arrDinE;
         int validosE = 0;
@@ -35,7 +34,37 @@ void mostrarOrdenEActivo()
         MostrarArregloEmpleados(arrDinE, validosE);
 }
 
-///calcular registros//////
+void mostrarOrdenDniE(){
+
+    stEmpleado * arrDinE;
+    int validosE=0;
+    validosE=ArchivoToArregloEmpleados(&arrDinE, validosE);
+    ordenamientoInserccionEmpleado(arrDinE, validosE);
+    MostrarArregloEmpleados(arrDinE, validosE);
+
+}
+void mostrarOrdenDniBajaE(){
+
+    stEmpleado * arrDinE;
+    int validosE=0;
+    validosE=ArchivoToArregloEmpleadosInactivos(&arrDinE, validosE);
+    ordenamientoInserccionEmpleado(arrDinE, validosE);
+    MostrarArregloEmpleados(arrDinE, validosE);
+
+}
+
+void mostrarOrdenDniActivosE(){
+
+    stEmpleado * arrDinE;
+    int validosE=0;
+    validosE=ArchivoToArregloEmpleadosActivo(&arrDinE, validosE);
+    ordenamientoInserccionEmpleado(arrDinE, validosE);
+    MostrarArregloEmpleados(arrDinE, validosE);
+
+}
+
+/// Calcular registros//////
+
 int calcularRegistrosE(){
 
     int cant=0;
@@ -208,13 +237,6 @@ int ArchivoToArregloEmpleadosInactivos(stEmpleado** arrD, int validos)
         }
 
     return validos;
-}
-
-
-void ordenarArrDinamicoEmpleados (stEmpleado** arrD, int validos){
-
-    ordenamientoSeleccionEmpleado(*arrD, validos);
-
 }
 
 void MostrarArregloEmpleados(stEmpleado A[], int validos){

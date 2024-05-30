@@ -22,11 +22,15 @@ int estado;
 }stCliente;
 
 ///PROTOTIPOS CLIENTE(alta, baja, mostrar, modificacion)///////////////////////////////////////////////////////////////////
+
 stCliente cargarCliente();
 void mostrarCliente(stCliente A);
-void mostrarOrdenC();
-void mostrarOrdenBajaC();
-void mostrarOrdenCActivo();
+void mostrarOrdenAlfabCActivo();
+void mostrarOrdenDNIActivosC();
+void mostrarOrdenAlfabBajaC();
+void mostrarOrdenDNIBajaC();
+void mostrarOrdenAlfabC();
+void mostrarOrdenDNIC();
 void mostrarArchivoCliente();
 
 ///modificar cliente//////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,7 +58,7 @@ stDomicilio modificarDomicilio(stDomicilio A);
 void cargarArchivoCliente();
 void encontrarClienteN(char N[30]);
 void encontrarClienteDni(char D[10]);
-void MostrarArreglo(stCliente A[], int validos);
+void MostrarArregloCliente(stCliente A[], int validos);
 
 /// ORDENAMIENTO CLIENTES/////////////////////////////////////////////////////////////////////////////////////////////////////
 int calcularRegistrosC();

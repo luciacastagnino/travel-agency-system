@@ -33,7 +33,8 @@ void menuEmpleados()
     case 0:
         {
             printf("LISTA DE EMPLEADOS\n\n");
-            mostrarOrdenE();
+            mostrarOrdenAlfabE();
+            mostrarOrdenDniE();
             break;
         }
 
@@ -43,7 +44,7 @@ void menuEmpleados()
             system("pause");
             system("cls");
             printf("LISTA DE EMPLEADOS\n\n");
-            mostrarOrdenEActivo();
+            mostrarOrdenAlfabEActivo();
 
             break;
         }
@@ -51,7 +52,7 @@ void menuEmpleados()
         {
             char nYa[30];
             printf("LISTA DE EMPLEADOS \n\n");
-            mostrarOrdenEActivo();
+            mostrarOrdenAlfabEActivo();
 
             printf("Ingrese el nombre del empleado a modificar:\n");
             fflush(stdin);
@@ -121,7 +122,7 @@ void menuEmpleados()
              char nYa[30];
 
             printf("LISTA DE EMPLEADOS \n\n");
-            mostrarOrdenEActivo();
+            mostrarOrdenAlfabEActivo();
 
             printf("Ingrese el nombre del empleado a dar de baja:\n");
             fflush(stdin);
@@ -136,7 +137,7 @@ void menuEmpleados()
     case 6:
         {
             printf("LISTA DE EMPLEADOS DADOS DE BAJA\n\n");
-            mostrarOrdenBajaE();
+            mostrarOrdenAlfabBajaE();
             break;
         }
     default:
@@ -168,7 +169,8 @@ void menuViajes()
         {
             printf("LISTA DE VIAJES\n\n");
             //mostrarArchivoViaje();
-            mostrarOrdenV();
+            mostrarOrdenIDV();
+            //mostrarOrdenDestinoV();
             break;
         }
     case 1:
@@ -178,7 +180,7 @@ void menuViajes()
             system("cls");
             printf("LISTA DE VIAJES\n\n");
             mostrarArchivoViaje();
-            mostrarOrdenActivosV();
+            mostrarOrdenIDActivosV();
 
             break;
         }
@@ -187,7 +189,7 @@ void menuViajes()
             int id;
             printf("LISTA DE VIAJES \n\n");
             //mostrarArchivoViaje();
-            mostrarOrdenActivosV();
+            mostrarOrdenIDActivosV();
 
             printf("Ingrese la ID del viaje a modificar:\n");
             fflush(stdin);
@@ -335,7 +337,8 @@ void menuClientes()
         case 0:
         {
             printf("LISTA DE CLIENTES \n\n");
-            mostrarOrdenCActivo();
+            //mostrarOrdenAlfabCActivo();
+            //mostrarOrdenDNIC();
             break;
         }
 
@@ -344,7 +347,7 @@ void menuClientes()
             cargarArchivoCliente();
             system("pause");
             system("cls");
-            mostrarOrdenCActivo();
+            mostrarOrdenAlfabCActivo();
 
             ///Cargar clientes tal vez tendria que ser en ventas
 
@@ -354,7 +357,7 @@ void menuClientes()
         {
             char nYa[30];
             printf("LISTA DE CLIENTES \n\n");
-            mostrarOrdenCActivo();
+            mostrarOrdenAlfabCActivo();
 
             printf("Ingrese el nombre del cliente a modificar:\n");
             fflush(stdin);
@@ -424,7 +427,7 @@ void menuClientes()
             char nYa[30];
 
             printf("LISTA DE CLIENTES \n\n");
-            mostrarOrdenCActivo();
+            mostrarOrdenAlfabCActivo();
 
             printf("Ingrese el nombre del cliente a dar de baja:\n");
             fflush(stdin);
@@ -439,7 +442,7 @@ void menuClientes()
         case 6:
             {
                 printf("LISTA DE CLIENTES DADOS DE BAJA\n\n");
-                mostrarOrdenBajaC();
+                mostrarOrdenAlfabBajaC();
                 break;
 
             }

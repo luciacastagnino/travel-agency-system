@@ -15,9 +15,12 @@ int estado;
 
 ///PROTOTIPO EMPLEADOS(alta, baja, mostrar, modificacion)///////////////////////////////////////////////////////////////////////
 stEmpleado cargarEmpleado ();
-void mostrarOrdenE();
-void mostrarOrdenBajaE();
-void mostrarOrdenEActivo();
+void mostrarOrdenAlfabE();
+void mostrarOrdenAlfabBajaE();
+void mostrarOrdenAlfabEActivo();
+void mostrarOrdenDniE();
+void mostrarOrdenDniBajaE();
+void mostrarOrdenDniActivosE();
 void mostrarEmpleado(stEmpleado A);
 
 ///modificar empleado//////////////////////////////////////////////////////////////////////////////////////////////////////////

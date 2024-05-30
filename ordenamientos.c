@@ -9,7 +9,7 @@
 
 /// ORDENAMIENTOS SELECCION/////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// ORDENAMIENTO EMPLEADOS/////////////////////////////////////////////////////////////////////////////////////////////////////
+/// ORDENAMIENTO EMPLEADOS ////////////////////////////////////////////////////////////////////////
 
 int buscarPosMenorEmpleado (stEmpleado* A, int pos, int cantRegistrosE){
 
@@ -43,7 +43,7 @@ void ordenamientoSeleccionEmpleado(stEmpleado* A, int cantRegistrosE){
      }
 }
 
-///ORDENAMIENTO CLIENTE//////////////////////////////////////////////////////////////////////////////////////////////////////
+/// ORDENAMIENTO CLIENTES /////////////////////////////////////////////////////////////////////////
 
 int cantRegistrosC=0;
 
@@ -79,9 +79,102 @@ void ordenamientoSeleccionCliente(stCliente* A, int cantRegistrosC){
      }
 }
 
+/// ORDENAMIENTO VIAJES ///////////////////////////////////////////////////////////////////////////
+
+int buscarPosMenorViaje (stViaje* A, int pos, int cantRegistrosV){
+
+    int posMenor=pos, i;
+    char menorDestino[30];
+
+    strcpy(menorDestino, A[pos].destino);
+
+    for(i=pos+1; i<cantRegistrosV; i++){
+        if(strcmpi(menorDestino, A[i].destino) > 0){
+            strcpy(menorDestino, A[i].destino);
+            posMenor=i;
+        }
+    }
+
+    return posMenor;
+}
+
+void ordenamientoSeleccionViaje(stViaje* A, int cantRegistrosV){
+
+    int posMenor;
+    stViaje aux;
+    int i=0;
+
+     while(i<cantRegistrosV){
+        posMenor=buscarPosMenorViaje(A, i, cantRegistrosV);
+        aux=A[posMenor];
+        A[posMenor]=A[i];
+        A[i]=aux;
+        i++;
+     }
+}
+
+
 /// ORDENAMIENTOS INSERCION////////////////////////////////////////////////////////////////////////////////////////
 
-/// ORDENAMIENTO VIAJES ///////////////////////////////////////////////////////////////////////////////////////////
+/// ORDENAMIENTO EMPLEADOS ////////////////////////////////////////////////////////////////////////
+
+void insertarEmpleado (stEmpleado* A, int u, stEmpleado aux){
+
+    int i=u;
+
+    while(i>=0 && strcmp(A[i].dni, aux.dni)>0){
+        A[i+1]=A[i];
+        i--;
+
+    }
+
+    A[i+1]=aux;
+
+}
+
+void ordenamientoInserccionEmpleado (stEmpleado* A, int cantRegistrosE){
+
+    int i=0;
+
+
+    while(i < cantRegistrosE - 1){
+        stEmpleado aux = A[i];
+        insertarEmpleado(A, i, A[i+1]);
+        i++;
+    }
+
+}
+
+/// ORDENAMIENTO CLIENTES /////////////////////////////////////////////////////////////////////////
+
+void insertarCliente (stCliente* A, int u, stCliente aux){
+
+    int i=u;
+
+    while(i>=0 && strcmp(A[i].dni, aux.dni)>0){
+        A[i+1]=A[i];
+        i--;
+
+    }
+
+    A[i+1]=aux;
+
+}
+
+void ordenamientoInserccionCliente (stCliente* A, int cantRegistrosC){
+
+    int i=0;
+
+
+    while(i < cantRegistrosC - 1){
+        stCliente aux = A[i];
+        insertarCliente(A, i, A[i+1]);
+        i++;
+    }
+
+}
+
+/// ORDENAMIENTO VIAJES ///////////////////////////////////////////////////////////////////////////
 
 int cantRegistrosV=0;
 

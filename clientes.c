@@ -8,35 +8,66 @@
 
 ///CLIENTE ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void mostrarOrdenCActivo()
+void mostrarOrdenAlfabCActivo()
 {
             stCliente *arrDinC;
-            int validos=0;
-            validos= ArchivoToArregloClienteActivo(&arrDinC, validos);
+            int validosC=0;
+            validosC= ArchivoToArregloClienteActivo(&arrDinC, validosC);
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
-            ordenamientoSeleccionCliente(arrDinC, validos);
-            MostrarArreglo(arrDinC, validos);
+            ordenamientoSeleccionCliente(arrDinC, validosC);
+            MostrarArregloCliente(arrDinC, validosC);
 }
 
-void mostrarOrdenBajaC()
-{
-            stCliente *arrDinC;
-            int validos = 0;
-            validos = ArchivoToArregloBajaClientes(&arrDinC, validos);
-            //printf("LISTA DE CLIENTES ORDENADOS:\n");
-            ordenamientoSeleccionCliente(arrDinC, validos);
-            MostrarArreglo(arrDinC, validos);
+void mostrarOrdenDNIActivosC(){
+
+    stCliente* arrDinC;
+    int validosC=0;
+    validosC=ArchivoToArregloClienteActivo(&arrDinC, validosC);
+    ordenamientoInserccionCliente(arrDinC, validosC);
+    MostrarArregloCliente(arrDinC, validosC);
+
 }
 
-///muestra archivo completo///
-void mostrarOrdenC()
+void mostrarOrdenAlfabBajaC()
 {
             stCliente *arrDinC;
-            int validos=0;
-            validos= ArchivoToArregloCliente(&arrDinC, validos);
+            int validosC = 0;
+            validosC = ArchivoToArregloBajaClientes(&arrDinC, validosC);
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
-            ordenamientoSeleccionCliente(arrDinC, validos);
-            MostrarArreglo(arrDinC, validos);
+            ordenamientoSeleccionCliente(arrDinC, validosC);
+            MostrarArregloCliente(arrDinC, validosC);
+}
+
+void mostrarOrdenDNIBajaC(){
+
+    stCliente* arrDinC;
+    int validosC=0;
+    validosC=ArchivoToArregloBajaClientes(&arrDinC, validosC);
+    ordenamientoInserccionCliente(arrDinC, validosC);
+    MostrarArregloCliente(arrDinC, validosC);
+
+}
+
+/// muestra archivo completo ///
+
+void mostrarOrdenAlfabC()
+{
+            stCliente *arrDinC;
+            int validosC=0;
+            validosC= ArchivoToArregloCliente(&arrDinC, validosC);
+            //printf("LISTA DE CLIENTES ORDENADOS:\n");
+            ordenamientoSeleccionCliente(arrDinC, validosC);
+            MostrarArregloCliente(arrDinC, validosC);
+}
+
+void mostrarOrdenDNIC(){
+
+    stCliente* arrDinC;
+    int validosC=0;
+    validosC=ArchivoToArregloCliente(&arrDinC, validosC);
+    ordenamientoInserccionCliente(arrDinC, validosC);
+    MostrarArregloCliente(arrDinC, validosC);
+
 }
 
 ///calcular registros/////////////////////////////
@@ -219,7 +250,8 @@ void ordenarArrDinamicoClientes (stCliente** arrD, int validos){
 
 }
 ///mostrar arreglo/////////////////////////////////////////////////
-void MostrarArreglo(stCliente A[], int validos){
+
+void MostrarArregloCliente(stCliente A[], int validos){
 
 int i;
 

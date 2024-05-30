@@ -198,7 +198,7 @@ void MostrarArregloViaje(stViaje A[], int validos){
     }
 }
 
-void mostrarOrdenV(){
+void mostrarOrdenIDV(){
 
         stViaje *arrDinV;
         int validosV=0;
@@ -208,7 +208,17 @@ void mostrarOrdenV(){
         MostrarArregloViaje(arrDinV, validosV);
 }
 
-void mostrarOrdenActivosV()
+void mostrarOrdenDestinoV(){
+
+    stViaje *arrDinV;
+    int validosV=0;
+    validosV=ArchivoToArregloViaje(&arrDinV, validosV);
+    ordenamientoSeleccionViaje(arrDinV, validosV);
+    MostrarArregloViaje(arrDinV, validosV);
+
+}
+
+void mostrarOrdenIDActivosV()
 {
 
         stViaje *arrDinV;
@@ -219,7 +229,17 @@ void mostrarOrdenActivosV()
         MostrarArregloViaje(arrDinV, validosV);
 }
 
-void mostrarOrdenBajaV()
+void mostrarOrdenDestinoActivosV(){
+
+    stViaje *arrDinV;
+    int validosV=0;
+    validosV=ArchivoToArregloViajeActivo(&arrDinV, validosV);
+    ordenamientoSeleccionViaje(arrDinV, validosV);
+    MostrarArregloViaje(arrDinV, validosV);
+
+}
+
+void mostrarOrdenIDBajaV()
 {
 
         stViaje *arrDinV;
@@ -228,6 +248,16 @@ void mostrarOrdenBajaV()
         //printf("LISTA DE VIAJES ORDENADOS: \n");
         ordenamientoInserccion(arrDinV, validosV);
         MostrarArregloViaje(arrDinV, validosV);
+}
+
+void mostrarOrdenDestinoBajaV(){
+
+    stViaje *arrDinV;
+    int validosV=0;
+    validosV=ArchivoToArregloViajeInactivo(&arrDinV, validosV);
+    ordenamientoSeleccionViaje(arrDinV, validosV);
+    MostrarArregloViaje(arrDinV, validosV);
+
 }
 
 ///Cargar Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////

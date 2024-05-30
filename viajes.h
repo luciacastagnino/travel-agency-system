@@ -48,9 +48,12 @@ int ArchivoToArregloViajeActivo(stViaje** arrD, int validos);
 int ArchivoToArregloViajeInactivo(stViaje** arrD, int validos);
 void ordenarArrDinamicoViaje (stViaje** arrD, int validos);
 void MostrarArregloViaje(stViaje A[], int validos);
-void mostrarOrdenV();
-void mostrarOrdenActivosV();
-void mostrarOrdenBajaV();
+void mostrarOrdenIDV();
+void mostrarOrdenDestinoV();
+void mostrarOrdenIDActivosV();
+void mostrarOrdenDestinoActivosV();
+void mostrarOrdenIDBajaV();
+void mostrarOrdenDestinoBajaV();
 
 void cargarArchivoViaje();
 stViaje encontrarViajeId(int id);
