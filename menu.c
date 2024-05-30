@@ -15,14 +15,15 @@ void menuEmpleados()
 {
     int opcion, op;
 
-    printf("Ingrese una opcion.\n\n");
-    printf("0. Ver la lista de empleados.\n");
+    printf("\nIngrese una opcion.\n\n");
+    printf("0. Ver la lista de empleados completa.\n");
     printf("1. Cargar un empleados.\n");
     printf("2. Modificar datos del empleado.\n");
     printf("3. Buscar un empleado\n");
     printf("4. Filtrar empleados\n");
     printf("5. Dar de baja empleado.\n");\
     printf("6. Mostrar empleados dados de baja.\n");
+    printf("7. Mostrar empleados activos\n");
 
     fflush(stdin);
     scanf("%d", &opcion);
@@ -151,8 +152,46 @@ void menuEmpleados()
         }
     case 6:
         {
-            printf("LISTA DE EMPLEADOS DADOS DE BAJA\n\n");
-            mostrarOrdenAlfabBajaE();
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por DNI.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE EMPLEADOS ACTIVOS\n\n");
+                mostrarOrdenAlfabBajaE();
+            }else if (op==2){
+                printf("LISTA DE EMPLEADOS ACTIVOS\n\n");
+                mostrarOrdenDniBajaE();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+
+            break;
+        }
+    case 7:
+        {
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por DNI.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE EMPLEADOS ACTIVOS\n\n");
+                mostrarOrdenAlfabEActivo();
+            }else if (op==2){
+                printf("LISTA DE EMPLEADOS ACTIVOS\n\n");
+                mostrarOrdenDniActivosE();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+
             break;
         }
     default:
@@ -166,7 +205,7 @@ void menuViajes()
 {
      int opcion, op;
 
-    printf("Ingrese una opcion:\n\n");
+    printf("\nIngrese una opcion:\n\n");
     printf("0. Mostrar lista de viajes\n");
     printf("1. Ingresar viaje.\n");
     printf("2. Modificar viaje.\n");
@@ -326,7 +365,7 @@ void menuVentas()
 {
      int opcion;
 
-    printf("Ingrese una opcion:\n\n");
+    printf("\nIngrese una opcion:\n\n");
     printf("0. Mostrar lista de ventas\n");
     printf("1. Ingresar venta.\n");
     printf("2. Modificar venta.\n");
@@ -349,15 +388,18 @@ void menuClientes()
 {
     int opcion, op;
 
-    printf("0. Ver la lista de clientes.\n\n");
+    printf("\nIngrese una opcion:\n\n");
+    printf("0. Ver la lista de clientes.\n");
     printf("1. Cargar clientes.\n");
     printf("2. Modificar datos del cliente.\n");
     printf("3. Buscar un cliente.\n");
     printf("4. Filtrar un cliente.\n");
     printf("5. Dar de baja clientes\n");
     printf("6. Mostrar clientes dados de baja\n");
+    printf("7. Mostrar clientes activos\n");
     fflush(stdin);
     scanf("%d", &opcion);
+
     system("pause");
     system("cls");
 
@@ -483,10 +525,45 @@ void menuClientes()
         }
         case 6:
             {
-                printf("LISTA DE CLIENTES DADOS DE BAJA\n\n");
-                mostrarOrdenAlfabBajaC();
-                break;
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por DNI.\n");
+            scanf("%i", &op);
 
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE CLIENTES\n\n");
+                mostrarOrdenAlfabBajaC();
+            }else if (op==2){
+                printf("LISTA DE CLIENTES\n\n");
+                mostrarOrdenDNIBajaC();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+            break;
+            }
+        case 7:
+            {
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por DNI.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE CLIENTES\n\n");
+                mostrarOrdenAlfabCActivo();
+            }else if (op==2){
+                printf("LISTA DE CLIENTES\n\n");
+                mostrarOrdenDNIActivosC();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+            break;
             }
         default:
             printf("La opcion no existe.\n");

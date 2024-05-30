@@ -7,9 +7,15 @@
 
 static const char archVentas[] = {"archivoVentas.bin"};
 
+typedef struct{
+int idVenta;
+char nYaC[30];
+char nYaE[30];
+int idViaje;
+}stVentas;
 
 ///PROTOTIPOS VENTAS//////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Cargar ventas/////////////////
-//int cargarArreglosVentas(int dimF, int dimC, stCliente cl[dimF], char nombresEmpleados[][dimC], stViaje vj[dimF], int i);
+
 
 #endif // VENTAS_H_INCLUDED
