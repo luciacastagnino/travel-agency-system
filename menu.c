@@ -211,7 +211,11 @@ void menuViajes()
     printf("2. Modificar viaje.\n");
     printf("3. Buscar viaje.\n");
     printf("4. Filtrar viaje.\n");
-    printf("5. Dar de baja viaje\n");
+    printf("5. Dar de baja viaje.\n");
+    printf("6. Mostrar viajes dados de baja.\n");
+    printf("7. Mostrar viajes activos.\n");
+
+
     fflush(stdin);
     scanf("%d", &opcion);
 
@@ -286,9 +290,9 @@ void menuViajes()
         {
             int opcion;
 
-            printf("Si desea filtrar el/los viaje/s por el destino Ingrese 1.\n\n");
-            printf("Si desea filtrar el/los viaje/s por el transporte Ingrese 2.\n\n");
-            printf("Si desea filtrar el/los viaje/s por el estado Ingrese 3.\n\n");
+            printf("Si desea filtrar el/los viaje/s por el destino, ingrese 1.\n\n");
+            printf("Si desea filtrar el/los viaje/s por el transporte, ingrese 2.\n\n");
+            printf("Si desea filtrar el/los viaje/s por el estado, ingrese 3.\n\n");
             fflush(stdin);
             scanf("%d", &opcion);
 
@@ -321,6 +325,7 @@ void menuViajes()
         {
             int id;
 
+            mostrarOrdenDestinoActivosV();
             printf("Ingrese la ID del viaje que desea dar de baja: \n");
             fflush(stdin);
             scanf("%d", &id);
@@ -328,16 +333,20 @@ void menuViajes()
             system("pause");
             system("cls");
 
-            //darBajaVJ(id);
+            darDeBajaViaje(id);
             break;
         }
     case 6:
         {
             printf("LISTA DE VIAJES DADOS DE BAJA\n\n");
-            //mostrarOrdenBajaV();
+            mostrarOrdenDestinoBajaV();
             break;
         }
     case 7:
+        printf("LISTA DE VIAJES ACTIVOS\n\n");
+        mostrarOrdenDestinoActivosV();
+        break;
+    case 8:
         {
             int calendario[6][7]; ///Invoco la matriz de calendario///
 

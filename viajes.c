@@ -501,7 +501,7 @@ stViaje modificarPrecioV(stViaje A)
 
 ///Dar Baja Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*
+
 void darDeBajaViaje (int id)
 {
     stViaje aux;
@@ -519,6 +519,7 @@ void darDeBajaViaje (int id)
                 pos++;
             }
         }
+
         fseek(buf, sizeof(stViaje) * pos, SEEK_SET);
         fread(&aux, sizeof(stViaje), 1, buf);
 
@@ -526,6 +527,7 @@ void darDeBajaViaje (int id)
 
         fseek(buf, sizeof(stViaje)* (-1), SEEK_CUR);
         fwrite(&aux, sizeof(stViaje), 1, buf);
+
         fclose(buf);
     }
 
@@ -545,12 +547,11 @@ stViaje darBajaVJ(stViaje aux)
             aux.estado = 0;
         }
 
-        printf("Asi quedo modificado el viaje: \n");
-        mostrarViaje(aux);
+        printf("El viaje esta siendo dado de baja...\n");
 
         return aux;
 }
-*/
+
 
 ///BUSCAR VIAJE///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 stViaje encontrarViajeId(int id)

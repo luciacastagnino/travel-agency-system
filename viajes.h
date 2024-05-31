@@ -30,8 +30,9 @@ void modificarViaje (int id);
 stViaje modificarDatosViaje(stViaje aux);
 
 // dar baja viaje
-///void darDeBajaViaje (int id)
-///stViaje darBajaVJ(stViaje aux);
+
+void darDeBajaViaje (int id);
+stViaje darBajaVJ(stViaje aux);
 
 //Filtrar Viajes
 void filtrarViajeTransporte(char transporte[10]);
