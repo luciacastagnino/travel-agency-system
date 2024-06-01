@@ -275,9 +275,11 @@ stCliente cargarCliente()
     fflush(stdin);
     gets(A.fechaNac);
 
-    printf("Ingrese el genero\n");
-    fflush(stdin);
-    scanf("%c", &A.genero);
+    while((A.genero != 'm') && (A.genero!='f')){
+        printf("\nSexo erroneo, ingrese nuevamente. ");
+        fflush(stdin);
+        scanf("%c", &A.genero);
+    }
 
     printf("Ingrese el DNI del cliente\n");
     fflush(stdin);

@@ -39,7 +39,7 @@ void encontrarEmpleadoN(char N[]);
 void mostrarArchivoEmpleado();
 
 /// ORDENAMIENTO EMPLEADOS////////////////////////////////////////////////////////////////////////////////////////////////////
-void MostrarArregloEmpleados(stEmpleado A[], int validos);
+void mostrarArregloEmpleadosRecursiva(stEmpleado A[], int validos, int i);
 int calcularRegistrosE();
 int calcularRegistrosActivosE();
 int calcularRegistrosInactivosE();
