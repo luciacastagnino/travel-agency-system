@@ -7,6 +7,7 @@
 
 ///VIAJES EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///calcular registros//////////////
+
 int calcularRegistrosV(){
 
     int cant=0;
@@ -261,6 +262,7 @@ void mostrarOrdenDestinoBajaV(){
 }
 
 ///Cargar Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 stViaje cargarViaje()
 {
     stViaje A;
@@ -279,15 +281,30 @@ stViaje cargarViaje()
     fflush(stdin);
     gets(A.destino);
 
-    printf("Ingrese la duracion del viaje en cantidad de dias\n");
-    fflush(stdin);
+    printf("Ingrese la fecha de partida:\n");
+    printf("Dia:");
+    scanf("%d", &A.fechaP.dia);
+    printf("Mes:");
+    scanf("%d", &A.fechaP.mes);
+    printf("Anio:");
+    scanf("%i", &A.fechaP.anio);
+
+    printf("Ingrese la fecha de regreso:\n");
+    printf("Dia:");
+    scanf("%d", &A.fechaR.dia);
+    printf("Mes:");
+    scanf("%d", &A.fechaR.mes);
+    printf("Anio:");
+    scanf("%d", &A.fechaR.anio);
+
+    printf("Ingrese la duracion del viaje (dias):\n");
     scanf("%d", &A.duracion);
 
     printf("Ingrese el transporte\n");
     fflush(stdin);
     gets(A.transporte);
 
-    printf("Ingrese el precio del viaje\n");
+    printf("Ingrese el precio del viaje:\n");
     fflush(stdin);
     scanf("%d", &A.precio);
 
@@ -330,9 +347,11 @@ void mostrarViaje(stViaje A)
 {
     printf("ID: %d\n", A.id);
     printf("Destino: %s\n", A.destino);
-    printf("Duracion: %d\n", A.duracion);
+    printf("Fecha de partida: %d/%d/%d\n", A.fechaP.dia, A.fechaP.mes, A.fechaP.anio);
+    printf("Fecha de regreso: %d/%d/%d\n", A.fechaR.dia, A.fechaR.mes, A.fechaR.anio);
+    printf("Duracion: %d dias\n", A.duracion);
     printf("Transporte: %s\n", A.transporte);
-    printf("Precio: %d\n", A.precio);
+    printf("Precio: $%d\n", A.precio);
     printf("\n");
 
 }
@@ -364,6 +383,7 @@ void mostrarArchivoViaje()
 
 
 /// Modificar Viaje
+
 void modificarViaje (int id){
 
     stViaje aux;
@@ -422,7 +442,24 @@ char control = 's';
             aux = modificarDestinoV(aux);
         }
 
-        printf("3. Desea modificar la duracion?.\n");
+        printf("3. Desea modificar la fecha de partida?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s'){
+            aux = modificarFechaPartidaV(aux);
+        }
+
+        printf("4. Desea modificar la fecha de regreso?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s'){
+
+            aux=modificarFechaRegresoV(aux);
+        }
+
+        printf("5. Desea modificar la duracion?.\n");
         fflush(stdin);
         scanf("%c", &control);
 
@@ -431,7 +468,7 @@ char control = 's';
             aux = modificarDuracionV(aux);
         }
 
-        printf("4. Desea modificar el transporte?.\n");
+        printf("6. Desea modificar el transporte?.\n");
         fflush(stdin);
         scanf("%c", &control);
 
@@ -440,7 +477,7 @@ char control = 's';
             aux = modificarTransporteV(aux);
         }
 
-        printf("5. Desea modificar el precio?.\n");
+        printf("7. Desea modificar el precio?.\n");
         fflush(stdin);
         scanf("%c", &control);
 
@@ -470,6 +507,34 @@ stViaje modificarDestinoV(stViaje A)
 	gets(A.destino);
 
 	return A;
+}
+
+stViaje modificarFechaPartidaV (stViaje A){
+
+    printf("Ingrese la fecha de partida para modificar la anterior:\n");
+    printf("Dia:");
+    scanf("%d", &A.fechaP.dia);
+    printf("Mes:");
+    scanf("%d", &A.fechaP.mes);
+    printf("Anio:");
+    scanf("%d", &A.fechaP.anio);
+
+    return A;
+
+}
+
+stViaje modificarFechaRegresoV (stViaje A){
+
+    printf("Ingrese la fecha de regreso para modificar la anterior:\n");
+    printf("Dia:");
+    scanf("%d", &A.fechaR.dia);
+    printf("Mes:");
+    scanf("%d", &A.fechaR.mes);
+    printf("Anio:");
+    scanf("%d", &A.fechaR.anio);
+
+    return A;
+
 }
 
 stViaje modificarDuracionV(stViaje A)
@@ -554,6 +619,7 @@ stViaje darBajaVJ(stViaje aux)
 
 
 ///BUSCAR VIAJE///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 stViaje encontrarViajeId(int id)
 {
 stViaje A;
@@ -581,6 +647,7 @@ return A;
 
 ///FILTRAR VIAJES///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Filtrar Viaje por Transporte
+
 void filtrarViajeTransporte(char T[10]){
     stViaje A;
     int encontrado = 0;
@@ -603,6 +670,7 @@ void filtrarViajeTransporte(char T[10]){
 }
 
 ///Filtrar Viaje por Destino
+
 void filtrarViajeDestino(char D[10]){
     stViaje A;
     int encontrado = 0;
@@ -625,6 +693,7 @@ void filtrarViajeDestino(char D[10]){
 }
 
 ///Filtrar viaje por Estado
+
 void filtrarViajeEstado(int E)
 {
 stViaje A;
@@ -652,6 +721,7 @@ if(buff){
 }
 
 ///Buscar el ID para cargarlo en el cliente
+
 stViaje buscarViajePorID(int id){
     stViaje A;
     int flag = 0;
@@ -678,6 +748,7 @@ stViaje buscarViajePorID(int id){
 }
 
 ///Verificar que el ID ingresado no existe
+
 int verificarIDViaje(int id){
     stViaje A;
     int encontrado = 0;
@@ -694,3 +765,6 @@ int verificarIDViaje(int id){
 
     return encontrado;
 }
+
+/// FUNCIONES AUXILIARES ////////////////////////
+/// calcular duracion del viaje

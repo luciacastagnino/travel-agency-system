@@ -119,7 +119,7 @@
 1717196105 c:\users\acer\desktop\utn\tp-final-prog\clientes.h
 	"viajes.h"
 
-1717196275 c:\users\acer\desktop\utn\tp-final-prog\viajes.h
+1717206181 c:\users\acer\desktop\utn\tp-final-prog\viajes.h
 
 1717196105 c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.h
 	"empleados.h"
@@ -157,7 +157,7 @@
 
 1717196105 c:\users\acer\desktop\utn\tp-final-prog\menu.h
 
-1717196821 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
+1717198398 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -192,7 +192,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1717197082 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
+1717206181 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"

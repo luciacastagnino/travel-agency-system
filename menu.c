@@ -250,7 +250,7 @@ void menuViajes()
             system("pause");
             system("cls");
             printf("LISTA DE VIAJES\n\n");
-            mostrarArchivoViaje();
+            //mostrarArchivoViaje();
             mostrarOrdenIDActivosV();
 
             break;

@@ -4,8 +4,16 @@
 static const char archViaje[] = {"archivoViaje.bin"};
 
 typedef struct{
+    int dia;
+    int mes;
+    int anio;
+}stViajeFecha;
+
+typedef struct{
 int id;
 char destino[30];
+stViajeFecha fechaP;
+stViajeFecha fechaR;
 int duracion;
 char transporte[20];
 int precio;
@@ -21,6 +29,8 @@ stViaje buscarViajePorID(int id);
 
 //modificar viaje
 stViaje modificarIdV(stViaje A);
+stViaje modificarFechaPartidaV (stViaje A);
+stViaje modificarFechaRegresoV (stViaje A);
 stViaje modificarDestinoV(stViaje A);
 stViaje modificarDuracionV(stViaje A);
 stViaje modificarTransporteV(stViaje A);
@@ -58,6 +68,12 @@ void mostrarOrdenDestinoBajaV();
 
 void cargarArchivoViaje();
 stViaje encontrarViajeId(int id);
+
+/// FUNCIONES AUXILIARES
+
+int calculaDuracionViaje();
+
+
 #endif // VIAJES_H_INCLUDED
 
 
