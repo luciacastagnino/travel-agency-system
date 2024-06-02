@@ -207,6 +207,10 @@ void mostrarOrdenIDV(){
         //printf("LISTA DE VIAJES ORDENADOS: \n");
         ordenamientoInserccion(arrDinV, validosV);
         MostrarArregloViaje(arrDinV, validosV);
+
+        if(validosV == 0){
+            printf("No se encontraron viajes\n");
+        }
 }
 
 void mostrarOrdenDestinoV(){
@@ -216,6 +220,10 @@ void mostrarOrdenDestinoV(){
     validosV=ArchivoToArregloViaje(&arrDinV, validosV);
     ordenamientoSeleccionViaje(arrDinV, validosV);
     MostrarArregloViaje(arrDinV, validosV);
+
+    if(validosV == 0){
+            printf("No se encontraron viajes\n");
+        }
 
 }
 
@@ -229,6 +237,10 @@ void mostrarOrdenIDActivosV()
         //printf("LISTA DE VIAJES ORDENADOS: \n");
         ordenamientoInserccion(arrDinV, validosV);
         MostrarArregloViaje(arrDinV, validosV);
+
+        if(validosV == 0){
+            printf("No hay viajes activos\n");
+        }
 }
 
 void mostrarOrdenDestinoActivosV(){
@@ -238,6 +250,10 @@ void mostrarOrdenDestinoActivosV(){
     validosV = ArchivoToArregloViajeActivo(&arrDinV, validosV);
     ordenamientoSeleccionViaje(arrDinV, validosV);
     MostrarArregloViaje(arrDinV, validosV);
+
+    if(validosV == 0){
+            printf("No hay viajes activos\n");
+        }
 
 }
 
@@ -251,6 +267,10 @@ void mostrarOrdenIDBajaV()
         //printf("LISTA DE VIAJES ORDENADOS: \n");
         ordenamientoInserccion(arrDinV, validosV);
         MostrarArregloViaje(arrDinV, validosV);
+
+        if(validosV == 0){
+            printf("No hay viajes dados de baja\n");
+        }
 }
 
 void mostrarOrdenDestinoBajaV(){
@@ -261,6 +281,9 @@ void mostrarOrdenDestinoBajaV(){
     ordenamientoSeleccionViaje(arrDinV, validosV);
     MostrarArregloViaje(arrDinV, validosV);
 
+    if(validosV == 0){
+            printf("No hay viajes dados de baja\n");
+        }
 }
 
 ///Cargar Viaje/////////////////////////////////////////////////////////////////////////////////////////////////////////////

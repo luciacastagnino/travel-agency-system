@@ -16,6 +16,9 @@ void mostrarOrdenAlfabCActivo()
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validosC);
             MostrarArregloCliente(arrDinC, validosC);
+            if(validosV == 0){
+            printf("No se encontraron clientes activos\n");
+        }
 }
 
 void mostrarOrdenDNIActivosC(){
@@ -25,7 +28,9 @@ void mostrarOrdenDNIActivosC(){
     validosC=ArchivoToArregloClienteActivo(&arrDinC, validosC);
     ordenamientoInserccionCliente(arrDinC, validosC);
     MostrarArregloCliente(arrDinC, validosC);
-
+    if(validosV == 0){
+            printf("No se encontraron clientes activos\n");
+        }
 }
 
 void mostrarOrdenAlfabBajaC()
@@ -36,6 +41,10 @@ void mostrarOrdenAlfabBajaC()
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validosC);
             MostrarArregloCliente(arrDinC, validosC);
+            if(validosV == 0){
+            printf("No se encontraron clientes dados de baja\n");
+        }
+
 }
 
 void mostrarOrdenDNIBajaC(){
@@ -45,6 +54,9 @@ void mostrarOrdenDNIBajaC(){
     validosC=ArchivoToArregloBajaClientes(&arrDinC, validosC);
     ordenamientoInserccionCliente(arrDinC, validosC);
     MostrarArregloCliente(arrDinC, validosC);
+    if(validosV == 0){
+            printf("No se encontraron clientes dados de baja\n");
+        }
 
 }
 
@@ -58,6 +70,9 @@ void mostrarOrdenAlfabC()
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validosC);
             MostrarArregloCliente(arrDinC, validosC);
+            if(validosV == 0){
+            printf("No se encontraron clientes\n");
+        }
 }
 
 void mostrarOrdenDNIC(){
@@ -67,7 +82,9 @@ void mostrarOrdenDNIC(){
     validosC=ArchivoToArregloCliente(&arrDinC, validosC);
     ordenamientoInserccionCliente(arrDinC, validosC);
     MostrarArregloCliente(arrDinC, validosC);
-
+    if(validosV == 0){
+            printf("No se encontraron clientes\n");
+        }
 }
 
 ///calcular registros/////////////////////////////
