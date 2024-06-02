@@ -250,7 +250,6 @@ void menuViajes()
             system("pause");
             system("cls");
             printf("LISTA DE VIAJES\n\n");
-            //mostrarArchivoViaje();
             mostrarOrdenIDActivosV();
 
             break;
@@ -259,7 +258,6 @@ void menuViajes()
         {
             int id;
             printf("LISTA DE VIAJES \n\n");
-            //mostrarArchivoViaje();
             mostrarOrdenIDActivosV();
 
             printf("Ingrese la ID del viaje a modificar:\n");
@@ -426,8 +424,6 @@ void menuClientes()
             system("pause");
             system("cls");
             mostrarOrdenAlfabCActivo();
-
-            ///Cargar clientes tal vez tendria que ser en ventas
 
             break;
         }
