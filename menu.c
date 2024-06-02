@@ -336,17 +336,48 @@ void menuViajes()
         }
     case 6:
         {
-            printf("LISTA DE VIAJES DADOS DE BAJA\n\n");
-            mostrarOrdenDestinoBajaV();
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por ID.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE VIAJES\n\n");
+                mostrarOrdenDestinoBajaV();
+            }else if (op==2){
+                printf("LISTA DE VIAJES\n\n");
+                mostrarOrdenIDBajaV();
+            }else{
+                printf("No existe la opcion.\n");
+            }
             break;
         }
     case 7:
-        printf("LISTA DE VIAJES ACTIVOS\n\n");
-        mostrarOrdenDestinoActivosV();
-        break;
+         printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por ID.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE VIAJES\n\n");
+                mostrarOrdenDestinoActivosV();
+            }else if (op==2){
+                printf("LISTA DE VIAJES\n\n");
+                mostrarOrdenIDActivosV();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+            break;
     case 8:
         {
             llamadaCalendario();
+            break;
         }
 
     }
