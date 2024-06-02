@@ -2,7 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "viajes.h"
 
+#define COLOR_RED     "\x1b[31m"
+#define COLOR_GREEN   "\x1b[32m"
+#define COLOR_YELLOW  "\x1b[33m"
+#define COLOR_BLUE    "\x1b[34m"
+#define COLOR_RESET   "\x1b[0m"
 
 ///Funcion de carga del mes///
 ///En cada case cambia algo debido a la cantidad dias y dependiendo del primer dia que comienza cada mes///
@@ -348,23 +354,66 @@ case 12:          ///CARGAR DICIEMBRE///
 }
 
 ///Funcion para mostrar el calendario del mes elegido///
-void MostrarCalendario(int calendario[6][7])
-{
+void MostrarCalendario(int calendario[6][7], stViaje viajes[], int numViajes, int mesSeleccionado) {
+    printf("   L       M       M       J       V       S       D\n\n");
 
-    printf("   L       M       M       J       V       S       D\n\n"); ///Printf para indicar que dia de la semana es cada numero del mes///
-    for(int a=0;a<6;a++)
-   {
-     for(int b=0;b<7;b++)
-    {
-       if(calendario[a][b]<=9)
-      {
-         printf(" | %i  | ", calendario[a][b]);
-      }
-       else
-      {
-         printf(" | %i | ", calendario[a][b]);
-      }
+    for(int a = 0; a < 6; a++) {
+        for(int b = 0; b < 7; b++) {
+            int dia = calendario[a][b];
+            int viajeEnFecha = 0;
+            int viajeRegreso = 0;
+
+            for(int i = 0; i < numViajes; i++) {
+                if ((viajes[i].fechaP.dia == dia) && (viajes[i].fechaP.mes == mesSeleccionado)) {
+                    viajeEnFecha = 1;
+                }
+                if (viajes[i].fechaR.dia == dia && viajes[i].fechaR.mes == mesSeleccionado) {
+                        viajeRegreso = 1;
+                    }
+
+            }
+
+             if (viajeEnFecha && viajeRegreso) {
+                    printf(COLOR_RED);
+                } else if (viajeEnFecha) {
+                    printf(COLOR_GREEN);
+                } else if (viajeRegreso) {
+                    printf(COLOR_BLUE);
+                } else {
+                    printf(COLOR_RESET);
+                }
+
+            if(dia <= 9) {
+                printf(" | %i  | ", dia);
+            } else {
+                printf(" | %i | ", dia);
+            }
+        }
+        printf(COLOR_RESET "\n\n");
     }
-    printf("\n\n");
-   }
 }
+
+void llamadaCalendario()
+{
+            int calendario[6][7];
+
+            char controlCalendario='s';
+            while(controlCalendario=='s')
+             {
+                int calendarioOpciones;
+                printf("Ingrese el numero de mes que desea ver: ");
+                scanf("%i", &calendarioOpciones);
+
+                stViaje *arrDinV;
+                int validosV = 0;
+                validosV = ArchivoToArregloViajeActivo(&arrDinV, validosV);
+
+                CargarCalendario(calendario, calendarioOpciones);
+                MostrarCalendario(calendario, arrDinV, validosV, calendarioOpciones);
+
+                printf("Desea ver otro mes? s/n");
+                fflush(stdin);
+                scanf("%c",&controlCalendario);
+             }
+}
+

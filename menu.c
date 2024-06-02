@@ -348,22 +348,7 @@ void menuViajes()
         break;
     case 8:
         {
-            int calendario[6][7]; ///Invoco la matriz de calendario///
-
-            char controlCalendario='s';
-            while(controlCalendario=='s')  ///While para que el usuario pueda ver mas de un mes si lo desea///
-             {
-                int calendarioOpciones; ///Sirve para indica que mes desea ver el usuario///
-                printf("Ingrese el numero de mes que desea ver: ");
-                scanf("%i", &calendarioOpciones);
-
-                CargarCalendario(calendario, calendarioOpciones); ///Invocacion de la funcion cargar el mes (dentro de la funcion se realiza un printf con el mes que se carga///
-                MostrarCalendario(calendario);  ///Invocacion de la funcion mostrar mes///
-
-                printf("Desea ver otro mes? s/n"); ///Se le pregunta al usiario si desea continuar viendo otros meses///
-                fflush(stdin);
-                scanf("%c",&controlCalendario);
-             }
+            llamadaCalendario();
         }
 
     }

@@ -234,7 +234,7 @@ void mostrarOrdenDestinoActivosV(){
 
     stViaje *arrDinV;
     int validosV=0;
-    validosV=ArchivoToArregloViajeActivo(&arrDinV, validosV);
+    validosV = ArchivoToArregloViajeActivo(&arrDinV, validosV);
     ordenamientoSeleccionViaje(arrDinV, validosV);
     MostrarArregloViaje(arrDinV, validosV);
 
