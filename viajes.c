@@ -198,7 +198,7 @@ void MostrarArregloViaje(stViaje A[], int validos){
         mostrarViaje(A[i]);
     }
 }
-
+///mostrar completo
 void mostrarOrdenIDV(){
 
         stViaje *arrDinV;
@@ -219,6 +219,7 @@ void mostrarOrdenDestinoV(){
 
 }
 
+///mostrar activos
 void mostrarOrdenIDActivosV()
 {
 
@@ -240,6 +241,7 @@ void mostrarOrdenDestinoActivosV(){
 
 }
 
+///mostrar baja
 void mostrarOrdenIDBajaV()
 {
 

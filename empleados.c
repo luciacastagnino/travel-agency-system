@@ -6,30 +6,12 @@
 #include "ordenamientos.h"
 
 ///EMPLEADOS EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///mostrar completo
 void mostrarOrdenAlfabE()
 {
         stEmpleado* arrDinE;
         int validosE = 0;
         validosE = ArchivoToArregloEmpleados(&arrDinE, validosE);
-        ordenamientoSeleccionEmpleado(arrDinE, validosE);
-        mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
-}
-
-void mostrarOrdenAlfabBajaE()
-{
-        stEmpleado* arrDinE;
-        int validosE = 0;
-        validosE = ArchivoToArregloEmpleadosInactivos(&arrDinE, validosE);
-        ordenamientoSeleccionEmpleado(arrDinE, validosE);
-        mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
-}
-
-void mostrarOrdenAlfabEActivo()
-{
-        stEmpleado* arrDinE;
-        int validosE = 0;
-        validosE = ArchivoToArregloEmpleadosActivo(&arrDinE, validosE);
-        //printf("LISTA DE EMPLEADOS ORDENADOS:\n");
         ordenamientoSeleccionEmpleado(arrDinE, validosE);
         mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
 }
@@ -43,6 +25,16 @@ void mostrarOrdenDniE(){
     mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
 
 }
+///mostrar baja
+void mostrarOrdenAlfabBajaE()
+{
+        stEmpleado* arrDinE;
+        int validosE = 0;
+        validosE = ArchivoToArregloEmpleadosInactivos(&arrDinE, validosE);
+        ordenamientoSeleccionEmpleado(arrDinE, validosE);
+        mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
+}
+
 void mostrarOrdenDniBajaE(){
 
     stEmpleado * arrDinE;
@@ -51,6 +43,16 @@ void mostrarOrdenDniBajaE(){
     ordenamientoInserccionEmpleado(arrDinE, validosE);
     mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
 
+}
+///mostrar activos
+void mostrarOrdenAlfabEActivo()
+{
+        stEmpleado* arrDinE;
+        int validosE = 0;
+        validosE = ArchivoToArregloEmpleadosActivo(&arrDinE, validosE);
+        //printf("LISTA DE EMPLEADOS ORDENADOS:\n");
+        ordenamientoSeleccionEmpleado(arrDinE, validosE);
+        mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
 }
 
 void mostrarOrdenDniActivosE(){
@@ -239,6 +241,7 @@ int ArchivoToArregloEmpleadosInactivos(stEmpleado** arrD, int validos)
     return validos;
 }
 
+///mostrar arreglo
 void mostrarArregloEmpleadosRecursiva(stEmpleado A[], int validos, int i){
     if (i < validos) {
         mostrarEmpleado(A[i]);
