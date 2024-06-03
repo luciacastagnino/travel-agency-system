@@ -16,7 +16,7 @@ void mostrarOrdenAlfabCActivo()
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validosC);
             MostrarArregloCliente(arrDinC, validosC);
-            if(validosV == 0){
+            if(validosC == 0){
             printf("No se encontraron clientes activos\n");
         }
 }
@@ -28,7 +28,7 @@ void mostrarOrdenDNIActivosC(){
     validosC=ArchivoToArregloClienteActivo(&arrDinC, validosC);
     ordenamientoInserccionCliente(arrDinC, validosC);
     MostrarArregloCliente(arrDinC, validosC);
-    if(validosV == 0){
+    if(validosC == 0){
             printf("No se encontraron clientes activos\n");
         }
 }
@@ -41,7 +41,7 @@ void mostrarOrdenAlfabBajaC()
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validosC);
             MostrarArregloCliente(arrDinC, validosC);
-            if(validosV == 0){
+            if(validosC == 0){
             printf("No se encontraron clientes dados de baja\n");
         }
 
@@ -54,7 +54,7 @@ void mostrarOrdenDNIBajaC(){
     validosC=ArchivoToArregloBajaClientes(&arrDinC, validosC);
     ordenamientoInserccionCliente(arrDinC, validosC);
     MostrarArregloCliente(arrDinC, validosC);
-    if(validosV == 0){
+    if(validosC == 0){
             printf("No se encontraron clientes dados de baja\n");
         }
 
@@ -70,7 +70,7 @@ void mostrarOrdenAlfabC()
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionCliente(arrDinC, validosC);
             MostrarArregloCliente(arrDinC, validosC);
-            if(validosV == 0){
+            if(validosC == 0){
             printf("No se encontraron clientes\n");
         }
 }
@@ -82,7 +82,7 @@ void mostrarOrdenDNIC(){
     validosC=ArchivoToArregloCliente(&arrDinC, validosC);
     ordenamientoInserccionCliente(arrDinC, validosC);
     MostrarArregloCliente(arrDinC, validosC);
-    if(validosV == 0){
+    if(validosC == 0){
             printf("No se encontraron clientes\n");
         }
 }
@@ -291,6 +291,10 @@ stCliente cargarCliente()
     printf("Ingrese la fecha de nacimiento del cliente\n");
     fflush(stdin);
     gets(A.fechaNac);
+
+    printf("Ingrese el genero del cliente\n");
+    fflush(stdin);
+    scanf("%c", &A.genero);
 
     while((A.genero != 'm') && (A.genero!='f')){
         printf("\nSexo erroneo, ingrese nuevamente. ");

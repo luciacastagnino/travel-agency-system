@@ -14,7 +14,7 @@ void mostrarOrdenAlfabE()
         validosE = ArchivoToArregloEmpleados(&arrDinE, validosE);
         ordenamientoSeleccionEmpleado(arrDinE, validosE);
         mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
-        if(validosV == 0){
+        if(validosE == 0){
             printf("No se encontraron empleados\n");
         }
 
@@ -27,7 +27,7 @@ void mostrarOrdenDniE(){
     validosE=ArchivoToArregloEmpleados(&arrDinE, validosE);
     ordenamientoInserccionEmpleado(arrDinE, validosE);
     mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
-    if(validosV == 0){
+    if(validosE == 0){
             printf("No se encontraron empleados\n");
         }
 
@@ -42,7 +42,7 @@ void mostrarOrdenAlfabBajaE()
         ordenamientoSeleccionEmpleado(arrDinE, validosE);
         mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
 
-        if(validosV == 0){
+        if(validosE == 0){
             printf("No se encontraron empleados dados de baja\n");
         }
 }
@@ -54,7 +54,7 @@ void mostrarOrdenDniBajaE(){
     validosE=ArchivoToArregloEmpleadosInactivos(&arrDinE, validosE);
     ordenamientoInserccionEmpleado(arrDinE, validosE);
     mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
-    if(validosV == 0){
+    if(validosE == 0){
             printf("No se encontraron empleados dados de baja\n");
         }
 
@@ -68,7 +68,7 @@ void mostrarOrdenAlfabEActivo()
         //printf("LISTA DE EMPLEADOS ORDENADOS:\n");
         ordenamientoSeleccionEmpleado(arrDinE, validosE);
         mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
-        if(validosV == 0){
+        if(validosE == 0){
             printf("No se encontraron empleados activos\n");
         }
 
@@ -81,7 +81,7 @@ void mostrarOrdenDniActivosE(){
     validosE=ArchivoToArregloEmpleadosActivo(&arrDinE, validosE);
     ordenamientoInserccionEmpleado(arrDinE, validosE);
     mostrarArregloEmpleadosRecursiva(arrDinE, validosE, 0);
-    if(validosV == 0){
+    if(validosE == 0){
             printf("No se encontraron empleados activos\n");
         }
 
