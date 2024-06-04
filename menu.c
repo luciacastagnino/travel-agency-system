@@ -402,7 +402,19 @@ void menuVentas()
 
     system("pause");
     system("cls");
-    switch(opcion){}
+    switch(opcion)
+    {
+    case 1:
+        {
+            ///Cargar Archivo Ventas y mostrar
+            cargarArchivoVentas();
+            mostrarArchivoVentas();
+            break;
+        }
+
+
+
+    }
 }
 
 ///MENU CLIENTES////////////////////////////////////////////////////////////////////////////////////////////////////////////////

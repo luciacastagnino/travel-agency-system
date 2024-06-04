@@ -12,7 +12,7 @@ char localidad[20];
 
 typedef struct{
 char nYa[30];
-char fechaNac[10];
+char fechaNac[15];
 char genero;
 char dni[10];
 char tel[10];
