@@ -255,7 +255,7 @@
 
 1717465127 c:\users\meli\desktop\tp-final-prog\menu.h
 
-1717465881 source:c:\users\meli\desktop\tp-final-prog\menu.c
+1717466880 source:c:\users\meli\desktop\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -280,7 +280,7 @@
 1717465127 source:c:\users\meli\desktop\tp-final-prog\pila.c
 	"pila.h"
 
-1717466471 source:c:\users\meli\desktop\tp-final-prog\ventas.c
+1717467223 source:c:\users\meli\desktop\tp-final-prog\ventas.c
 	"ventas.h"
 	<stdio.h>
 	<stdlib.h>

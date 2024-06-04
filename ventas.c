@@ -42,8 +42,12 @@ stTickets CargarTicket()
     printf("Ingrese la id del ticket: ");
     scanf("%i", &A.id);
 
-    printf("Ingrese los datos del viaje: \n");
-    A.viaje = cargarViaje(); ///LLAMA LA FUNCION AUXILIAR PARA CARGAR EL VIAJE DENTRO DEL TICKET (PODEMOS MODIFICARLO DE ALGUNA MANERA PARA QUE SEA MAS COMODO)
+    printf("Ingrese el viaje por ID\n\n");
+    int id;
+    mostrarArchivoViaje();
+    printf("ID: ");
+    scanf("%d", &id);
+    A.viaje=buscarViajePorID(id);
 
     return A;
 }
