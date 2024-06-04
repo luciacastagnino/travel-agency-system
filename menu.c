@@ -404,13 +404,21 @@ void menuVentas()
     system("cls");
     switch(opcion)
     {
+    case 0:
+        {
+         //Mostrar Archivo
+         mostrarArchivoVentas();
+        break;
+        }
     case 1:
         {
+
             ///Cargar Archivo Ventas y mostrar
             cargarArchivoVentas();
             mostrarArchivoVentas();
             break;
         }
+
 
 
 
