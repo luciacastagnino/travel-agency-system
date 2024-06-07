@@ -337,18 +337,18 @@
 
 1717334314 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\empleados.h
 
-1717103571 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.h
+1717794326 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.h
 	"empleados.h"
 	"clientes.h"
-	"ventas.h"
 	"viajes.h"
+	"ventas.h"
 
 1717789490 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.h
 	"viajes.h"
 
 1717334314 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\viajes.h
 
-1717790986 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.h
+1717794187 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.h
 	"viajes.h"
 	"clientes.h"
 	"empleados.h"

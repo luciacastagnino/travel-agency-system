@@ -2,8 +2,8 @@
 #define ORDENAMIENTOS_H_INCLUDED
 #include "empleados.h"
 #include "clientes.h"
-#include "ventas.h"
 #include "viajes.h"
+#include "ventas.h"
 
 ///ORDENAMIENTO POR SELECCION/////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,6 +23,10 @@ void ordenamientoSeleccionCliente(stCliente* A, int cantRegistrosC);
 int buscarPosMenorViaje (stViaje* A, int pos, int cantRegistrosV);
 void ordenamientoSeleccionViaje(stViaje* A, int cantRegistrosV);
 
+////ventas
+//int buscarPosMenorTicket(stTickets* A, int pos, int cantRegistrosT);
+//void ordenamientoSeleccionTicket(stTickets* A, int cantRegistrosT);
+
 ///ORDENAMIENTO POR INSERCION/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // empleados
@@ -39,5 +43,9 @@ void ordenamientoInserccionCliente (stCliente* A, int cantRegistrosC);
 
 void insertar (stViaje* A, int u, stViaje aux);
 void ordenamientoInserccion (stViaje* A, int cantRegistrosV);
+
+////ventas
+//void insertarTicket(stTickets* A, int u, stTickets aux);
+//void ordenamientoInserccionTicket(stTickets* A, int cantRegistrosT);
 
 #endif // ORDENAMIENTOS_H_INCLUDED

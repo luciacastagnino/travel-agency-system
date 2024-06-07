@@ -4,8 +4,8 @@
 #include "clientes.h"
 #include "ordenamientos.h"
 #include "empleados.h"
-#include "ventas.h"
 #include "viajes.h"
+#include "ventas.h"
 
 /// ORDENAMIENTOS SELECCION/////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -113,6 +113,42 @@ void ordenamientoSeleccionViaje(stViaje* A, int cantRegistrosV){
      }
 }
 
+///ORDENAMIENTO VENTAS/////////////////////////////////////////////////////////////////////////////////////////////////
+int cantRegistrosT=0;
+
+int buscarPosMenorTicket(stTickets* A, int pos, int cantRegistrosT)
+{
+
+    int posMenor=pos, i;
+    char menorVenta[30];
+
+    strcpy(menorVenta, A[pos].idCliente);
+
+    for(i=pos+1; i<cantRegistrosT; i++){
+        if(strcmpi(menorVenta, A[i].idCliente) > 0){
+            strcpy(menorVenta, A[i].idCliente);
+            posMenor=i;
+        }
+    }
+
+    return posMenor;
+}
+
+void ordenamientoSeleccionTicket(stTickets* A, int cantRegistrosT)
+{
+    int posMenor;
+    stTickets aux;
+    int i=0;
+
+     while(i<cantRegistrosT){
+        posMenor=buscarPosMenorTicket(A, i, cantRegistrosT);
+        aux=A[posMenor];
+        A[posMenor]=A[i];
+        A[i]=aux;
+        i++;
+     }
+}
+
 
 /// ORDENAMIENTOS INSERCION////////////////////////////////////////////////////////////////////////////////////////
 
@@ -200,6 +236,34 @@ void ordenamientoInserccion (stViaje* A, int cantRegistrosV){
     while(i < cantRegistrosV - 1){
         stViaje aux = A[i];
         insertar(A, i, A[i+1]);
+        i++;
+    }
+
+}
+
+///ORDENAMIENTO VENTAS///////////////////////////////////////////////////////////////////
+void insertarTicket(stTickets* A, int u, stTickets aux)
+{
+
+    int i=u;
+
+    while(i>=0 && A[i].id > aux.id){
+        A[i+1] = A[i];
+        i--;
+    }
+
+    A[i+1]=aux;
+
+}
+
+void ordenamientoInserccionTicket(stTickets* A, int cantRegistrosT)
+{
+    int i=0;
+
+
+    while(i < cantRegistrosT - 1){
+        stTickets aux = A[i];
+        insertarTicket(A, i, A[i+1]);
         i++;
     }
 

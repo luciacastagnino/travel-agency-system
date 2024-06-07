@@ -20,15 +20,6 @@ typedef struct
 
 }stTickets;
 
-//typedef struct{
-//int idVenta;
-//char nYaC[30];
-//char nYaE[30];
-//int idViaje;
-//}stVentas;
-//
-
-
 
 ///PROTOTIPOS VENTAS//////////////////////////////////////////////////////////////////////////////////////////////////////////
 stTickets CargarTicket();
@@ -64,7 +55,24 @@ void filtrarVentaMetodo(char met[]);
 ///Filtrar venta por Viaje
 void filtrarVentaViaje(int ID);
 
-///Cargar ventas/////////////////
+///Cargar ventas///////////////
+
+///ARREGLO/////////////////////////////////////////////////////
+void MostrarArregloTicket(stTickets A[], int validos);
+void ordenarArrDinamicoTicket(stTickets** arrD, int validos);
+int ArchivoToArregloBajaTicket(stTickets** arrD, int validos);
+int ArchivoToArregloTicketActivo(stTickets** arrD, int validos);
+int ArchivoToArregloTicket(stTickets** arrD, int validos);
+int calcularRegistrosInactivosT();
+int calcularRegistrosActivosT();
+int calcularRegistrosT();
+void mostrarOrdenIDT();
+void mostrarOrdenAlfabT();
+void mostrarOrdenIDBajaT();
+void mostrarOrdenAlfabBajaT();
+void mostrarOrdenIDActivosT();
+void mostrarOrdenAlfabTActivo();
+
 
 
 #endif // VENTAS_H_INCLUDED
