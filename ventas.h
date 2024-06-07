@@ -36,6 +36,34 @@ void MostrarTicket(stTickets A);
 void cargarArchivoVentas();
 void mostrarArchivoVentas();
 
+
+///Dar de baja ventas///////////////////////////////////////////////////////////////////////////////////////////////////////
+void darBajaVenta(int idTicket);
+stTickets darBajaT(stTickets aux);
+
+///MODIFICAR VENTAS///////////////////////////////////////////////////////////////////////////////////////////////////////
+stTickets modificarViajeT(stTickets A);
+stTickets ModificarIdDelEmpleadoEnTicket(stTickets A);
+stTickets ModificarIdTicket(stTickets A);
+stTickets ModificarIdDelClienteEnTicket(stTickets A);
+stTickets ModificarFechaTicket(stTickets A);
+stTickets ModificarMontoTicket(stTickets A);
+stTickets ModificarMetodoDePago(stTickets A);
+stTickets modificarDatosTicket(stTickets aux);
+void modificarVenta(int id);
+
+///BUSCAR VENTA///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void encontrarVentaId(int id);
+void encontrarVentaDNIC(char dniC[]);
+
+///FILTRAR VENTAS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///Filtrar Venta por Empleado
+void filtrarVentaEmpleado(char dniE[]);
+///Filtrar Ventas por metodo de pago
+void filtrarVentaMetodo(char met[]);
+///Filtrar venta por Viaje
+void filtrarVentaViaje(int ID);
+
 ///Cargar ventas/////////////////
 
 

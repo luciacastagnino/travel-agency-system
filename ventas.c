@@ -123,151 +123,362 @@ void mostrarArchivoVentas()
     }
 }
 
+///MODIFICAR VENTA//////////////////////////////////////////////////////////////////////////////////////////////////////
+void modificarVenta(int id)
+{
 
-/// //////////////////////////////////////////////////////////////////////////////
+    stTickets aux;
+    int flag = 0;
+    int pos=0;
 
-/////FUNCION COMPLETA DE MODIFICAR TICKET -Linea 181 a 246///
-//
-//stTickets ModificarTicket(stTickets A)
-//{
-//    int controlador;
-//    char control='s';
-//
-//    printf("Desea modificar el ticket? (s/n)");
-//    fflush(stdin);
-//    scanf("%c", &control);
-//
-//    while (control=='s')
-//    {
-//        printf("1. Monto agregado\n2. Fecha del ticket\n3. Id del dliente\n4. Id del empleado\n5. Metodo de pago\n6. Id del ticket\nQue desea modificar: ");
-//        scanf("%i", &controlador);
-//
-//        switch(controlador)
-//        {
-//
-//        case 1:
-//
-//            {
-//                A=ModificarMontoTicket(A);
-//                break;
-//            }
-//
-//        case 2:
-//
-//            {
-//                A=ModificarFechaTicket(A);
-//                break;
-//            }
-//
-//        case 3:
-//
-//            {
-//                A= ModificarIdDelClienteEnTicket(A);
-//                break;
-//            }
-//
-//        case 4:
-//
-//            {
-//                A= ModificarIdDelEmpleadoEnTicket(A);
-//                break;
-//            }
-//        case 5:
-//
-//            {
-//                A= ModificarMetodoDePago(A);
-//                break;
-//            }
-//
-//        case 6:
-//
-//            {
-//                A= ModificarIdTicket(A);
-//                break;
-//            }
-//
-//        }
-//
-//        printf("Desea continuar modificando el ticket? (s/n)\n");
-//        fflush(stdin);
-//        scanf("%c",&control);
-//    }
-//    return A;
-//}
-///// /////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-/////Dar de baja ticket///
-//stTickets DarDeBaja(stTickets A)
-//{
-//    char control='s';
-//    printf("Desea dar de baja el ticket? s/n");
-//    fflush(stdin);
-//    scanf("%c", &control);
-//
-//    if (control == 's')
-//    {
-//        A.estado=0;
-//    }
-//    return A;
-//}
-///// ////////////////////////////
-//
-///// //////////////////////////////////////////////////////////////////////////////////////////////////
-//
-/////MODIFICACIONES NECESARIAS PARA EL FUNCIONAMIENTO DE MODIFICACION PRINCIPAL -Linea 269 a 319///
-//
-//stTickets ModificarMetodoDePago(stTickets A)
-//{
-//    printf("Ingrese el nuevo metodo de pago: ");
-//    fflush(stdin);
-//    gets(A.metodo);
-//
-//    return A;
-//}
-//
-//stTickets ModificarMontoTicket(stTickets A)
-//{
-//    printf("Ingrese el nuevo monto del ticket: ");
-//    scanf("%d", &A.monto);
-//
-//    return A;
-//}
-//
-//stTickets ModificarFechaTicket(stTickets A)
-//{
-//    printf("Ingrese la nueva fecha del ticket: ");
-//    fflush(stdin);
-//    gets(A.fecha);
-//
-//    return A;
-//}
-//
-//stTickets ModificarIdDelClienteEnTicket(stTickets A)
-//{
-//    printf("Ingresar el nuevo id del cliente: ");
-//    fflush(stdin);
-//    gets(A.idCliente);
-//
-//    return A;
-//}
-//
-//stTickets ModificarIdTicket(stTickets A)
-//{
-//    printf("Ingrese la nueva id del ticket: ");
-//    scanf("%i",&A.id);
-//
-//    return A;
-//}
-//
-//stTickets ModificarIdDelEmpleadoEnTicket(stTickets A)
-//{
-//    printf("Ingrese el nuevo id del empleado: ");
-//    fflush(stdin);
-//    gets(A.idEmpleado);
-//
-//    return A;
-//}
-///// /////////////////////////////////////////////////////////////////////////////////////////////////
+    FILE* buf;
+    buf = fopen(archVentas, "r+b");
+
+    if(buf){
+        while((fread(&aux, sizeof(stTickets), 1, buf)>0)&& flag==0){
+            if(aux.id == id){
+                flag = 1;
+            }else{
+                pos++;
+            }
+        }
+        fseek(buf, sizeof(stTickets) * pos, SEEK_SET);
+        fread(&aux, sizeof(stTickets), 1, buf);
+
+        aux = modificarDatosTicket(aux);
+
+        fseek(buf, sizeof(stTickets)* (-1), SEEK_CUR);
+        fwrite(&aux, sizeof(stTickets), 1, buf);
+        fclose(buf);
+    }
+}
+
+stTickets modificarDatosTicket(stTickets aux)
+{
+
+char control = 's';
+
+        printf("1. Desea modificar el monto?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux = ModificarMontoTicket(aux);
+        }
+
+        printf("2. Desea modificar fecha?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux = ModificarFechaTicket(aux);
+        }
+
+        printf("3. Desea modificar el metodo de pago?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux = ModificarMetodoDePago(aux);
+        }
+
+        printf("4. Desea modificar el id del cliente?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux = ModificarIdDelClienteEnTicket(aux);
+        }
+
+        printf("5. Desea modificar id del empleado?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux = ModificarIdDelEmpleadoEnTicket(aux);
+        }
+
+        printf("6. Desea mdificar id del ticket?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux = ModificarIdTicket(aux);
+        }
+
+        printf("7. Desea modificar el viaje?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux = modificarViajeT(aux);
+        }
+
+        printf("Asi quedo modificado el ticket \n");
+        MostrarTicket(aux);
+        return aux;
+}
+
+stTickets ModificarMetodoDePago(stTickets A)
+{
+    printf("Ingrese el nuevo metodo de pago: ");
+    fflush(stdin);
+    gets(A.metodo);
+
+    return A;
+}
+
+stTickets ModificarMontoTicket(stTickets A)
+{
+    printf("Ingrese el nuevo monto del ticket: ");
+    scanf("%d", &A.monto);
+
+    return A;
+}
+
+stTickets ModificarFechaTicket(stTickets A)
+{
+    printf("Ingrese la nueva fecha del ticket: ");
+    fflush(stdin);
+    gets(A.fecha);
+
+    return A;
+}
+
+stTickets ModificarIdDelClienteEnTicket(stTickets A)
+{
+    printf("Ingresar el nuevo id del cliente: ");
+    fflush(stdin);
+    gets(A.idCliente);
+
+    return A;
+}
+
+stTickets ModificarIdTicket(stTickets A)
+{
+    printf("Ingrese la nueva id del ticket: ");
+    scanf("%i",&A.id);
+
+    return A;
+}
+
+stTickets ModificarIdDelEmpleadoEnTicket(stTickets A)
+{
+    printf("Ingrese el nuevo id del empleado: ");
+    fflush(stdin);
+    gets(A.idEmpleado);
+
+    return A;
+}
+
+stTickets modificarViajeT(stTickets A)
+{
+    int id;
+
+    printf("Ingrese el ID del viaje que desea encontrar.\n");
+    fflush(stdin);
+    scanf("%d", &id);
+
+    A.viaje = encontrarViajeId(id);
+
+    return A;
+}
+
+///Dar Baja Venta//////////////////////////////////////////////////////////////////////////////////////////////////////////
+void darBajaVenta(int idTicket)
+{
+    stTickets aux;
+    int flag = 0;
+    int pos=0;
+
+    FILE* buf;
+    buf = fopen(archVentas, "r+b");
+
+    if(buf){
+        while((fread(&aux, sizeof(stTickets), 1, buf)>0)&& flag==0){
+            if(aux.id == idTicket){
+                flag = 1;
+            }else{
+                pos++;
+            }
+        }
+        fseek(buf, sizeof(stTickets) * pos, SEEK_SET);
+        fread(&aux, sizeof(stTickets), 1, buf);
+
+        aux = darBajaT(aux);
+
+        fseek(buf, sizeof(stTickets)* (-1), SEEK_CUR);
+        fwrite(&aux, sizeof(stTickets), 1, buf);
+        fclose(buf);
+    }
+}
+
+stTickets darBajaT(stTickets aux)
+{
+
+    char control = 's';
+
+        printf("1. Desea dar de baja esta venta?.\n");
+        fflush(stdin);
+        scanf("%c", &control);
+
+        if(control=='s')
+        {
+            aux.estado = 0;
+        }
+
+        printf("Asi quedo modificado el Ticket: \n");
+        MostrarTicket(aux);
+
+        return aux;
+}
+
+///BUSCAR VENTA///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void encontrarVentaId(int id)
+{
+stTickets A;
+int flag = 0;
+
+FILE *buff;
+buff = fopen(archVentas, "rb");
+
+if(buff){
+       while(fread(&A, sizeof(stTickets), 1, buff) && flag == 0)
+        {
+            if(A.id == id)
+            {
+                    flag = 1;
+                    MostrarTicket(A);
+            }
+        }
+    fclose(buff);
+    if (flag == 0) {
+            printf("La ID ingresada no fue encontrada\n");
+        }
+    }else{
+    printf("El archivo no se pudo abrir\n");
+    }
+}
+
+///Encontrar Venta por idCliente///////////
+void encontrarVentaDNIC(char dniC[])
+{
+stTickets A;
+int flag = 0;
+
+FILE *buf;
+buf = fopen(archVentas, "rb");
+
+if(buf){
+       while(fread(&A, sizeof(stTickets), 1, buf) && flag == 0)
+        {
+            if(strcmpi(A.idCliente, dniC) == 0)
+                {
+                    flag = 1;
+                    MostrarTicket(A);
+                }
+        }
+
+    fclose(buf);
+    if (flag == 0) {
+            printf("El DNI ingresado no fue encontrado\n");
+    }
+}
+else{
+    printf("El archivo no se pudo abrir\n");
+}
+}
+
+///FILTRAR VENTAS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///Filtrar Venta por Empleado
+void filtrarVentaEmpleado(char dniE[])
+{
+stTickets A;
+int encontrado = 0;
+
+FILE *buff;
+buff = fopen(archVentas, "rb");
+
+if(buff){
+       while(fread(&A, sizeof(stTickets), 1, buff))
+        {
+           if(strcmpi(A.idEmpleado, dniE) == 0)
+                {
+                    MostrarTicket(A);
+                    encontrado=1;
+                }
+        }
+        fclose(buff);
+        if (!encontrado){
+            printf("El DNI ingresado no fue encontrado\n");
+        }
+}
+    else{
+        printf("El archivo no se pudo abrir\n");
+    }
+}
+
+///Filtrar Ventas por metodo de pago
+void filtrarVentaMetodo(char met[])
+{
+stTickets A;
+int encontrado=0;
+FILE *buff;
+buff = fopen(archVentas, "rb");
+
+if(buff){
+       while(fread(&A, sizeof(stTickets), 1, buff))
+        {
+            if(strcmpi(A.metodo, met) == 0)
+                {
+                    MostrarTicket(A);
+                    encontrado=1;
+                }
+        }
+        fclose(buff);
+        if (!encontrado){
+            printf("El metodo ingresado no fue encontrado\n");
+        }
+}else{
+        printf("El archivo no se pudo abrir\n");
+    }
+}
+
+///Filtrar venta por Viaje
+void filtrarVentaViaje(int ID)
+{
+stTickets A;
+int encontrado=0;
+FILE *buff;
+buff = fopen(archVentas, "rb");
+
+if(buff){
+       while(fread(&A, sizeof(stTickets), 1, buff))
+        {
+           if(A.viaje.id == ID)
+                {
+                    MostrarTicket(A);
+                    encontrado=1;
+                }
+        }
+        fclose(buff);
+        if (!encontrado){
+            printf("El ID ingresado no fue encontrado\n");
+        }
+    }
+    else{
+        printf("El archivo no se pudo abrir\n");
+    }
+}
+
+
 
 
 

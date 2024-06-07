@@ -343,18 +343,18 @@
 	"ventas.h"
 	"viajes.h"
 
-1717103571 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.h
+1717789490 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.h
 	"viajes.h"
 
 1717334314 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\viajes.h
 
-1717104802 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.h
+1717790986 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.h
 	"viajes.h"
 	"clientes.h"
 	"empleados.h"
 	"ordenamientos.h"
 
-1717337759 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\menu.c
+1717789490 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -405,7 +405,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1717435006 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.c
+1717435670 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
