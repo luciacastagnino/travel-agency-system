@@ -297,7 +297,7 @@ stCliente cargarCliente()
     fflush(stdin);
     scanf("%c", &A.genero);
 
-    while((A.genero != 'm') && (A.genero!='f')){
+    while((A.genero != 'm') && (A.genero != 'M') && (A.genero!='f') && (A.genero !='F')){
         printf("\nSexo erroneo, ingrese nuevamente. ");
         fflush(stdin);
         scanf("%c", &A.genero);
@@ -817,5 +817,4 @@ if(buff){
         printf("El archivo no se pudo abrir\n");
     }
 }
-
 

@@ -261,9 +261,19 @@ void menuViajes()
             printf("LISTA DE VIAJES \n\n");
             mostrarOrdenIDActivosV();
 
-            printf("Ingrese la ID del viaje a modificar:\n");
+
+            int idNoExiste;
+        do {
+            printf("Ingrese el ID del viaje\n");
             fflush(stdin);
             scanf("%d", &id);
+
+            idNoExiste = verificarIDNoExiste(id);
+            if (idNoExiste) {
+                printf("El ID del viaje no existe. Ingrese un ID diferente:\n");
+            }
+        } while (idNoExiste);
+
 
             system("pause");
             system("cls");
@@ -696,8 +706,8 @@ void menuClientes()
         {
             int opcion;
             printf("Si desea filtrar el/los cliente/s por el genero Ingrese 1.\n\n");
-            printf("Si desea filtrar el/los empleado/s por el estado Ingrese 2.\n\n");
-            printf("Si desea filtrar el/los empleado/s por el viaje Ingrese 3.\n\n");
+            printf("Si desea filtrar el/los cliente/s por el estado Ingrese 2.\n\n");
+            printf("Si desea filtrar el/los cliente/s por el viaje Ingrese 3.\n\n");
             fflush(stdin);
             scanf("%d", &opcion);
 

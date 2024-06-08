@@ -196,6 +196,7 @@ void MostrarArregloViaje(stViaje A[], int validos){
 
     for(i=0; i<validos; i++){
         mostrarViaje(A[i]);
+
     }
 }
 ///mostrar completo
@@ -789,6 +790,27 @@ int verificarIDViaje(int id){
 
     return encontrado;
 }
+
+//Verificar que el ID ingresado en modificar exista
+int verificarIDNoExiste(int id) {
+    stViaje A;
+    int encontrado = 0;
+
+    FILE *bufViaje = fopen(archViaje, "rb");
+    if (bufViaje) {
+        while (fread(&A, sizeof(stViaje), 1, bufViaje) && !encontrado) {
+            if (A.id == id) {
+                encontrado = 1;
+            }
+        }
+        fclose(bufViaje);
+    } else {
+        printf("No se pudo abrir el archivo %s\n");
+    }
+
+    return !encontrado;
+}
+
 
 /// FUNCIONES AUXILIARES ////////////////////////
 /// calcular duracion del viaje

@@ -38,6 +38,7 @@ stViaje modificarPrecioV(stViaje A);
 stViaje modificarEstadoV(stViaje A);
 void modificarViaje (int id);
 stViaje modificarDatosViaje(stViaje aux);
+int verificarIDNoExiste(int id);
 
 // dar baja viaje
 

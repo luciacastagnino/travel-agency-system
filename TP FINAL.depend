@@ -201,17 +201,17 @@
 	"viajes.h"
 	"ordenamientos.h"
 
-1717465127 source:c:\users\meli\desktop\tp-final-prog\calendario.c
+1717865708 source:c:\users\meli\desktop\tp-final-prog\calendario.c
 	"calendario.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"viajes.h"
 
-1717465127 c:\users\meli\desktop\tp-final-prog\calendario.h
+1717865708 c:\users\meli\desktop\tp-final-prog\calendario.h
 	"viajes.h"
 
-1717465127 source:c:\users\meli\desktop\tp-final-prog\empleados.c
+1717865708 source:c:\users\meli\desktop\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -219,44 +219,42 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1717465127 c:\users\meli\desktop\tp-final-prog\pila.h
+1717865708 c:\users\meli\desktop\tp-final-prog\pila.h
 	<stdio.h>
 	<malloc.h>
 
-1717465127 c:\users\meli\desktop\tp-final-prog\empleados.h
+1717865708 c:\users\meli\desktop\tp-final-prog\empleados.h
 
-1717465127 c:\users\meli\desktop\tp-final-prog\ordenamientos.h
+1717865708 c:\users\meli\desktop\tp-final-prog\ordenamientos.h
 	"empleados.h"
 	"clientes.h"
+	"viajes.h"
 	"ventas.h"
+
+1717866644 c:\users\meli\desktop\tp-final-prog\clientes.h
 	"viajes.h"
 
-1717466588 c:\users\meli\desktop\tp-final-prog\clientes.h
-	"viajes.h"
+1717866644 c:\users\meli\desktop\tp-final-prog\viajes.h
 
-1717465127 c:\users\meli\desktop\tp-final-prog\viajes.h
-
-1717465881 c:\users\meli\desktop\tp-final-prog\ventas.h
+1717865708 c:\users\meli\desktop\tp-final-prog\ventas.h
 	"viajes.h"
 	"clientes.h"
 	"empleados.h"
-	"ordenamientos.h"
 
-1717465127 source:c:\users\meli\desktop\tp-final-prog\main.c
+1717865708 source:c:\users\meli\desktop\tp-final-prog\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"pila.h"
 	"menu.h"
 	"empleados.h"
-	"ordenamientos.h"
 	"clientes.h"
 	"ventas.h"
 	"viajes.h"
 
-1717465127 c:\users\meli\desktop\tp-final-prog\menu.h
+1717865708 c:\users\meli\desktop\tp-final-prog\menu.h
 
-1717466880 source:c:\users\meli\desktop\tp-final-prog\menu.c
+1717866728 source:c:\users\meli\desktop\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -268,20 +266,20 @@
 	"ordenamientos.h"
 	"calendario.h"
 
-1717465127 source:c:\users\meli\desktop\tp-final-prog\ordenamientos.c
+1717865708 source:c:\users\meli\desktop\tp-final-prog\ordenamientos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"clientes.h"
 	"ordenamientos.h"
 	"empleados.h"
-	"ventas.h"
 	"viajes.h"
+	"ventas.h"
 
-1717465127 source:c:\users\meli\desktop\tp-final-prog\pila.c
+1717865708 source:c:\users\meli\desktop\tp-final-prog\pila.c
 	"pila.h"
 
-1717467223 source:c:\users\meli\desktop\tp-final-prog\ventas.c
+1717865708 source:c:\users\meli\desktop\tp-final-prog\ventas.c
 	"ventas.h"
 	<stdio.h>
 	<stdlib.h>
@@ -291,7 +289,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1717465127 source:c:\users\meli\desktop\tp-final-prog\viajes.c
+1717866796 source:c:\users\meli\desktop\tp-final-prog\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -299,7 +297,7 @@
 	"viajes.h"
 	"ordenamientos.h"
 
-1717465127 source:c:\users\meli\desktop\tp-final-prog\clientes.c
+1717866644 source:c:\users\meli\desktop\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
