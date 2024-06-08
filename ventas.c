@@ -364,6 +364,7 @@ void cargarArchivoVentas()
 void MostrarTicket(stTickets A)
 {
     int Cargos;
+    printf("\n");
     printf("-----------------------------------------\n");
     printf("               CODETRAVEL             \n");
     printf("EXPEDIDO EN: LOCAL PRINCIPAL\n");
@@ -393,6 +394,7 @@ void MostrarTicket(stTickets A)
 
     printf("\n            %s $%i.\n", A.metodo, Cargos);
     printf("-----------------------------------------\n");
+    printf("\n");
 
 }
 
