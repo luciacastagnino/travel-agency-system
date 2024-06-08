@@ -293,11 +293,11 @@ stCliente cargarCliente()
     fflush(stdin);
     gets(A.fechaNac);
 
-    printf("Ingrese el genero del cliente\n");
+    printf("Ingrese el genero del cliente M/F (En mayuscula)\n");
     fflush(stdin);
     scanf("%c", &A.genero);
 
-    while((A.genero != 'm') && (A.genero != 'M') && (A.genero!='f') && (A.genero !='F')){
+    while((A.genero != 'M') && (A.genero !='F')){
         printf("\nSexo erroneo, ingrese nuevamente. ");
         fflush(stdin);
         scanf("%c", &A.genero);
@@ -749,7 +749,7 @@ buff = fopen(archCliente, "rb");
 if(buff){
        while(fread(&A, sizeof(stCliente), 1, buff))
         {
-           if(toupper(A.genero) == toupper(G))
+           if(A.genero == G)
                 {
                     mostrarCliente(A);
                     encontrado=1;

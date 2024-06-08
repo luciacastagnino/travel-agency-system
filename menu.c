@@ -713,17 +713,25 @@ void menuClientes()
 
             if(opcion==1){
                char G;
-               printf("Ingrese el genero que desea filtrar (M o F): ");
+               printf("Ingrese el genero que desea filtrar (M o F) en mayuscula: ");
                fflush(stdin);
                scanf("%c", &G);
+
+                while((G != 'M') && (G !='F')){
+                   printf("\nSexo erroneo, ingrese nuevamente. \n");
+                   fflush(stdin);
+                   scanf("%c", &G);
+                 }
                filtrarClienteGenero(G);
-            }else if(opcion == 2){
+            }
+            else if(opcion == 2){
                 int E;
                 printf("Ingrese el estado que desea filtrar (0. Inactivo | 1. Activo): ");
                 fflush(stdin);
                 scanf("%d", &E);
                 filtrarClienteEstado(E);
-            }else{
+            }
+            else{
                 int ID;
                 printf("Ingrese el ID que desea filtrar: ");
                 fflush(stdin);
