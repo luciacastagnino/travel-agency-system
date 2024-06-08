@@ -318,14 +318,13 @@
 1717336997 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\calendario.h
 	"viajes.h"
 
-1717334314 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\main.c
+1717856576 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"pila.h"
 	"menu.h"
 	"empleados.h"
-	"ordenamientos.h"
 	"clientes.h"
 	"ventas.h"
 	"viajes.h"
@@ -338,7 +337,7 @@
 
 1717334314 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\empleados.h
 
-1717794326 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.h
+1717856781 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.h
 	"empleados.h"
 	"clientes.h"
 	"viajes.h"
@@ -349,13 +348,12 @@
 
 1717334314 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\viajes.h
 
-1717794187 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.h
+1717856576 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.h
 	"viajes.h"
 	"clientes.h"
 	"empleados.h"
-	"ordenamientos.h"
 
-1717789490 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\menu.c
+1717856462 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -367,20 +365,20 @@
 	"ordenamientos.h"
 	"calendario.h"
 
-1717103571 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.c
+1717856462 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"clientes.h"
 	"ordenamientos.h"
 	"empleados.h"
-	"ventas.h"
 	"viajes.h"
+	"ventas.h"
 
 1717012552 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\pila.c
 	"pila.h"
 
-1717104768 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.c
+1717858140 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.c
 	"ventas.h"
 	<stdio.h>
 	<stdlib.h>
@@ -390,7 +388,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1717368781 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\viajes.c
+1717856462 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -406,7 +404,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1717435670 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.c
+1717856462 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"

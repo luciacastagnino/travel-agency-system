@@ -23,10 +23,10 @@ void ordenamientoSeleccionCliente(stCliente* A, int cantRegistrosC);
 int buscarPosMenorViaje (stViaje* A, int pos, int cantRegistrosV);
 void ordenamientoSeleccionViaje(stViaje* A, int cantRegistrosV);
 
-////ventas
+//ventas
 
-//int buscarPosMenorTicket(stTickets* A, int pos, int cantRegistrosT);
-//void ordenamientoSeleccionTicket(stTickets* A, int cantRegistrosT);
+int buscarPosMenorTicket(stTickets* A, int pos, int cantRegistrosT);
+void ordenamientoSeleccionTicket(stTickets* A, int cantRegistrosT);
 
 ///ORDENAMIENTO POR INSERCION/////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -45,9 +45,9 @@ void ordenamientoInserccionCliente (stCliente* A, int cantRegistrosC);
 void insertar (stViaje* A, int u, stViaje aux);
 void ordenamientoInserccion (stViaje* A, int cantRegistrosV);
 
-////ventas
+//ventas
 
-//void insertarTicket(stTickets* A, int u, stTickets aux);
-//void ordenamientoInserccionTicket(stTickets* A, int cantRegistrosT);
+void insertarTicket(stTickets* A, int u, stTickets aux);
+void ordenamientoInserccionTicket(stTickets* A, int cantRegistrosT);
 
 #endif // ORDENAMIENTOS_H_INCLUDED

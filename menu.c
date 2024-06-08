@@ -391,12 +391,14 @@ void menuVentas()
      int opcion;
 
     printf("\nIngrese una opcion:\n\n");
-    printf("0. Mostrar lista de ventas\n");
+    printf("0. Mostrar lista de ventas completa\n");
     printf("1. Ingresar venta.\n");
     printf("2. Modificar venta.\n");
     printf("3. Buscar venta.\n");
     printf("4. Filtrar ventas.\n");
     printf("5. Dar de baja ventas");
+    printf("6. Mostrar orden baja.\n");
+    printf("7. Mostrar orden activos.\n");
     printf("6. Calcular cantidad de ventas que realizo un empleado.\n");
     printf("7. Calcular ganancias.\n");
     fflush(stdin);
@@ -409,8 +411,7 @@ void menuVentas()
     case 0:
         {
          //Mostrar Archivo
-         mostrarArchivoVentas();
-         mostrarOrdenAlfabTActivo();
+         mostrarOrdenAlfabT();
         break;
         }
     case 1:
@@ -418,7 +419,160 @@ void menuVentas()
 
             ///Cargar Archivo Ventas y mostrar
             cargarArchivoVentas();
-            mostrarArchivoVentas();
+            system("pause");
+            system("cls");
+            printf("LISTA DE VENTAS\n\n");
+            mostrarOrdenAlfabTActivo();
+
+            break;
+        }
+    case 2:
+        {
+            int id;
+            printf("LISTA DE VENTAS \n\n");
+            mostrarOrdenIDActivosV();
+
+            printf("Ingrese la ID de la venta a modificar:\n");
+            fflush(stdin);
+            scanf("%d", &id);
+
+            system("pause");
+            system("cls");
+
+            modificarVenta(id);
+            break;
+        }
+    case 3:
+        {
+            int opcion;
+
+            printf("Si desea buscar la venta por el DNI del cliente, ingrese 1.\n\n");
+            printf("Si desea buscar la venta por la ID del ticket, ingrese 2.\n\n");
+            fflush(stdin);
+            scanf("%d", &opcion);
+
+            system("pause");
+            system("cls");
+            if(opcion==1){
+             char dni[10];
+
+             printf("Ingrese el DNI del cliente: \n");
+             fflush(stdin);
+             gets(dni);
+
+             system("pause");
+             system("cls");
+
+             encontrarVentaDNIC(dni);
+            }
+            else if (opcion==2){
+              int id;
+
+              printf("Ingrese la ID del ticket: \n");
+              fflush(stdin);
+              scanf("%d", &id);
+
+              system("pause");
+              system("cls");
+
+              encontrarVentaId(id);
+            }
+            break;
+        }
+    case 4:
+        {
+            int opcion;
+
+            printf("Si desea filtrar el/los ticket/s por el empleado que realizo la venta, ingrese 1.\n\n");
+            printf("Si desea filtrar el/los ticket/s por el metodo de pago, ingrese 2.\n\n");
+            printf("Si desea filtrar el/los ticket/s por el viaje, ingrese 3.\n\n");
+            fflush(stdin);
+            scanf("%d", &opcion);
+
+            system("pause");
+            system("cls");
+            if(opcion==1){
+               char P[10];
+               printf("Ingrese el DNI del empleado: \n");
+               fflush(stdin);
+               gets(P);
+               filtrarVentaEmpleado(P);
+            }
+            else if(opcion == 2){
+                char T[20];
+                printf("Ingrese el metodo de pago a filtrar: \n");
+                fflush(stdin);
+                gets(T);
+                filtrarVentaMetodo(T);
+            }
+            else if(opcion == 3){
+                int E;
+                printf("Ingrese la ID del viaje que desea filtrar: \n");
+                fflush(stdin);
+                scanf("%d", &E);
+                filtrarVentaViaje(E);
+            }
+            break;
+        }
+    case 5:
+        {
+            int id;
+
+            mostrarOrdenIDActivosT();
+            printf("Ingrese la ID del ticket que desea dar de baja: \n");
+            fflush(stdin);
+            scanf("%d", &id);
+
+            system("pause");
+            system("cls");
+
+            darBajaVenta(id);
+            break;
+        }
+    case 6:
+        {
+            int op;
+
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por ID.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE VENTAS\n\n");
+                mostrarOrdenAlfabBajaT();
+            }else if (op==2){
+                printf("LISTA DE VENTAS\n\n");
+                mostrarOrdenIDBajaT();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+            break;
+        }
+    case 7:
+        {
+            int op;
+
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por ID.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE VENTAS\n\n");
+                mostrarOrdenAlfabTActivo();
+            }else if (op==2){
+                printf("LISTA DE VENTAS\n\n");
+                mostrarOrdenIDActivosT();
+            }else{
+                printf("No existe la opcion.\n");
+            }
             break;
         }
 

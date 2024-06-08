@@ -5,6 +5,7 @@
 #include "viajes.h"
 #include "clientes.h"
 #include "empleados.h"
+#include "ordenamientos.h"
 
 ///VENTAS EN ORDEN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -12,7 +13,7 @@ void mostrarOrdenAlfabTActivo()
 {
             stTickets *arrDinT;
             int validosT=0;
-            validosT = ArchivoToArregloClienteActivo(&arrDinT, validosT);
+            validosT = ArchivoToArregloTicketActivo(&arrDinT, validosT);
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
             ordenamientoSeleccionTicket(arrDinT, validosT);
             MostrarArregloTicket(arrDinT, validosT);
