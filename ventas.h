@@ -70,18 +70,22 @@ void filtrarVentaViaje(int ID);
 ///ARREGLO/////////////////////////////////////////////////////
 
 void MostrarArregloTicket(stTickets A[], int validos);
-void ordenarArrDinamicoTicket(stTickets** arrD, int validos);
-int ArchivoToArregloBajaTicket(stTickets** arrD, int validos);
-int ArchivoToArregloTicketActivo(stTickets** arrD, int validos);
-int ArchivoToArregloTicket(stTickets** arrD, int validos);
-int calcularRegistrosInactivosT();
-int calcularRegistrosActivosT();
-int calcularRegistrosT();
 void mostrarOrdenIDT();
 void mostrarOrdenAlfabT();
 void mostrarOrdenIDBajaT();
 void mostrarOrdenAlfabBajaT();
 void mostrarOrdenIDActivosT();
 void mostrarOrdenAlfabTActivo();
+
+void ordenarArrDinamicoTicket(stTickets** arrD, int validos);
+
+int ArchivoToArregloBajaTicket(stTickets** arrD, int validos);
+int ArchivoToArregloTicketActivo(stTickets** arrD, int validos);
+int ArchivoToArregloTicket(stTickets** arrD, int validos);
+
+int calcularRegistrosInactivosT();
+int calcularRegistrosActivosT();
+int calcularRegistrosT();
+
 
 #endif // VENTAS_H_INCLUDED
