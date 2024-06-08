@@ -65,8 +65,6 @@ void filtrarVentaMetodo(char met[]);
 
 void filtrarVentaViaje(int ID);
 
-///Cargar ventas///////////////
-
 ///ARREGLO/////////////////////////////////////////////////////
 
 void MostrarArregloTicket(stTickets A[], int validos);
