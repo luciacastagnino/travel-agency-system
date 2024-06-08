@@ -410,8 +410,26 @@ void menuVentas()
     {
     case 0:
         {
-         //Mostrar Archivo
-         mostrarOrdenAlfabT();
+            int op;
+
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Orden alfabetico.\n");
+            printf("2. Orden por ID.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                printf("LISTA DE VENTAS\n\n");
+                mostrarOrdenAlfabT();
+            }else if (op==2){
+                printf("LISTA DE VENTAS\n\n");
+                mostrarOrdenIDT();
+            }else{
+                printf("No existe la opcion.\n");
+            }
+            break;
         break;
         }
     case 1:
