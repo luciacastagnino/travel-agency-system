@@ -295,7 +295,7 @@ stTickets CargarTicket()
     printf("Ingrese el cargo por servicio : ");
     scanf("%i", &A.monto);
 
-    printf("Ingrese la fecha de:\n");
+    printf("Ingrese la fecha de la venta:\n");
     printf("Dia:");
     scanf("%d", &A.dia.dia);
     printf("Mes:");
