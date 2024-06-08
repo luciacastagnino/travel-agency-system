@@ -8,15 +8,16 @@
 #include "ordenamientos.h"
 
 ///VENTAS EN ORDEN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void mostrarOrdenAlfabTActivo()
 {
-            stTickets *arrDinC;
-            int validosC=0;
-            validosC = ArchivoToArregloClienteActivo(&arrDinC, validosC);
+            stTickets *arrDinT;
+            int validosT=0;
+            validosT = ArchivoToArregloClienteActivo(&arrDinT, validosT);
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
-            ordenamientoSeleccionTicket(arrDinC, validosC);
-            MostrarArregloTicket(arrDinC, validosC);
-            if(validosC == 0){
+            ordenamientoSeleccionTicket(arrDinT, validosT);
+            MostrarArregloTicket(arrDinT, validosT);
+            if(validosT == 0){
             printf("No se encontraron Tickets activos\n");
         }
 }
@@ -24,25 +25,25 @@ void mostrarOrdenAlfabTActivo()
 void mostrarOrdenIDActivosT()
 {
 
-    stTickets* arrDinC;
-    int validosC=0;
-    validosC = ArchivoToArregloTicketActivo(&arrDinC, validosC);
-    ordenamientoInserccionTicket(arrDinC, validosC);
-    MostrarArregloTicket(arrDinC, validosC);
-    if(validosC == 0){
+    stTickets* arrDinT;
+    int validosT=0;
+    validosT = ArchivoToArregloTicketActivo(&arrDinT, validosT);
+    ordenamientoInserccionTicket(arrDinT, validosT);
+    MostrarArregloTicket(arrDinT, validosT);
+    if(validosT == 0){
             printf("No se encontraron tickets activos\n");
         }
 }
 
 void mostrarOrdenAlfabBajaT()
 {
-            stTickets *arrDinC;
-            int validosC = 0;
-            validosC = ArchivoToArregloBajaTicket(&arrDinC, validosC);
+            stTickets *arrDinT;
+            int validosT = 0;
+            validosT = ArchivoToArregloBajaTicket(&arrDinT, validosT);
             //printf("LISTA DE CLIENTES ORDENADOS:\n");
-            ordenamientoSeleccionTicket(arrDinC, validosC);
-            MostrarArregloTicket(arrDinC, validosC);
-            if(validosC == 0){
+            ordenamientoSeleccionTicket(arrDinT, validosT);
+            MostrarArregloTicket(arrDinT, validosT);
+            if(validosT == 0){
             printf("No se encontraron ticket dados de baja\n");
         }
 
@@ -51,49 +52,48 @@ void mostrarOrdenAlfabBajaT()
 void mostrarOrdenIDBajaT()
 {
 
-    stTickets* arrDinC;
-    int validosC=0;
-    validosC=ArchivoToArregloBajaTicket(&arrDinC, validosC);
-    ordenamientoInserccionTicket(arrDinC, validosC);
-    MostrarArregloTicket(arrDinC, validosC);
-    if(validosC == 0){
-            printf("No se encontraron tickets dados de baja\n");
-        }
-
+    stTickets* arrDinT;
+    int validosT=0;
+    validosT=ArchivoToArregloBajaTicket(&arrDinT, validosT);
+    ordenamientoInserccionTicket(arrDinT, validosT);
+    MostrarArregloTicket(arrDinT, validosT);
+    if(validosT == 0){
+        printf("No se encontraron tickets dados de baja.\n");
+    }
 }
 
 /// muestra archivo completo ///
 
 void mostrarOrdenAlfabT()
 {
-            stTickets *arrDinC;
-            int validosC=0;
-            validosC= ArchivoToArregloTicket(&arrDinC, validosC);
-            //printf("LISTA DE CLIENTES ORDENADOS:\n");
-            ordenamientoSeleccionTicket(arrDinC, validosC);
-            MostrarArregloTicket(arrDinC, validosC);
-            if(validosC == 0){
-            printf("No se encontraron tickets\n");
-        }
+    stTickets *arrDinT;
+    int validosT=0;
+    validosT= ArchivoToArregloTicket(&arrDinT, validosT);
+    //printf("LISTA DE CLIENTES ORDENADOS:\n");
+    ordenamientoSeleccionTicket(arrDinT, validosT);
+    MostrarArregloTicket(arrDinT, validosT);
+    if(validosT == 0){
+        printf("No se encontraron tickets.\n");
+    }
 }
 
 void mostrarOrdenIDT()
 {
 
-    stTickets* arrDinC;
-    int validosC=0;
-    validosC=ArchivoToArregloTicket(&arrDinC, validosC);
-    ordenamientoInserccionTicket(arrDinC, validosC);
-    MostrarArregloTicket(arrDinC, validosC);
-    if(validosC == 0){
-            printf("No se encontraron tickets\n");
+    stTickets* arrDinT;
+    int validosT=0;
+    validosT=ArchivoToArregloTicket(&arrDinT, validosT);
+    ordenamientoInserccionTicket(arrDinT, validosT);
+    MostrarArregloTicket(arrDinT, validosT);
+    if(validosT == 0){
+            printf("No se encontraron tickets.\n");
         }
 }
 
 ///calcular registros/////////////////////////////
+
 int calcularRegistrosT()
 {
-
     int cant=0;
 
     FILE *buf;
@@ -169,8 +169,8 @@ int calcularRegistrosInactivosT()
 }
 
 ///pasar de archivo a arreglo////////////////////
-int ArchivoToArregloTicket(stTickets** arrD, int validos)
-{
+
+int ArchivoToArregloTicket(stTickets** arrD, int validosT){
 
     FILE* buf;
     stTickets A;
@@ -181,47 +181,47 @@ int ArchivoToArregloTicket(stTickets** arrD, int validos)
 
     if (*arrD == NULL) {
         printf("No se pudo asignar memoria\n");
-        return validos;
+        return validosT;
     }
 
     buf = fopen(archVentas, "rb");
 
     if (buf){
-        while(fread(&A, sizeof(stTickets), 1, buf) > 0 && validos < cantRegistrosT){
-            (*arrD)[validos] = A;
-            validos++;
+        while(fread(&A, sizeof(stTickets), 1, buf) > 0 && validosT < cantRegistrosT){
+            (*arrD)[validosT] = A;
+            validosT++;
         }
         fclose(buf);
     }else{
         printf("No se pudo abrir el archivo\n");
         }
 
-    return validos;
+    return validosT;
 }
 
-int ArchivoToArregloTicketActivo(stTickets** arrD, int validos)
+int ArchivoToArregloTicketActivo(stTickets** arrD, int validosT)
 {
 
     FILE* buf;
     stTickets A;
 
-    int cantRegistrosC = calcularRegistrosActivosT();
+    int cantRegistrosT = calcularRegistrosActivosT();
 
-    *arrD = (stTickets*)malloc(sizeof(stTickets)*cantRegistrosC);
+    *arrD = (stTickets*)malloc(sizeof(stTickets)*cantRegistrosT);
 
     if (*arrD == NULL) {
         printf("No se pudo asignar memoria\n");
-        return validos;
+        return validosT;
     }
 
     buf = fopen(archVentas, "rb");
 
     if (buf){
-        while(fread(&A, sizeof(stTickets), 1, buf) > 0 && validos < cantRegistrosC){
+        while(fread(&A, sizeof(stTickets), 1, buf) > 0 && validosT < cantRegistrosT){
             if(A.estado == 1)
                 {
-                   (*arrD)[validos] = A;
-                   validos++;
+                   (*arrD)[validosT] = A;
+                   validosT++;
 
                 }
         }
@@ -230,32 +230,32 @@ int ArchivoToArregloTicketActivo(stTickets** arrD, int validos)
         printf("No se pudo abrir el archivo\n");
         }
 
-    return validos;
+    return validosT;
 }
 
-int ArchivoToArregloBajaTicket(stTickets** arrD, int validos)
+int ArchivoToArregloBajaTicket(stTickets** arrD, int validosT)
 {
 
     FILE* buf;
     stTickets A;
 
-    int cantRegistrosC = calcularRegistrosInactivosT();
+    int cantRegistrosT = calcularRegistrosInactivosT();
 
-    *arrD = (stTickets*)malloc(sizeof(stTickets)*cantRegistrosC);
+    *arrD = (stTickets*)malloc(sizeof(stTickets)*cantRegistrosT);
 
     if (*arrD == NULL) {
         printf("No se pudo asignar memoria\n");
-        return validos;
+        return validosT;
     }
 
     buf = fopen(archVentas, "rb");
 
     if (buf){
-        while(fread(&A, sizeof(stTickets), 1, buf) > 0 && validos < cantRegistrosC){
+        while(fread(&A, sizeof(stTickets), 1, buf) > 0 && validosT < cantRegistrosT){
             if(A.estado == 0)
                 {
-                    (*arrD)[validos] = A;
-                     validos++;
+                    (*arrD)[validosT] = A;
+                     validosT++;
                 }
         }
         fclose(buf);
@@ -263,34 +263,31 @@ int ArchivoToArregloBajaTicket(stTickets** arrD, int validos)
         printf("No se pudo abrir el archivo\n");
         }
 
-    return validos;
+    return validosT;
 }
 
 ///ordenar arreglo/////////////////////////////////
 
-void ordenarArrDinamicoTicket(stTickets** arrD, int validos)
-{
+void ordenarArrDinamicoTickets (stTickets** arrDinT, int validosT){
 
-    ordenamientoSeleccionTicket(*arrD, validos);
+    ordenamientoSeleccionTicket(*arrDinT, validosT);
 
 }
 ///mostrar arreglo/////////////////////////////////////////////////
 
-void MostrarArregloTicket(stTickets A[], int validos)
-{
+void MostrarArregloTicket(stTickets A[], int validosT){
 
 int i;
 
 printf("El contenido del arreglo:\n");
 
-for(i=0; i<validos; i++){
+for(i=0; i<validosT; i++){
     MostrarTicket(A[i]);
     }
 }
 
-
-
 /// Cargar un Ticket
+
 stTickets CargarTicket()
 {
     stTickets A;
@@ -302,11 +299,11 @@ stTickets CargarTicket()
     fflush(stdin);
     gets(A.fecha);
 
-    printf("Ingrese la id del cliente: ");
+    printf("Ingrese el DNI del cliente: ");
     fflush(stdin);
     gets(A.idCliente);
 
-    printf("Ingrese la id del empleado: ");
+    printf("Ingrese el DNI del empleado: ");
     fflush(stdin);
     gets(A.idEmpleado);
 
@@ -314,8 +311,7 @@ stTickets CargarTicket()
     fflush(stdin);
     gets(A.metodo);
 
-    printf("Ingrese el estado del ticket (1/0): ");
-    scanf("%i", &A.estado);
+    A.estado=1;
 
     printf("Ingrese la id del ticket: ");
     scanf("%i", &A.id);
@@ -369,8 +365,8 @@ void MostrarTicket(stTickets A)
     printf("La fecha del ticket es: %s\n", A.fecha);
     printf("La id del ticket es: %i\n", A.id);
     printf("El metodo de pago es: %s\n", A.metodo);
-    printf("La id del cliente es: %s\n", A.idCliente);
-    printf("La id del empleado es: %s\n", A.idEmpleado);
+    printf("La DNI del cliente es: %s\n", A.idCliente);
+    printf("La DNI del empleado es: %s\n", A.idEmpleado);
     printf("Datos del viaje: \n\n");
 
     mostrarViaje(A.viaje);
@@ -380,6 +376,7 @@ void MostrarTicket(stTickets A)
 }
 
 ///Mostrar Archivo Ventas
+
 void mostrarArchivoVentas()
 {
     stTickets A;
@@ -463,7 +460,7 @@ char control = 's';
             aux = ModificarMetodoDePago(aux);
         }
 
-        printf("4. Desea modificar el id del cliente?.\n");
+        printf("4. Desea modificar el DNI del cliente?.\n");
         fflush(stdin);
         scanf("%c", &control);
 
@@ -472,7 +469,7 @@ char control = 's';
             aux = ModificarIdDelClienteEnTicket(aux);
         }
 
-        printf("5. Desea modificar id del empleado?.\n");
+        printf("5. Desea modificar DNI del empleado?.\n");
         fflush(stdin);
         scanf("%c", &control);
 
@@ -532,7 +529,7 @@ stTickets ModificarFechaTicket(stTickets A)
 
 stTickets ModificarIdDelClienteEnTicket(stTickets A)
 {
-    printf("Ingresar el nuevo id del cliente: ");
+    printf("Ingresar el nuevo DNI del cliente: ");
     fflush(stdin);
     gets(A.idCliente);
 
@@ -549,7 +546,7 @@ stTickets ModificarIdTicket(stTickets A)
 
 stTickets ModificarIdDelEmpleadoEnTicket(stTickets A)
 {
-    printf("Ingrese el nuevo id del empleado: ");
+    printf("Ingrese el nuevo DNI del empleado: ");
     fflush(stdin);
     gets(A.idEmpleado);
 
@@ -619,6 +616,7 @@ stTickets darBajaT(stTickets aux)
 }
 
 ///BUSCAR VENTA///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void encontrarVentaId(int id)
 {
 stTickets A;
@@ -646,6 +644,7 @@ if(buff){
 }
 
 ///Encontrar Venta por idCliente///////////
+
 void encontrarVentaDNIC(char dniC[])
 {
 stTickets A;
@@ -676,6 +675,7 @@ else{
 
 ///FILTRAR VENTAS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Filtrar Venta por Empleado
+
 void filtrarVentaEmpleado(char dniE[])
 {
 stTickets A;
@@ -704,6 +704,7 @@ if(buff){
 }
 
 ///Filtrar Ventas por metodo de pago
+
 void filtrarVentaMetodo(char met[])
 {
 stTickets A;
@@ -730,6 +731,7 @@ if(buff){
 }
 
 ///Filtrar venta por Viaje
+
 void filtrarVentaViaje(int ID)
 {
 stTickets A;
@@ -755,9 +757,3 @@ if(buff){
         printf("El archivo no se pudo abrir\n");
     }
 }
-
-
-
-
-
-

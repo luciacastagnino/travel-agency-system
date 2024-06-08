@@ -163,6 +163,7 @@ int calcularRegistrosInactivosC(){
 }
 
 ///pasar de archivo a arreglo////////////////////
+
 int ArchivoToArregloCliente(stCliente** arrD, int validos){
 
     FILE* buf;

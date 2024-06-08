@@ -114,6 +114,7 @@ void ordenamientoSeleccionViaje(stViaje* A, int cantRegistrosV){
 }
 
 ///ORDENAMIENTO VENTAS/////////////////////////////////////////////////////////////////////////////////////////////////
+
 int cantRegistrosT=0;
 
 int buscarPosMenorTicket(stTickets* A, int pos, int cantRegistrosT)
@@ -242,6 +243,7 @@ void ordenamientoInserccion (stViaje* A, int cantRegistrosV){
 }
 
 ///ORDENAMIENTO VENTAS///////////////////////////////////////////////////////////////////
+
 void insertarTicket(stTickets* A, int u, stTickets aux)
 {
 

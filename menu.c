@@ -384,6 +384,7 @@ void menuViajes()
 }
 
 ///MENU VENTAS////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void menuVentas()
 {
      int opcion;
@@ -408,6 +409,7 @@ void menuVentas()
         {
          //Mostrar Archivo
          mostrarArchivoVentas();
+         mostrarOrdenAlfabTActivo();
         break;
         }
     case 1:

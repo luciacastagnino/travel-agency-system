@@ -7,32 +7,31 @@
 
 static const char archVentas[] = {"archivoVentas.bin"};
 
-typedef struct
-{
-  int monto;              /// Valor por cargo de servicios que se agrega al precio de viaje
-  char fecha[10];         /// Fecha en la que se imprime el ticket
-  char metodo[15];        /// Metodo de pago
-  char idCliente[10];     /// Id del cliente
-  char idEmpleado[10];    /// Id del empleado
-  int id;                 /// Id del ticket
-  int estado;             /// 1/0
-  stViaje viaje;          /// Estructura *AUXILIAR* de viaje
-
+typedef struct{
+int monto;
+char fecha[10];
+char metodo[20];
+char idCliente[10];
+char idEmpleado[10];
+int id;
+int estado;
+stViaje viaje;
 }stTickets;
 
-
 ///PROTOTIPOS VENTAS//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 stTickets CargarTicket();
 void MostrarTicket(stTickets A);
 void cargarArchivoVentas();
 void mostrarArchivoVentas();
 
-
 ///Dar de baja ventas///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void darBajaVenta(int idTicket);
 stTickets darBajaT(stTickets aux);
 
 ///MODIFICAR VENTAS///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 stTickets modificarViajeT(stTickets A);
 stTickets ModificarIdDelEmpleadoEnTicket(stTickets A);
 stTickets ModificarIdTicket(stTickets A);
@@ -44,20 +43,27 @@ stTickets modificarDatosTicket(stTickets aux);
 void modificarVenta(int id);
 
 ///BUSCAR VENTA///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void encontrarVentaId(int id);
 void encontrarVentaDNIC(char dniC[]);
 
 ///FILTRAR VENTAS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Filtrar Venta por Empleado
+
 void filtrarVentaEmpleado(char dniE[]);
+
 ///Filtrar Ventas por metodo de pago
+
 void filtrarVentaMetodo(char met[]);
+
 ///Filtrar venta por Viaje
+
 void filtrarVentaViaje(int ID);
 
 ///Cargar ventas///////////////
 
 ///ARREGLO/////////////////////////////////////////////////////
+
 void MostrarArregloTicket(stTickets A[], int validos);
 void ordenarArrDinamicoTicket(stTickets** arrD, int validos);
 int ArchivoToArregloBajaTicket(stTickets** arrD, int validos);
@@ -72,7 +78,5 @@ void mostrarOrdenIDBajaT();
 void mostrarOrdenAlfabBajaT();
 void mostrarOrdenIDActivosT();
 void mostrarOrdenAlfabTActivo();
-
-
 
 #endif // VENTAS_H_INCLUDED

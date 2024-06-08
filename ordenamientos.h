@@ -24,6 +24,7 @@ int buscarPosMenorViaje (stViaje* A, int pos, int cantRegistrosV);
 void ordenamientoSeleccionViaje(stViaje* A, int cantRegistrosV);
 
 ////ventas
+
 //int buscarPosMenorTicket(stTickets* A, int pos, int cantRegistrosT);
 //void ordenamientoSeleccionTicket(stTickets* A, int cantRegistrosT);
 
@@ -45,6 +46,7 @@ void insertar (stViaje* A, int u, stViaje aux);
 void ordenamientoInserccion (stViaje* A, int cantRegistrosV);
 
 ////ventas
+
 //void insertarTicket(stTickets* A, int u, stTickets aux);
 //void ordenamientoInserccionTicket(stTickets* A, int cantRegistrosT);
 
