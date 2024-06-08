@@ -5,7 +5,6 @@
 #include "viajes.h"
 #include "clientes.h"
 #include "empleados.h"
-#include "ordenamientos.h"
 
 ///VENTAS EN ORDEN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -295,9 +294,13 @@ stTickets CargarTicket()
     printf("Ingrese el cargo por servicio : ");
     scanf("%i", &A.monto);
 
-    printf("Ingrese la fecha: ");
-    fflush(stdin);
-    gets(A.fecha);
+    printf("Ingrese la fecha de:\n");
+    printf("Dia:");
+    scanf("%d", &A.dia.dia);
+    printf("Mes:");
+    scanf("%d", &A.dia.mes);
+    printf("Anio:");
+    scanf("%d", &A.dia.anio);
 
     printf("Ingrese el DNI del cliente: ");
     fflush(stdin);
@@ -360,19 +363,36 @@ void cargarArchivoVentas()
 void MostrarTicket(stTickets A)
 {
     int Cargos;
-    printf("DETALLES DEL TICKET: \n");
-    printf("Cargos por servicio del ticket es: $%i\n", A.monto);
-    printf("La fecha del ticket es: %s\n", A.fecha);
-    printf("La id del ticket es: %i\n", A.id);
-    printf("El metodo de pago es: %s\n", A.metodo);
-    printf("La DNI del cliente es: %s\n", A.idCliente);
-    printf("La DNI del empleado es: %s\n", A.idEmpleado);
-    printf("Datos del viaje: \n\n");
+    printf("-----------------------------------------\n");
+    printf("               CODETRAVEL             \n");
+    printf("EXPEDIDO EN: LOCAL PRINCIPAL\n");
+    printf("DIREC: Av. Dorrego 281\n");
+    printf("TEL: 4810000\n");
+    printf("EMAIL: codetravel@gmail.com\n");
+    printf("\n");
 
+    printf("                           Ticket: # %i\n", A.id);
+    printf("****************************************\n");
+    printf("\n");
+    printf("DNI DEL EMPLEADO: %s.\n", A.idEmpleado);
+    printf("DNI DEL CLIENTE: %s.\n", A.idCliente);
+    printf("\n");
+    printf("FECHA: %d/%d/%d\n", A.dia.dia, A.dia.mes, A.dia.anio);
+    printf("****************************************\n");
+    printf("DETALLE VIAJE:\n");
+    printf("****************************************\n");
     mostrarViaje(A.viaje);
+    printf("-----------------------------------------\n");
+    printf("-----------------------------------------\n");
 
+    printf("            SUBTOTAL: $%i.\n", A.viaje.precio);
+    printf("            VALOR AGREGADO:$%i.\n", A.monto);
     Cargos=A.monto+A.viaje.precio;
-    printf("Monto total a pagar: $%i\n", Cargos);
+    printf("            TOTAL:$%i.\n", Cargos);
+
+    printf("\n            %s $%i.\n", A.metodo, Cargos);
+    printf("-----------------------------------------\n");
+
 }
 
 ///Mostrar Archivo Ventas
@@ -518,13 +538,18 @@ stTickets ModificarMontoTicket(stTickets A)
     return A;
 }
 
-stTickets ModificarFechaTicket(stTickets A)
-{
-    printf("Ingrese la nueva fecha del ticket: ");
-    fflush(stdin);
-    gets(A.fecha);
+stTickets ModificarFechaTicket (stTickets A){
+
+    printf("Ingrese la fecha para modificar la anterior:\n");
+    printf("Dia:");
+    scanf("%d", &A.dia.dia);
+    printf("Mes:");
+    scanf("%d", &A.dia.mes);
+    printf("Anio:");
+    scanf("%d", &A.dia.anio);
 
     return A;
+
 }
 
 stTickets ModificarIdDelClienteEnTicket(stTickets A)

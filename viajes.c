@@ -377,7 +377,6 @@ void mostrarViaje(stViaje A)
     printf("Duracion: %d dias\n", A.duracion);
     printf("Transporte: %s\n", A.transporte);
     printf("Precio: $%d\n", A.precio);
-    printf("\n");
 
 }
 

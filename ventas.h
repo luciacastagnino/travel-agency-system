@@ -8,8 +8,14 @@
 static const char archVentas[] = {"archivoVentas.bin"};
 
 typedef struct{
+    int dia;
+    int mes;
+    int anio;
+}stTicketFecha;
+
+typedef struct{
 int monto;
-char fecha[10];
+stTicketFecha dia;
 char metodo[20];
 char idCliente[10];
 char idEmpleado[10];
