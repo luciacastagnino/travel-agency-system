@@ -688,7 +688,6 @@ void ArchivoToPilaEmpleados(Pila* aux)
         while(fread(&A, sizeof(stEmpleado), 1, buf) > 0){
             if(A.estado == 1)
                 {
-                    mostrarEmpleado(A);
                     apilar(aux, A.sueldo);
                 }
         }

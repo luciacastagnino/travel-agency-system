@@ -6,6 +6,7 @@
 #include "clientes.h"
 #include "empleados.h"
 #include "ordenamientos.h"
+#include "pila.h"
 
 ///VENTAS EN ORDEN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -784,4 +785,77 @@ if(buff){
     else{
         printf("El archivo no se pudo abrir\n");
     }
+}
+
+int cargarArregloEstatico(int A[], int dim, int validos)
+{
+stTickets aux;
+
+FILE *buff;
+buff = fopen(archVentas, "rb");
+
+if(buff){
+       while(fread(&aux, sizeof(stTickets), 1, buff)>0 && validos<dim)
+        {
+           if(aux.estado == 1)
+                {
+                   A[validos]= aux.monto + aux.viaje.precio;
+                   validos++;
+                }
+        }
+        fclose(buff);
+    }
+    else{
+        printf("El archivo no se pudo abrir\n");
+    }
+    return validos;
+}
+
+float sumarVentas(int A[], int validos)
+{
+int i;
+float suma = 0;
+
+for(i=0; i<validos; i++){
+    suma = suma + A[i];
+}
+return suma;
+}
+
+void mostrarCalculo()
+{
+    int dim = calcularRegistrosActivosT();
+
+    int A[dim];
+
+    int validos;
+
+    validos = cargarArregloEstatico(A, dim, 0);
+
+    float suma= sumarVentas(A, validos);
+
+    printf("El total de ventas es: %.2f\n", suma);
+}
+
+void mostrarGanancias()
+{
+    int dim = calcularRegistrosActivosT();
+    float total;
+
+    int A[dim];
+
+    int validos;
+
+    validos = cargarArregloEstatico(A, dim, 0);
+
+    float suma= sumarVentas(A, validos);
+
+    Pila p;
+    inicpila(&p);
+    ArchivoToPilaEmpleados(&p);
+    float rta= sumarSueldos(p);
+
+    total= suma-rta;
+
+    printf("Ganancias: %.2f\n", total);
 }

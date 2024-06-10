@@ -440,11 +440,11 @@ void menuVentas()
     printf("2. Modificar venta.\n");
     printf("3. Buscar venta.\n");
     printf("4. Filtrar ventas.\n");
-    printf("5. Dar de baja ventas");
+    printf("5. Dar de baja ventas\n");
     printf("6. Mostrar orden baja.\n");
     printf("7. Mostrar orden activos.\n");
-    printf("6. Calcular cantidad de ventas que realizo un empleado.\n");
-    printf("7. Calcular ganancias.\n");
+    printf("8. Calcular cantidad total de ventas.\n");
+    printf("9. Calcular ganancias.\n");
     fflush(stdin);
     scanf("%d", &opcion);
 
@@ -636,6 +636,18 @@ void menuVentas()
                 printf("No existe la opcion.\n");
             }
             break;
+        }
+    case 8:
+        {
+            mostrarCalculo();
+
+            break;
+        }
+    case 9:
+        {
+            mostrarGanancias();
+            break;
+
         }
 
 

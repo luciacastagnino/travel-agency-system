@@ -85,5 +85,9 @@ int calcularRegistrosInactivosT();
 int calcularRegistrosActivosT();
 int calcularRegistrosT();
 
+///Calcular total ventas////////////////////////////////////////////////////////////////////////////////////////////////////////
+int cargarArregloEstatico(int A[], int dim, int validos);
+float sumarVentas(int A[], int validos);
+void mostrarCalculo();
 
 #endif // VENTAS_H_INCLUDED
