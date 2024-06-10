@@ -25,6 +25,7 @@ void menuEmpleados()
     printf("5. Dar de baja empleado.\n");\
     printf("6. Mostrar empleados dados de baja.\n");
     printf("7. Mostrar empleados activos\n");
+    printf("8. Calcular sueldos\n");
 
     fflush(stdin);
     scanf("%d", &opcion);
