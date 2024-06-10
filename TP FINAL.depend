@@ -509,10 +509,26 @@
 	"viajes.h"
 	"ordenamientos.h"
 
-1718053686 source:d:\bren\utn\tp-final-prog\empleados.c
+1718056283 source:d:\bren\utn\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"empleados.h"
 	"ordenamientos.h"
+
+1718056681 source:d:\bren\utn\tp-final-prog\home.c
+	"home.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1718056667 d:\bren\utn\tp-final-prog\home.h
+
+1718056760 source:d:\bren\utn\tp-final-prog\admin.c
+	"admin.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1718056760 d:\bren\utn\tp-final-prog\admin.h
 
