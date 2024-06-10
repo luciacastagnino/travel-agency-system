@@ -195,6 +195,39 @@ void menuEmpleados()
 
             break;
         }
+    case 8:
+        {
+            printf("Ingrese una opcion.\n\n");
+            printf("1. Calcular todos los sueldos.\n");
+            printf("2. Calcular por puesto de trabajo.\n");
+            scanf("%i", &op);
+
+            system("pause");
+            system("cls");
+
+            if(op==1){
+                Pila A;
+                inicpila(&A);
+                ArchivoToPilaEmpleados(&A);
+                float rta= sumarSueldos(A);
+                printf("rta: %.2f\n", rta);
+            }else if (op==2){
+                Pila A;
+                inicpila(&A);
+
+                char P[20];
+                printf("Ingrese el puesto: \n");
+                fflush(stdin);
+                gets(P);
+
+                ArchivoToPilaEmpleadosFilt(&A, P);
+                float rta= sumarSueldos(A);
+                printf("rta: %.2f\n", rta);
+            }else{
+                printf("No existe la opcion.\n");
+            }
+            break;
+        }
     default:
         printf("La opcion no existe.\n");
     }

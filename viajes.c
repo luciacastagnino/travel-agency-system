@@ -805,7 +805,7 @@ int verificarIDNoExiste(int id) {
         }
         fclose(bufViaje);
     } else {
-        printf("No se pudo abrir el archivo %s\n");
+        printf("No se pudo abrir el archivo\n");
     }
 
     return !encontrado;

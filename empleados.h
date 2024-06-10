@@ -1,3 +1,4 @@
+#include "pila.h"
 #ifndef EMPLEADOS_H_INCLUDED
 #define EMPLEADOS_H_INCLUDED
 
@@ -55,4 +56,9 @@ stEmpleado darBajaE(stEmpleado aux);
 ///Filtrar Empleados//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void filtrarEmpleadoEstado(int E);
 void filtrarEmpleadoPuesto(char P[]);
+
+///Calcular sueldos////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void ArchivoToPilaEmpleadosFilt(Pila* aux, char dep[]);
+void ArchivoToPilaEmpleados(Pila* aux);
+float sumarSueldos(Pila aux);
 #endif // EMPLEADOS_H_INCLUDED

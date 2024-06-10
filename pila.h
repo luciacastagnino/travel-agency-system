@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <malloc.h>
+#ifndef PILA_H_INCLUDED
+#define PILA_H_INCLUDED
+
 #define Pila struct _Pila
 #define P_Pila struct _Pila *
 
@@ -19,3 +22,4 @@ void leer (P_Pila p);
 void mostrar(P_Pila p);
 
 
+#endif // PILA_H_INCLUDED

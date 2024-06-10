@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "pila.h"
 #include <string.h>
 #include "empleados.h"
 #include "ordenamientos.h"
@@ -654,4 +653,60 @@ stEmpleado darBajaE(stEmpleado aux)
         mostrarEmpleado(aux);
 
         return aux;
+}
+
+void ArchivoToPilaEmpleadosFilt(Pila* aux, char dep[])
+{
+
+    FILE* buf;
+    stEmpleado A;
+
+    buf = fopen(archEmpleado, "rb");
+
+    if (buf){
+        while(fread(&A, sizeof(stEmpleado), 1, buf) > 0){
+            if(A.estado == 1 && strcmpi(A.puesto, dep) == 0)
+                {
+                    apilar(aux, A.sueldo);
+                }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo\n");
+        }
+}
+
+void ArchivoToPilaEmpleados(Pila* aux)
+{
+
+    FILE* buf;
+    stEmpleado A;
+
+    buf = fopen(archEmpleado, "rb");
+
+    if (buf){
+        while(fread(&A, sizeof(stEmpleado), 1, buf) > 0){
+            if(A.estado == 1)
+                {
+                    mostrarEmpleado(A);
+                    apilar(aux, A.sueldo);
+                }
+        }
+        fclose(buf);
+    }
+    else{
+        printf("No se pudo abrir el archivo\n");
+        }
+}
+
+float sumarSueldos(Pila aux)
+{
+float i = 0;
+int valor;
+
+while(!pilavacia(&aux)){
+    valor= desapilar(&aux);
+    i = i + (float)valor;
+}
+return i;
 }
