@@ -459,7 +459,7 @@
 
 1718050683 d:\bren\utn\tp-final-prog\menu.h
 
-1718121844 source:d:\bren\utn\tp-final-prog\menu.c
+1718139557 source:d:\bren\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -470,6 +470,8 @@
 	"ventas.h"
 	"ordenamientos.h"
 	"calendario.h"
+	"admin.h"
+	"home.h"
 
 1718050683 source:d:\bren\utn\tp-final-prog\ordenamientos.c
 	<stdio.h>
@@ -510,7 +512,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1718138741 source:d:\bren\utn\tp-final-prog\home.c
+1718139348 source:d:\bren\utn\tp-final-prog\home.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -523,7 +525,7 @@
 	"admin.h"
 	"home.h"
 
-1718138295 d:\bren\utn\tp-final-prog\home.h
+1718139348 d:\bren\utn\tp-final-prog\home.h
 
 1718139321 source:d:\bren\utn\tp-final-prog\admin.c
 	<stdio.h>
