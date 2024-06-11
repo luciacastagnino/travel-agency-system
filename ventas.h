@@ -89,5 +89,9 @@ int calcularRegistrosT();
 int cargarArregloEstatico(int A[], int dim, int validos);
 float sumarVentas(int A[], int validos);
 void mostrarCalculo();
+void mostrarGanancias();
+
+///Filtrar Cliente por Viaje
+void filtarClienteViaje(int id);
 
 #endif // VENTAS_H_INCLUDED

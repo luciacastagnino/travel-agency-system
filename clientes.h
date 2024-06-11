@@ -1,4 +1,3 @@
-#include "viajes.h"
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
 
@@ -17,7 +16,6 @@ char genero;
 char dni[10];
 char tel[10];
 stDomicilio dom;
-stViaje v;
 int estado;
 }stCliente;
 
@@ -42,7 +40,6 @@ stCliente modificarGeneroC(stCliente A);
 stCliente modificarDniC(stCliente A);
 stCliente modificarTelC(stCliente A);
 stCliente modificarDomicilioC(stCliente A);
-stCliente modificarViajeC(stCliente A);
 
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void darBajaCliente (char nYa[30]);
@@ -71,6 +68,6 @@ void ordenarArrDinamicoClientes (stCliente** arrD, int validos);
 ///Filtrar Clientes/////////////////////////////////////////////////////////////////////////////////////////////////////////
 void filtrarClienteGenero(char G);
 void filtrarClienteEstado(int E);
-void filtrarClienteViaje(int ID);
+
 
 #endif // CLIENTES_H_INCLUDED

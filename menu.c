@@ -782,7 +782,7 @@ void menuClientes()
                 printf("Ingrese el ID que desea filtrar: ");
                 fflush(stdin);
                 scanf("%d", &ID);
-                filtrarClienteViaje(ID);
+                filtarClienteViaje(ID);
             }
             break;
         }

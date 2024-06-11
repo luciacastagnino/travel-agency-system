@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="admin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="admin.h" />
 		<Unit filename="calendario.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -43,6 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="empleados.h" />
+		<Unit filename="home.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="home.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -58,6 +66,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="pila.h" />
+		<Unit filename="validaciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="validaciones.h" />
 		<Unit filename="ventas.c">
 			<Option compilerVar="CC" />
 		</Unit>

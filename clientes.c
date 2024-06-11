@@ -314,13 +314,6 @@ stCliente cargarCliente()
     printf("Ingrese el domicilio del cliente\n");
     A.dom = cargarDomicilio();
 
-    printf("Ingrese el viaje del cliente por ID\n\n");
-    int id;
-    mostrarArchivoViaje();
-    printf("ID: ");
-    scanf("%d", &id);
-    A.v=buscarViajePorID(id);
-
     A.estado=1;
 
     return A;
@@ -364,7 +357,6 @@ void mostrarCliente(stCliente A)
     printf("DNI: %s\n", A.dni);
     printf("Telefono: %s\n", A.tel);
     mostrarDomicilio(A.dom);
-    mostrarViaje(A.v);
     printf("\n");
 }
 
@@ -480,15 +472,6 @@ char control = 's';
             aux = modificarDomicilioC(aux);
         }
 
-        printf("7. Desea modificar el Viaje?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarViajeC(aux);
-        }
-
         printf("Asi quedo modificado el cliente: \n");
         mostrarCliente(aux);
         return aux;
@@ -546,18 +529,6 @@ stCliente modificarDomicilioC(stCliente A)
     return A;
 }
 
-stCliente modificarViajeC(stCliente A)
-{
-    int id;
-
-    printf("Ingrese el ID del viaje que desea encontrar.\n");
-    fflush(stdin);
-    scanf("%d", &id);
-
-    A.v = encontrarViajeId(id);
-
-    return A;
-}
 
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void darBajaCliente (char nYa[]){
@@ -791,30 +762,5 @@ if(buff){
     }
 }
 
-///Filtrar Cliente por Viaje
-void filtrarClienteViaje(int ID)
-{
-stCliente A;
-int encontrado=0;
-FILE *buff;
-buff = fopen(archCliente, "rb");
 
-if(buff){
-       while(fread(&A, sizeof(stCliente), 1, buff))
-        {
-           if(A.v.id == ID)
-                {
-                    mostrarCliente(A);
-                    encontrado=1;
-                }
-        }
-        fclose(buff);
-        if (!encontrado){
-            printf("El ID ingresado no fue encontrado\n");
-        }
-    }
-    else{
-        printf("El archivo no se pudo abrir\n");
-    }
-}
 

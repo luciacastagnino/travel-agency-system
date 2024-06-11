@@ -859,3 +859,27 @@ void mostrarGanancias()
 
     printf("Ganancias: %.2f\n", total);
 }
+
+///Filtrar Cliente por Viaje
+void filtarClienteViaje(int id)
+{
+stTickets A;
+
+FILE *buf;
+buf = fopen(archVentas, "rb");
+
+if(buf){
+          while(fread(&A, sizeof(stTickets), 1, buf)> 0)
+          {
+            if(A.viaje.id == id)
+                {
+                    encontrarClienteDni(A.idCliente);
+                }
+          }
+
+    fclose(buf);
+}
+else{
+    printf("El archivo no se pudo abrir\n");
+}
+}
