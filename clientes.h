@@ -1,3 +1,4 @@
+#include "viajes.h"
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
 
@@ -11,13 +12,16 @@ char localidad[20];
 
 typedef struct{
 char nYa[30];
-char fechaNac[15];
+char contrasenia[30];
+stViajeFecha fechaN;
 char genero;
 char dni[10];
 char tel[10];
 stDomicilio dom;
+stViaje v;
 int estado;
 }stCliente;
+
 
 ///PROTOTIPOS CLIENTE(alta, baja, mostrar, modificacion)///////////////////////////////////////////////////////////////////
 
@@ -69,5 +73,11 @@ void ordenarArrDinamicoClientes (stCliente** arrD, int validos);
 void filtrarClienteGenero(char G);
 void filtrarClienteEstado(int E);
 
+///CUENTA CLIENTE///////////////////////////////////////////////////////////////////////
+int generarIdCliente();
+void registrarCliente();
+stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[]);
+stCliente iniciarSesionCliente();
+stCliente cargarContraseniaCliente(stCliente A);
 
 #endif // CLIENTES_H_INCLUDED

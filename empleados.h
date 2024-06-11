@@ -1,4 +1,5 @@
 #include "pila.h"
+#include "viajes.h"
 #ifndef EMPLEADOS_H_INCLUDED
 #define EMPLEADOS_H_INCLUDED
 
@@ -7,6 +8,8 @@ static const char archEmpleado[] = {"archivoEmpleado.bin"};
 typedef struct{
 char nYa[30];
 char dni[10];
+stViajeFecha fechaN;
+char contrasenia[30];
 char tel[10];
 int sueldo;
 char puesto[20];
@@ -61,4 +64,9 @@ void filtrarEmpleadoPuesto(char P[]);
 void ArchivoToPilaEmpleadosFilt(Pila* aux, char dep[]);
 void ArchivoToPilaEmpleados(Pila* aux);
 float sumarSueldos(Pila aux);
+
+///Cuenta empleado///////////////////////////////////////
+stEmpleado cargarContraseniaEmpleado(stEmpleado A);
+stEmpleado busquedaEmpleadoInicioSesion (char dni[], char contrasenia[]);
+stEmpleado iniciarSesionEmpleado();
 #endif // EMPLEADOS_H_INCLUDED
