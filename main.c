@@ -43,9 +43,11 @@ int main()
 
     system("pause");
     system("cls");
+
     stAdmin admin;
     stEmpleado empleado;
     stCliente cliente;
+
     printf("Bienvenido!\n\n");
     printf("1. Iniciar sesion\n");
     printf("2. Registro\n");

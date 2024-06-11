@@ -777,7 +777,8 @@ stEmpleado cargarContraseniaEmpleado(stEmpleado A){
     return A;
 }
 
-void registrarEmpleado(){
+void registrarEmpleado()
+{
 
     FILE *buf;
     buf=fopen(archEmpleado, "ab");

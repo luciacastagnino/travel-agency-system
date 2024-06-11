@@ -103,7 +103,7 @@ stAdmin busquedaAdminInicioSesion (char dni[], char contrasenia[])
     return A;
 }
 
-stAdmin iniciarSesionAdminaux() {
+stAdmin iniciarSesionAdmin() {
 
     FILE *buf;
     buf = fopen(archAdmin, "rb");

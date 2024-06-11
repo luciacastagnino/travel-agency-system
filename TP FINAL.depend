@@ -443,7 +443,7 @@
 	"viajes.h"
 	"ventas.h"
 
-1718139128 d:\bren\utn\tp-final-prog\empleados.h
+1718139751 d:\bren\utn\tp-final-prog\empleados.h
 	"pila.h"
 	"viajes.h"
 
@@ -505,7 +505,7 @@
 	"viajes.h"
 	"ordenamientos.h"
 
-1718139128 source:d:\bren\utn\tp-final-prog\empleados.c
+1718139789 source:d:\bren\utn\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -537,7 +537,7 @@
 	"admin.h"
 	"validaciones.h"
 
-1718139321 d:\bren\utn\tp-final-prog\admin.h
+1718139935 d:\bren\utn\tp-final-prog\admin.h
 
 1718122809 source:d:\bren\utn\tp-final-prog\validaciones.c
 	"validaciones.h"

@@ -15,7 +15,7 @@ typedef struct{
 // inicio de sesion
 
 stAdmin arBuscarUsuarioLoginAdmin (char dni[], char contrasenia[]);
-stAdmin iniciarSesionAdminaux();
+stAdmin iniciarSesionAdmin();
 
 // registro
 
