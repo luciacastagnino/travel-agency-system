@@ -21,6 +21,7 @@ int estado;
 }stViaje;
 
 ///PROTOTIPOS VIAJE(alta, baja, mostrar, modificacion)
+
 stViaje cargarViaje();
 void mostrarViaje(stViaje A);
 void mostrarArchivoViaje();
@@ -28,6 +29,7 @@ int verificarIDViaje(int id);
 stViaje buscarViajePorID(int id);
 
 //modificar viaje
+
 stViaje modificarIdV(stViaje A);
 stViaje modificarFechaPartidaV (stViaje A);
 stViaje modificarFechaRegresoV (stViaje A);

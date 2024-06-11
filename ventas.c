@@ -861,8 +861,10 @@ void mostrarGanancias()
 }
 
 ///Filtrar Cliente por Viaje
-void filtarClienteViaje(int id)
+
+void filtrarClienteViaje(int id)
 {
+
 stTickets A;
 
 FILE *buf;

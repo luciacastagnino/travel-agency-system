@@ -405,6 +405,7 @@ void mostrarArchivoCliente()
 
 
 ///Modificar Cliente///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void modificarCliente (char nYa[30]){
 
     stCliente aux;
@@ -571,6 +572,7 @@ stCliente modificarDomicilioC(stCliente A)
 
 
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void darBajaCliente (char nYa[]){
 
     stCliente aux;
@@ -692,6 +694,7 @@ stDomicilio modificarDomicilio(stDomicilio A)
 }
 
 ///BUSCAR CLIENTE///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void encontrarClienteN(char N[30])
 {
 stCliente A;
@@ -719,6 +722,7 @@ if(buff){
 }
 
 ///Encontrar Cliente por DNI///////////
+
 void encontrarClienteDni(char D[10])
 {
 stCliente A;
@@ -749,6 +753,7 @@ else{
 
 ///FILTRAR CLIENTES/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Filtrar Cliente por Genero
+
 void filtrarClienteGenero(char G)
 {
 stCliente A;
@@ -777,6 +782,7 @@ if(buff){
 }
 
 ///Filtrar Clientes por Estado
+
 void filtrarClienteEstado(int E)
 {
 stCliente A;
@@ -803,6 +809,7 @@ if(buff){
 }
 
 ///CUENTA CLIENTE///////////////////////////////////////////////////////////////////////
+
 stCliente cargarContraseniaCliente(stCliente A)
 {
     char contrasenia[30];

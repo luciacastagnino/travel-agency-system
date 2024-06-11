@@ -126,7 +126,7 @@ stAdmin iniciarSesionAdmin() {
         A=busquedaAdminInicioSesion(dni, contrasenia);
 
         if((strcmp(A.dni, dni)==0) && strcmp(A.contrasenia, contrasenia)==0){
-            printf("Inicio de sesion exitoso.\n");
+            printf("\nInicio de sesion exitoso.\n\n");
             flag=1;
         }else{
             printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
