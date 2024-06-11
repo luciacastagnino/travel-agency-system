@@ -4,7 +4,7 @@
 // iniciar sesion
 /*
 stEmpleado arBuscarUsuarioLoginEmpleado (char dni[], char contrasenia[]);
-stEmpleado iniciarSesionEmpleado();
+stEmpleado iniciarSesionEmpleadoaux();
 stCliente arBuscarUsuarioLoginCliente (char dni[], char contrasenia[]);
 stCliente iniciarSesionCliente();
 */

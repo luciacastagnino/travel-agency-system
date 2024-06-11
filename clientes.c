@@ -3,6 +3,7 @@
 #include <strings.h>
 #include "clientes.h"
 #include "ordenamientos.h"
+#include "validaciones.h"
 
 ///CLIENTE ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -810,7 +811,7 @@ stCliente cargarContraseniaCliente(stCliente A)
     printf("Ingrese su contrasenia:  \n");
     fflush(stdin);
     gets(contrasenia);
-    flag=lenghtContrasenia(contrasenia);
+    flag= lenghtContrasenia(contrasenia);
 
     while(flag!=1)
     {

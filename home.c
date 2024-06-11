@@ -78,7 +78,7 @@ stEmpleado arBuscarUsuarioLoginEmpleado (char dni[], char contrasenia[])
     return A;
 }
 
-stEmpleado iniciarSesionEmpleado()
+stEmpleado iniciarSesionEmpleadoaux()
 {
     stEmpleado empleado;
     char dni[10];
