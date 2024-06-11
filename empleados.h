@@ -69,4 +69,5 @@ float sumarSueldos(Pila aux);
 stEmpleado cargarContraseniaEmpleado(stEmpleado A);
 stEmpleado busquedaEmpleadoInicioSesion (char dni[], char contrasenia[]);
 stEmpleado iniciarSesionEmpleado();
+void registrarEmpleado();
 #endif // EMPLEADOS_H_INCLUDED
