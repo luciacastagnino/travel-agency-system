@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "pila.h"
 #include <strings.h>
 #include "clientes.h"
-#include "viajes.h"
 #include "ordenamientos.h"
 
 ///CLIENTE ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////

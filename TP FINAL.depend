@@ -422,13 +422,11 @@
 
 1718050683 d:\bren\utn\tp-final-prog\viajes.h
 
-1718122284 source:d:\bren\utn\tp-final-prog\clientes.c
+1718122578 source:d:\bren\utn\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
-	"pila.h"
 	<strings.h>
 	"clientes.h"
-	"viajes.h"
 	"ordenamientos.h"
 
 1718052726 d:\bren\utn\tp-final-prog\pila.h
@@ -451,16 +449,10 @@
 	"clientes.h"
 	"empleados.h"
 
-1718050683 source:d:\bren\utn\tp-final-prog\main.c
+1718122708 source:d:\bren\utn\tp-final-prog\main.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	"pila.h"
 	"menu.h"
-	"empleados.h"
-	"clientes.h"
-	"ventas.h"
-	"viajes.h"
 
 1718050683 d:\bren\utn\tp-final-prog\menu.h
 
