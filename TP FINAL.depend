@@ -117,7 +117,7 @@
 	<stdio.h>
 	<malloc.h>
 
-1718214244 c:\users\acer\desktop\utn\tp-final-prog\clientes.h
+1718218837 c:\users\acer\desktop\utn\tp-final-prog\clientes.h
 	"viajes.h"
 
 1718141698 c:\users\acer\desktop\utn\tp-final-prog\viajes.h
@@ -187,7 +187,7 @@
 1718140661 source:c:\users\acer\desktop\utn\tp-final-prog\pila.c
 	"pila.h"
 
-1718215832 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
+1718218641 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
 	"ventas.h"
 	<stdio.h>
 	<stdlib.h>
@@ -199,7 +199,7 @@
 	"pila.h"
 	<time.h>
 
-1718214668 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
+1718218525 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"

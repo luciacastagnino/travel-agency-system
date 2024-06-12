@@ -310,27 +310,7 @@ int generarIdRandom (){
     return idRandom;
 }
 
-int validarExistenciaCliente (char dniC[]){
-
-    FILE* buf;
-    buf=fopen(archCliente, "rb");
-    stCliente A;
-    int flag=0;
-    printf("HOLA.\n");
-    if(buf){
-        while(fread(&A, sizeof(stCliente), 1, buf)>0 && flag==0){
-            printf("hola.\n");
-            if(strcmp(A.dni, dniC)==0){
-                flag=1;
-            }
-        }
-        fclose(buf);
-    }else{
-        printf("No se pudo abrir el archivo.\n");
-    }
-
-    return flag;
-} //NO FUNCIONA
+ //NO FUNCIONA
 
 int validarExistenciaEmpleado (char dni[]){
 
@@ -356,7 +336,7 @@ int validarExistenciaEmpleado (char dni[]){
 stTickets CargarTicket()
 {
     stTickets A;
-    int flagC=0, flagE=0;
+    int flag=0, flag1=0, flagC=0, flagE=0;
 
     system("cls");
 

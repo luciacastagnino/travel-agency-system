@@ -69,6 +69,9 @@ int ArchivoToArregloClienteActivo(stCliente** arrD, int validos);
 int ArchivoToArregloBajaClientes(stCliente** arrD, int validos);
 void ordenarArrDinamicoClientes (stCliente** arrD, int validos);
 
+// validarexistencia
+
+int validarExistenciaCliente (char dniC[10]);
 
 ///Filtrar Clientes/////////////////////////////////////////////////////////////////////////////////////////////////////////
 void filtrarClienteGenero(char G);

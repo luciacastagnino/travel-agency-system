@@ -292,6 +292,7 @@ void mostrarOrdenDestinoBajaV(){
 stViaje cargarViaje()
 {
     stViaje A;
+    int flag=0, flag1=0, flagr=0, flagr1=0;
 
     do {
         printf("Ingrese el ID del viaje\n");
@@ -331,20 +332,20 @@ stViaje cargarViaje()
 
 
     printf("Ingrese la fecha de regreso:\n");
-        while(flag!=1){
+        while(flagr!=1){
         printf("Dia:");
         scanf("%d", &A.fechaR.dia);
-        flag=validarDiaFecha(A.fechaR.dia);
-        if(flag!=1){
+        flagr=validarDiaFecha(A.fechaR.dia);
+        if(flagr!=1){
             printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
         }
     }
 
-    while(flag1!=1){
+    while(flagr1!=1){
         printf("Mes:");
         scanf("%d", &A.fechaR.mes);
-        flag1=validarMesFecha(A.fechaR.mes);
-        if(flag1!=1){
+        flagr1=validarMesFecha(A.fechaR.mes);
+        if(flagr1!=1){
             printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
         }
     }
