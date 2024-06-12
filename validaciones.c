@@ -16,6 +16,24 @@ int lenghtContrasenia(char contrasenia[]){
     return flag;
 }
 
+int lenghtDNI(char dni[]){
+
+    int flag=0;
+    if(strlen(dni)>7){
+        flag=1;
+    }
+    return flag;
+}
+
+int lenghtTelefono(char telefono[]){
+
+    int flag=0;
+    if(strlen(contrasenia)>9){
+        flag=1;
+    }
+    return flag;
+}
+
 int validacionContrasenia (char contrasenia[], char contrasenia2[]){
 
     int flag=0;
@@ -48,7 +66,7 @@ int validarMesFecha(int mes)
     return flag;
 }
 
-int validarExistenciaCliente (char dniC[10]){
+int validarExistenciaCliente (char dniC[]){
 
     FILE* buf;
     buf=fopen(archCliente, "rb");
@@ -68,7 +86,7 @@ int validarExistenciaCliente (char dniC[10]){
     return flag;
 }
 
-int validarExistenciaEmpleado (char dniE[10]){
+int validarExistenciaEmpleado (char dniE[]){
 
     FILE* buf;
     buf=fopen(archEmpleado, "rb");
