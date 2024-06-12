@@ -359,11 +359,13 @@ void cargarArchivoEmpleado()
 }
 
 ///Mostrar Empleado/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void mostrarEmpleado (stEmpleado A)
 {
     printf("\n");
     printf("Nombre y apellido: %s.\n", A.nYa);
     printf("DNI: %s.\n", A.dni);
+    printf("Fecha de nacimiento: %i/%i/%i.\n", A.fechaN.dia, A.fechaN.mes, A.fechaN.anio);
     printf("Tel: %s.\n", A.tel);
     printf("Sueldo: $%i.\n", A.sueldo);
     printf("Puesto: %s.\n", A.puesto);
@@ -385,6 +387,36 @@ stEmpleado modificarDniE(stEmpleado A)
     printf("Ingrese el nuevo DNI:\n");
     fflush(stdin);
     gets(A.dni);
+
+    return A;
+}
+
+stEmpleado modificarFechaNE(stEmpleado A){
+
+    int flag=0, flag1=0;
+
+    printf("Ingrese su fecha de nacimiento:\n");
+
+    while(flag!=1){
+        printf("Dia:");
+        scanf("%d", &A.fechaN.dia);
+        flag=validarDiaFecha(A.fechaN.dia);
+        if(flag!=1){
+            printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
+        }
+    }
+
+    while(flag1!=1){
+        printf("Mes:");
+        scanf("%d", &A.fechaN.mes);
+        flag1=validarMesFecha(A.fechaN.mes);
+        if(flag1!=1){
+            printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
+        }
+    }
+
+    printf("Anio:");
+    scanf("%i", &A.fechaN.anio);
 
     return A;
 }
@@ -446,56 +478,48 @@ void modificarEmpleado (char nYa[30]){
 
 stEmpleado modificarDatosEmpleado(stEmpleado aux){
 
-char control = 's';
-
-        printf("1. Desea modificar el Nombre y apellido?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarNyAE(aux);
-        }
-
-        printf("2. Desea modificar el DNI?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarDniE(aux);
-        }
-
-
-        printf("5. Desea modificar el Telefono?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarTelE(aux);
-        }
-
-        printf("6. Desea modificar el Sueldo?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarSueldoE(aux);
-        }
-
-        printf("7. Desea modificar el Puesto de empleo?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarPuestoE(aux);
-        }
+        int op=0;
+        do{
+        printf("\nQue desea modificar?\n\n");
+        printf("1. Nombre y apellido.\n");
+        printf("2. DNI.\n");
+        printf("3. Fecha de nacimiento.\n");
+        printf("4.Telefono.\n");
+        printf("5.Puesto.\n");
+        printf("6.Sueldo.\n");
+        printf("7.Salir.\n");
+        scanf("%i", &op);
+        switch(op){
+    case 1:
+        aux = modificarNyAE(aux);
+        break;
+    case 2:
+        aux=modificarDniE(aux);
+        break;
+    case 3:
+        aux=modificarFechaNE(aux);
+        break;
+    case 4:
+        aux=modificarTelE(aux);
+        break;
+    case 5:
+        aux=modificarPuestoE(aux);
+        break;
+    case 6:
+        aux=modificarSueldoE(aux);
+        break;
+    case 7:
+        system("cls");
+        break;
+    default:
+        printf("No existe la opcion.\n");
+        break;
+        }}while(op!=7);
 
         printf("Asi quedo modificado el Empleado: \n");
         mostrarEmpleado(aux);
+        system("pause");
+        system("cls");
         return aux;
 }
 
