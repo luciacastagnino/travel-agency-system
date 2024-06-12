@@ -310,32 +310,12 @@ int generarIdRandom (){
     return idRandom;
 }
 
- //NO FUNCIONA
-
-int validarExistenciaEmpleado (char dni[]){
-
-    FILE* buf;
-    buf=fopen(archEmpleado, "rb");
-    stEmpleado A;
-    int flag=0;
-
-    if(buf){
-        while(fread(&A, sizeof(stEmpleado), 1, buf)>0 && flag==0){
-            if(strcmp(A.dni, dni)==0){
-                flag=1;
-            }
-        }
-        fclose(buf);
-    }
-
-    return flag;
-} //NO FUNCIONA
-
 /// Cargar un Ticket
 
 stTickets CargarTicket()
 {
     stTickets A;
+    char dni[10];
     int flag=0, flag1=0, flagC=0, flagE=0;
 
     system("cls");
@@ -370,19 +350,25 @@ stTickets CargarTicket()
     while(flagC==0){
         printf("Ingrese el DNI del cliente: ");
         fflush(stdin);
-        gets(A.idCliente);
-        flagC=validarExistenciaCliente(A.id);
-        printf("%i", flagC);
+        gets(dni);
+        flagC=validarExistenciaCliente(dni);
         if(flagC==0){
             printf("DNI invalido, vuelva a cargarlo.\n");
+        }else{
+        strcpy(A.idCliente, dni);
         }
     }
 
     while(flagE==0){
         printf("Ingrese el DNI del empleado: ");
         fflush(stdin);
-        gets(A.idEmpleado);
-        flagE=validarExistenciaEmpleado(A.idEmpleado);
+        gets(dni);
+        flagE=validarExistenciaEmpleado(dni);
+        if(flagE==0){
+            printf("DNI invalido, vuelva a cargarlo.\n");
+        }else{
+        strcpy(A.idEmpleado, dni);
+        }
     }
 
     printf("Ingrese el viaje por ID\n\n");

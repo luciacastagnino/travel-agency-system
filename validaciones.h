@@ -5,5 +5,6 @@ int lenghtContrasenia(char contrasenia[]);
 int validacionContrasenia (char contrasenia[], char contrasenia2[]);
 int validarDiaFecha(int dia);
 int validarMesFecha(int mes);
+int validarExistenciaCliente (char dniC[10]);
 
 #endif // VALIDACIONES_H_INCLUDED

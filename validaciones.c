@@ -1,4 +1,6 @@
 #include "validaciones.h"
+#include "clientes.h"
+#include "empleados.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -43,5 +45,45 @@ int validarMesFecha(int mes)
     {
         flag=1;
     }
+    return flag;
+}
+
+int validarExistenciaCliente (char dniC[10]){
+
+    FILE* buf;
+    buf=fopen(archCliente, "rb");
+    stCliente A;
+    int flag=0;
+    if(buf){
+        while(fread(&A, sizeof(stCliente), 1, buf)>0 && flag==0){
+            if(strcmp(A.dni, dniC)==0){
+                flag=1;
+            }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo.\n");
+    }
+
+    return flag;
+}
+
+int validarExistenciaEmpleado (char dniE[10]){
+
+    FILE* buf;
+    buf=fopen(archEmpleado, "rb");
+    stEmpleado A;
+    int flag=0;
+    if(buf){
+        while(fread(&A, sizeof(stEmpleado), 1, buf)>0 && flag==0){
+            if(strcmp(A.dni, dniE)==0){
+                flag=1;
+            }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo.\n");
+    }
+
     return flag;
 }

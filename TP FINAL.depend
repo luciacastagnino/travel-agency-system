@@ -105,7 +105,7 @@
 1718145929 c:\users\acer\desktop\utn\tp-final-prog\calendario.h
 	"viajes.h"
 
-1718213735 source:c:\users\acer\desktop\utn\tp-final-prog\clientes.c
+1718221333 source:c:\users\acer\desktop\utn\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
@@ -566,7 +566,7 @@
 
 1718208220 c:\users\acer\desktop\utn\tp-final-prog\admin.h
 
-1718140661 c:\users\acer\desktop\utn\tp-final-prog\validaciones.h
+1718221333 c:\users\acer\desktop\utn\tp-final-prog\validaciones.h
 
 1718140921 source:c:\users\acer\desktop\utn\tp-final-prog\home.c
 	<stdio.h>
@@ -583,8 +583,10 @@
 
 1718140661 c:\users\acer\desktop\utn\tp-final-prog\home.h
 
-1718213057 source:c:\users\acer\desktop\utn\tp-final-prog\validaciones.c
+1718221462 source:c:\users\acer\desktop\utn\tp-final-prog\validaciones.c
 	"validaciones.h"
+	"clientes.h"
+	"empleados.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
