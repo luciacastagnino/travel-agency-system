@@ -48,13 +48,17 @@ int main()
     stCliente cliente;
     int op, opcion;
 
+    printf("\nBienvenido a CodeTravel!\n\n");
+
     do {
-        printf("\nBienvenido a CodeTravel!\n\n");
+
         printf("1. Iniciar sesion\n");
         printf("2. Registro\n");
         printf("3. Salir del sistema.\n");
         fflush(stdin);
         scanf("%d", &op);
+        system("pause");
+        system("cls");
 
         switch (op) {
             case 1:
@@ -64,28 +68,29 @@ int main()
                     printf("2. Cliente\n");
                     printf("3. Salir\n");
                     scanf("%i", &opcion);
-
+                    system("pause");
+                    system("cls");
                     switch (opcion){
                         case -1:
                             admin=iniciarSesionAdmin();
                             system("pause");
                             system("cls");
-                            printf("Bienvenido/a %s.\n\n", admin.nYa);
-                            menuAdmin();
+                            printf("Bienvenido/a %s.\n", admin.nYa);
+                            menuAdmin(admin.nYa);
                             break;
                         case 1:
                             empleado=iniciarSesionEmpleado();
                             system("pause");
                             system("cls");
-                            printf("Bienvenido/a %s.\n\n", empleado.nYa);
-                            menuEmpleados();
+                            printf("Bienvenido/a %s.\n", empleado.nYa);
+                            menuEmpleados(empleado.nYa);
                             break;
                         case 2:
                             cliente=iniciarSesionCliente();
                             system("pause");
                             system("cls");
-                            printf("Bienvenido/a %s.\n\n", cliente.nYa);
-                            menuClientes();
+                            printf("Bienvenido/a %s.\n", cliente.nYa);
+                            menuClientes(cliente.nYa);
                             break;
                         case 3:
                             system("cls");

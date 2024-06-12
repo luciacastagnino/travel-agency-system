@@ -5,6 +5,6 @@
 void llamadaCalendario();
 void MostrarCalendario(int calendario[6][7], stViaje viajes[], int numViajes, int mesSeleccionado);
 void CargarCalendario(int calendario[6][7], int calendarioOpciones);
-
+void mostrarCalendarioCompleto ();
 
 #endif // CALENDARIO_H_INCLUDED

@@ -371,6 +371,7 @@ void cargarArchivoCliente()
 
 void mostrarCliente(stCliente A)
 {
+    printf("\n");
     printf("Nombre y Apellido: %s\n", A.nYa);
     printf("Fecha de nacimiento: %i/%i/%i\n", A.fechaN.dia, A.fechaN.mes, A.fechaN.anio);
     printf("Genero: %c\n", A.genero);
@@ -849,23 +850,6 @@ stCliente cargarContraseniaCliente(stCliente A)
     return A;
 }
 
-// REGISTRO CLIENTE
-/*
-int generarIdCliente()
-{
-    FILE* buf;
-    buf = fopen(archCliente,"rb");
-    stCliente A;
-
-    if(buf)
-    {
-        fseek(buf, sizeof(stCliente)*(-1), SEEK_END);
-        fread(&A, sizeof(stCliente), 1, buf);
-        fclose(buf);
-    }
-    return A.;
-}*/
-
 void registrarCliente() {
 
     FILE *buf;
@@ -917,20 +901,20 @@ stCliente iniciarSesionCliente() {
     if(buf){
         while(flag!=1){
 
-        printf("Ingrese el DNI:\n");
+        printf("\nIngrese el DNI:\n");
         fflush(stdin);
         gets(dni);
 
-        printf("Ingrese contrasenia:\n");
+        printf("\nIngrese contrasenia:\n");
         fflush(stdin);
         gets(contrasenia);
         A=busquedaClienteInicioSesion(dni, contrasenia);
 
         if((strcmp(A.dni, dni)==0) && strcmp(A.contrasenia, contrasenia)==0){
-            printf("Inicio de sesion exitoso.\n");
+            printf("\nInicio de sesion exitoso.\n\n");
             flag=1;
         }else{
-            printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
+            printf("\nDni o contrasenia incorrectos. Vuelva a iniciar sesion.\n\n");
         }
 
     }

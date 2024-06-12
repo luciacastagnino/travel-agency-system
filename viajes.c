@@ -371,6 +371,7 @@ void cargarArchivoViaje()
 
 void mostrarViaje(stViaje A)
 {
+    printf("\n");
     printf("ID: %d\n", A.id);
     printf("Destino: %s\n", A.destino);
     printf("Fecha de partida: %d/%d/%d\n", A.fechaP.dia, A.fechaP.mes, A.fechaP.anio);
@@ -378,7 +379,7 @@ void mostrarViaje(stViaje A)
     printf("Duracion: %d dias\n", A.duracion);
     printf("Transporte: %s\n", A.transporte);
     printf("Precio: $%d\n", A.precio);
-
+    printf("\n");
 }
 
 ///Mostrar Archivo Viaje

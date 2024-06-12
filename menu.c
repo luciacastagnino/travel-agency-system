@@ -14,7 +14,7 @@
 
 /// MENU ADMIN //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void menuAdmin(){
+void menuAdmin(char nYa[]){
 
     int op=0;
 
@@ -33,7 +33,7 @@ case 2:
     menuRegistroAdmin();
     break;
 case 3:
-    menuPerfilAdmin();
+    menuPerfilAdmin(nYa);
     break;
 case 4:
     system("cls");
@@ -459,6 +459,8 @@ void menuABMCLviajes(){
     scanf("%i", &op);
     switch(op){
 case 0:
+            system("pause");
+            system("cls");
             printf("Ingrese una opcion.\n\n");
             printf("1. Orden alfabetico.\n");
             printf("2. Orden por ID.\n");
@@ -470,9 +472,13 @@ case 0:
             if(op==1){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenDestinoV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else if (op==2){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenIDV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else{
                 printf("No existe la opcion.\n");
             }
@@ -489,9 +495,13 @@ case 1:
             if(op==1){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenDestinoActivosV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else if (op==2){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenIDActivosV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else{
                 printf("No existe la opcion.\n");
             }
@@ -823,7 +833,7 @@ case 2:
 
 /// MENU MODIFICAR PERFIL ADMIN ////////////////////////////////////////////////////////////////////
 
-void menuPerfilAdmin(){
+void menuPerfilAdmin(char nYa[]){
 
     int op;
     stAdmin A;
@@ -837,12 +847,11 @@ void menuPerfilAdmin(){
     scanf("%i", &op);
     switch(op){
 case 1:
-    mostrarPerfilAdmin(A.nYa);
-    //no funciona
+    mostrarPerfilAdmin(nYa);
     break;
 case 2:
-    modificarAdmin(A.nYa);
-    //no funciona
+    modificarAdmin(nYa);
+    //no funca
     break;
 case 3:
     system("cls");
@@ -853,7 +862,7 @@ case 3:
 
 /// MENU EMPLEADOS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void menuEmpleados(){
+void menuEmpleados(char nYa[]){
 
     int op=0;
 
@@ -867,7 +876,7 @@ void menuEmpleados(){
     scanf("%i", &op);
     switch(op){
 case 1:
-    menuPerfilEmpleado();
+    menuPerfilEmpleado(nYa);
     break;
 case 2:
     menuClienteEmpleado();
@@ -887,13 +896,9 @@ case 5:
 
 /// MENU PERFIL EMPLEADO ////////////////////////////
 
-void menuPerfilEmpleado (){
+void menuPerfilEmpleado (char nYa[]){
 
     int op=0;
-    char nYa[30];
-    printf("Por favor, ingrese su nombre:\n");
-    fflush(stdin);
-    gets(nYa);
 
     do{
     printf("PERFIL\n\n");
@@ -1146,9 +1151,13 @@ case 0:
             if(op==1){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenDestinoV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else if (op==2){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenIDV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else{
                 printf("No existe la opcion.\n");
             }
@@ -1165,9 +1174,13 @@ case 1:
             if(op==1){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenDestinoActivosV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else if (op==2){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenIDActivosV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else{
                 printf("No existe la opcion.\n");
             }
@@ -1477,7 +1490,7 @@ default:
 
 /// MENU CLIENTES /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void menuClientes(){
+void menuClientes(char nYa[]){
 
     int op=0;
 
@@ -1490,7 +1503,7 @@ void menuClientes(){
     scanf("%i", &op);
     switch(op){
 case 1:
-    menuPerfilCliente();
+    menuPerfilCliente(nYa);
     break;
 case 2:
     menuViajesCliente();
@@ -1507,13 +1520,9 @@ case 4:
 
 /// MENU PERFIL CLIENTE ///////////////////////////////////
 
-void menuPerfilCliente (){
+void menuPerfilCliente (char nYa[]){
 
     int op=0;
-    char nYa[30];
-    printf("Por favor, ingrese su nombre:\n");
-    fflush(stdin);
-    gets(nYa);
 
     do{
     printf("PERFIL\n\n");
@@ -1556,7 +1565,6 @@ void menuViajesCliente (){
     printf("1. Ver la lista de viajes.\n");
     printf("2. Buscar un viaje\n");
     printf("3. Filtrar viajes\n");
-    //falta llamar calendario
     printf("4. Atras\n");
     scanf("%i", &op);
     switch(op){
@@ -1572,9 +1580,13 @@ case 1:
             if(op==1){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenDestinoActivosV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else if (op==2){
                 printf("LISTA DE VIAJES\n\n");
                 mostrarOrdenIDActivosV();
+                printf("\nCalendario:\n");
+                mostrarCalendarioCompleto();
             }else{
                 printf("No existe la opcion.\n");
             }
@@ -1648,7 +1660,7 @@ case 1:
             system("cls");
 
             encontrarVentaDNIC(dni);
-            // no funciona
+
     break;
 case 2:
     system("cls");

@@ -361,6 +361,7 @@ void cargarArchivoEmpleado()
 ///Mostrar Empleado/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void mostrarEmpleado (stEmpleado A)
 {
+    printf("\n");
     printf("Nombre y apellido: %s.\n", A.nYa);
     printf("DNI: %s.\n", A.dni);
     printf("Tel: %s.\n", A.tel);
@@ -499,6 +500,7 @@ char control = 's';
 }
 
 ///BUSCAR EMPLEADO/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void encontrarEmpleadoN(char N[30])
 {
 stEmpleado A;
@@ -553,6 +555,7 @@ if(buff){
 }
 ///FILTRAR EMPLEADOS/////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Filtrar Empleado por Puesto
+
 void filtrarEmpleadoPuesto(char P[10])
 {
 stEmpleado A;
@@ -581,6 +584,7 @@ if(buff){
 }
 
 ///Filtrar Empleado por Estado
+
 void filtrarEmpleadoEstado(int E)
 {
 stEmpleado A;
@@ -829,20 +833,20 @@ stEmpleado iniciarSesionEmpleado(){
     if(buf){
         while(flag!=1){
 
-        printf("Ingrese el DNI:\n");
+        printf("\nIngrese el DNI:\n");
         fflush(stdin);
         gets(dni);
 
-        printf("Ingrese contrasenia:\n");
+        printf("\nIngrese contrasenia:\n");
         fflush(stdin);
         gets(contrasenia);
         A=busquedaEmpleadoInicioSesion(dni, contrasenia);
 
         if((strcmp(A.dni, dni)==0) && strcmp(A.contrasenia, contrasenia)==0){
-            printf("Inicio de sesion exitoso.\n");
+            printf("\nInicio de sesion exitoso.\n\n");
             flag=1;
         }else{
-            printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
+            printf("\nDni o contrasenia incorrectos. Vuelva a iniciar sesion.\n\n");
         }
 
     }

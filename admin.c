@@ -116,11 +116,11 @@ stAdmin iniciarSesionAdmin() {
     if(buf){
         while(flag!=1){
 
-        printf("Ingrese el DNI:\n");
+        printf("\nIngrese el DNI:\n");
         fflush(stdin);
         gets(dni);
 
-        printf("Ingrese contrasenia:\n");
+        printf("\nIngrese contrasenia:\n");
         fflush(stdin);
         gets(contrasenia);
         A=busquedaAdminInicioSesion(dni, contrasenia);
@@ -129,7 +129,7 @@ stAdmin iniciarSesionAdmin() {
             printf("\nInicio de sesion exitoso.\n\n");
             flag=1;
         }else{
-            printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
+            printf("\nDni o contrasenia incorrectos. Vuelva a iniciar sesion.\n\n");
         }
 
     }
@@ -145,6 +145,7 @@ stAdmin iniciarSesionAdmin() {
 
 void mostrarAdmin(stAdmin A)
 {
+    printf("\n");
     printf("Nombre y Apellido: %s\n", A.nYa);
     printf("DNI: %s\n", A.dni);
     printf("\n");

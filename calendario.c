@@ -354,6 +354,7 @@ case 12:          ///CARGAR DICIEMBRE///
 }
 
 ///Funcion para mostrar el calendario del mes elegido///
+
 void MostrarCalendario(int calendario[6][7], stViaje viajes[], int numViajes, int mesSeleccionado) {
     printf("   L       M       M       J       V       S       D\n\n");
 
@@ -417,3 +418,20 @@ void llamadaCalendario()
              }
 }
 
+void mostrarCalendarioCompleto (){
+
+    int calendario[6][7];
+
+    int i=0;
+
+    for (i=1;i<13;i++){
+        stViaje *arrDinV;
+        int validosV = 0;
+        validosV = ArchivoToArregloViajeActivo(&arrDinV, validosV);
+
+        CargarCalendario(calendario, i);
+        MostrarCalendario(calendario, arrDinV, validosV, i);
+
+    }
+
+}
