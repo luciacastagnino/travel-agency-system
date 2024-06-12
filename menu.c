@@ -72,6 +72,7 @@ case 4:
     menuABMCLventas();
     break;
 case 5:
+    printf("Volviendo a la pantalla de login/registro...\n");
     system("cls");
     break;
 default:
@@ -453,7 +454,6 @@ void menuABMCLviajes(){
     printf("4. Modificar datos del viaje.\n");
     printf("5. Buscar un viaje\n");
     printf("6. Filtrar viajes\n");
-    //falta llamar calendario
     printf("7. Dar de baja viaje.\n");
     printf("8. Atras\n");
     scanf("%i", &op);
@@ -838,8 +838,6 @@ void menuPerfilAdmin(char nYa[]){
     int op;
     stAdmin A;
     do{
-    system("pause");
-    system("cls");
     printf("MENU PERFIL:\n\n");
     printf("1. Ver perfil.\n");
     printf("2. Modificar perfil.\n");
@@ -851,7 +849,6 @@ case 1:
     break;
 case 2:
     modificarAdmin(nYa);
-    //no funca
     break;
 case 3:
     system("cls");
@@ -918,6 +915,7 @@ void menuPerfilEmpleado (char nYa[]){
         darBajaEmpleado(nYa);
         break;
     case 4:
+        printf("Volviendo a la pantalla de login/registro...\n");
         system("cls");
         break;
     default:
@@ -1512,10 +1510,14 @@ case 3:
     menuComprasCliente();
     break;
 case 4:
+    printf("Volviendo a la pantalla de login/registro...\n");
     system("cls");
     break;
+default:
+    printf("Opcion incorrecta\n");
+    break;
     }
-    }while(op!=5);
+    }while(op!=4);
 }
 
 /// MENU PERFIL CLIENTE ///////////////////////////////////

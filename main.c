@@ -57,13 +57,14 @@ int main()
         printf("3. Salir del sistema.\n");
         fflush(stdin);
         scanf("%d", &op);
-        system("pause");
-        system("cls");
+
 
         switch (op) {
             case 1:
                 do {
-                    printf("\nIngrese su tipo de usuario:\n");
+                    system("pause");
+                    system("cls");
+                    printf("\nIngrese su tipo de usuario:\n\n");
                     printf("1. Empleado\n");
                     printf("2. Cliente\n");
                     printf("3. Salir\n");
@@ -105,7 +106,9 @@ int main()
             case 2:
                 {
                     int option;
-                    printf("Ingrese su tipo de usuario:\n");
+                    system("pause");
+                    system("cls");
+                    printf("Ingrese su tipo de usuario:\n\n");
                     printf("1. Empleado\n");
                     printf("2. Cliente\n");
                     printf("3. Salir\n");

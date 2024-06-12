@@ -438,64 +438,53 @@ void modificarCliente (char nYa[30]){
 stCliente modificarDatosCliente(stCliente aux)
 {
 
-char control = 's';
-
-        printf("1. Desea modificar el Nombre y apellido?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarNyAC(aux);
-        }
-
-         printf("2. Desea modificar la Fecha de nacimiento?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarFechaNacC(aux);
-        }
-
-        printf("3. Desea modificar el Genero?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarGeneroC(aux);
-        }
-
-        printf("4. Desea modificar el DNI?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarDniC(aux);
-        }
-
-        printf("5. Desea modificar el Telefono?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarTelC(aux);
-        }
-
-        printf("6. Desea mdificar el Domicilio?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarDomicilioC(aux);
-        }
+         int op=0;
+        do{
+        printf("\nQue desea modificar?\n\n");
+        printf("1. Nombre y apellido.\n");
+        printf("2. DNI.\n");
+        printf("3. Fecha de nacimiento.\n");
+        printf("4. Genero.\n");
+        printf("5. Telefono.\n");
+        printf("6. Domicilio.\n");
+        printf("7. Contrasenia.\n");
+        printf("8. Salir.\n");
+        scanf("%i", &op);
+        switch(op){
+    case 1:
+        aux = modificarNyAC(aux);
+        break;
+    case 2:
+        aux=modificarDniC(aux);
+        break;
+    case 3:
+        aux=modificarFechaNacC(aux);
+        break;
+    case 4:
+        aux=modificarGeneroC(aux);
+        break;
+    case 5:
+        aux=modificarTelC(aux);
+        break;
+    case 6:
+        aux=modificarDomicilioC(aux);
+        break;
+    case 7:
+        aux=modificarContraseniaC(aux);
+        break;
+    case 8:
+        system("cls");
+        break;
+    default:
+        printf("No existe la opcion.\n");
+        break;
+        }}while(op!=8);
 
         printf("Asi quedo modificado el cliente: \n");
         mostrarCliente(aux);
+        system("pause");
+        system("cls");
+
         return aux;
 }
 
@@ -571,6 +560,30 @@ stCliente modificarDomicilioC(stCliente A)
     return A;
 }
 
+stCliente modificarContraseniaC (stCliente A){
+
+    char contraseniaActual[30];
+    int flag=0;
+
+    while(flag!=1){
+        printf("Ingrese su contrasenia actual:\n");
+        fflush(stdin);
+        gets(contraseniaActual);
+
+        if(strcmpi(A.contrasenia, contraseniaActual)==0){
+            printf("Contrasenia actual correcta, por favor a continuacion ingrese la nueva contrasenia.\n");
+            system("pause");
+            system("cls");
+            A=cargarContraseniaCliente(A);
+            printf("Contrasenia actualizada con exito!\n");
+            flag=1;
+        }else{
+            printf("Contrasenia incorrecta, vuelva a ingresar su contrasenia actual.\n");
+        }
+    }
+
+    return A;
+}
 
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
 

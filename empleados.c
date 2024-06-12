@@ -448,6 +448,31 @@ stEmpleado modificarPuestoE(stEmpleado A)
     return A;
 }
 
+stEmpleado modificarContraseniaE (stEmpleado A){
+
+    char contraseniaActual[30];
+    int flag=0;
+
+    while(flag!=1){
+        printf("Ingrese su contrasenia actual:\n");
+        fflush(stdin);
+        gets(contraseniaActual);
+
+        if(strcmpi(A.contrasenia, contraseniaActual)==0){
+            printf("Contrasenia actual correcta, por favor a continuacion ingrese la nueva contrasenia.\n");
+            system("pause");
+            system("cls");
+            A=cargarContraseniaEmpleado(A);
+            printf("Contrasenia actualizada con exito!\n");
+            flag=1;
+        }else{
+            printf("Contrasenia incorrecta, vuelva a ingresar su contrasenia actual.\n");
+        }
+    }
+
+    return A;
+}
+
 void modificarEmpleado (char nYa[30]){
 
     stEmpleado aux;
@@ -484,10 +509,11 @@ stEmpleado modificarDatosEmpleado(stEmpleado aux){
         printf("1. Nombre y apellido.\n");
         printf("2. DNI.\n");
         printf("3. Fecha de nacimiento.\n");
-        printf("4.Telefono.\n");
-        printf("5.Puesto.\n");
-        printf("6.Sueldo.\n");
-        printf("7.Salir.\n");
+        printf("4. Telefono.\n");
+        printf("5. Puesto.\n");
+        printf("6. Sueldo.\n");
+        printf("7. Contrasenia.\n");
+        printf("8. Salir.\n");
         scanf("%i", &op);
         switch(op){
     case 1:
@@ -509,17 +535,20 @@ stEmpleado modificarDatosEmpleado(stEmpleado aux){
         aux=modificarSueldoE(aux);
         break;
     case 7:
+        aux=modificarContraseniaE(aux);
+    case 8:
         system("cls");
         break;
     default:
         printf("No existe la opcion.\n");
         break;
-        }}while(op!=7);
+        }}while(op!=8);
 
-        printf("Asi quedo modificado el Empleado: \n");
+        printf("Asi quedo modificado el empleado: \n");
         mostrarEmpleado(aux);
         system("pause");
         system("cls");
+
         return aux;
 }
 
@@ -580,14 +609,14 @@ if(buff){
 ///FILTRAR EMPLEADOS/////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Filtrar Empleado por Puesto
 
-void filtrarEmpleadoPuesto(char P[10])
-{
-stEmpleado A;
-int encontrado=0;
-FILE *buff;
-buff = fopen(archEmpleado, "rb");
+void filtrarEmpleadoPuesto(char P[10]){
 
-if(buff){
+    stEmpleado A;
+    int encontrado=0;
+    FILE *buff;
+    buff = fopen(archEmpleado, "rb");
+
+    if(buff){
        while(fread(&A, sizeof(stEmpleado), 1, buff))
         {
             if(strcmpi(A.puesto, P) == 0)
@@ -659,6 +688,7 @@ void mostrarArchivoEmpleado()
 }
 
 /// Dar de baja un empleado////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void darBajaEmpleado(char nYa[])
 {
     stEmpleado aux;
@@ -755,17 +785,19 @@ void ArchivoToPilaEmpleados(Pila* aux)
 
 float sumarSueldos(Pila aux)
 {
-float i = 0;
-int valor;
+    float i = 0;
+    int valor;
 
-while(!pilavacia(&aux)){
-    valor= desapilar(&aux);
-    i = i + (float)valor;
-}
-return i;
+    while(!pilavacia(&aux)){
+        valor= desapilar(&aux);
+        i = i + (float)valor;
+    }
+
+    return i;
 }
 
 ///Cuenta empleado////////////////////////////////////////
+
 stEmpleado cargarContraseniaEmpleado(stEmpleado A){
     char contrasenia[30];
     char contrasenia2[30];

@@ -30,7 +30,11 @@ void mostrarPerfilAdmin (char nYa[]);
 
 // modificacion
 
+stAdmin modificarnYaA(stAdmin A);
+stAdmin modificarDniA(stAdmin A);
+stAdmin modificarContraseniaA (stAdmin A);
 void modificarAdmin (char nYa[]);
+stAdmin modificarDatosAdmin(stAdmin aux);
 
 
 #endif // ADMIN_H_INCLUDED

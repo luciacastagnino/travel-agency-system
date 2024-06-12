@@ -44,6 +44,7 @@ stCliente modificarGeneroC(stCliente A);
 stCliente modificarDniC(stCliente A);
 stCliente modificarTelC(stCliente A);
 stCliente modificarDomicilioC(stCliente A);
+stCliente modificarContraseniaC (stCliente A);
 
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void darBajaCliente (char nYa[30]);
