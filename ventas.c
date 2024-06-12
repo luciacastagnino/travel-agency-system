@@ -676,7 +676,7 @@ stTickets darBajaT(stTickets aux)
 
     char control = 's';
 
-        printf("1. Desea dar de baja esta venta?.\n");
+        printf("Desea dar de baja esta venta?.\n");
         fflush(stdin);
         scanf("%c", &control);
 
@@ -685,8 +685,7 @@ stTickets darBajaT(stTickets aux)
             aux.estado = 0;
         }
 
-        printf("Asi quedo modificado el Ticket: \n");
-        MostrarTicket(aux);
+        printf("El ticket esta siendo dado de baja...\n");
 
         return aux;
 }

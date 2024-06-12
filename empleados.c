@@ -734,8 +734,7 @@ stEmpleado darBajaE(stEmpleado aux)
             aux.estado = 0;
         }
 
-        printf("Asi quedo modificado el empleado: \n");
-        mostrarEmpleado(aux);
+        printf("El empleado esta siendo dado de baja...\n");
 
         return aux;
 }

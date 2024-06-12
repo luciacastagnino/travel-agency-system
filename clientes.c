@@ -627,8 +627,7 @@ stCliente darBajaC(stCliente aux)
             aux.estado = 0;
         }
 
-        printf("Asi quedo modificado el cliente: \n");
-        mostrarCliente(aux);
+        printf("El cliente esta siendo dado de baja...\n");
 
         return aux;
 }
