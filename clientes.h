@@ -75,7 +75,6 @@ void filtrarClienteGenero(char G);
 void filtrarClienteEstado(int E);
 
 ///CUENTA CLIENTE///////////////////////////////////////////////////////////////////////
-int generarIdCliente();
 void registrarCliente();
 stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[]);
 stCliente iniciarSesionCliente();

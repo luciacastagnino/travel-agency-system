@@ -7,6 +7,7 @@
 #include "empleados.h"
 #include "ordenamientos.h"
 #include "pila.h"
+#include <time.h>
 
 ///VENTAS EN ORDEN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -280,46 +281,129 @@ void MostrarArregloTicket(stTickets A[], int validosT){
 
 int i;
 
-printf("El contenido del arreglo:\n");
-
 for(i=0; i<validosT; i++){
     MostrarTicket(A[i]);
     }
 }
+
+int generarIdRandom (){
+
+    FILE* buf;
+    buf=fopen(archVentas, "rb");
+    stTickets A;
+    int idRandom, flag=0;
+    srand(time(NULL));
+
+
+    if(buf){
+        do{
+        int min=10000, max=99999;
+        idRandom = rand()%(max-min+1)+min;
+         while(fread(&A, sizeof(stTickets), 1, buf)>0 && flag==0){
+            if(A.id!=idRandom){
+                flag=1;
+            }
+        }}while(flag!=1);
+        fclose(buf);
+    }
+
+    return idRandom;
+}
+
+int validarExistenciaCliente (char dniC[]){
+
+    FILE* buf;
+    buf=fopen(archCliente, "rb");
+    stCliente A;
+    int flag=0;
+    printf("HOLA.\n");
+    if(buf){
+        while(fread(&A, sizeof(stCliente), 1, buf)>0 && flag==0){
+            printf("hola.\n");
+            if(strcmp(A.dni, dniC)==0){
+                flag=1;
+            }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo.\n");
+    }
+
+    return flag;
+} //NO FUNCIONA
+
+int validarExistenciaEmpleado (char dni[]){
+
+    FILE* buf;
+    buf=fopen(archEmpleado, "rb");
+    stEmpleado A;
+    int flag=0;
+
+    if(buf){
+        while(fread(&A, sizeof(stEmpleado), 1, buf)>0 && flag==0){
+            if(strcmp(A.dni, dni)==0){
+                flag=1;
+            }
+        }
+        fclose(buf);
+    }
+
+    return flag;
+} //NO FUNCIONA
 
 /// Cargar un Ticket
 
 stTickets CargarTicket()
 {
     stTickets A;
+    int flagC=0, flagE=0;
+
+    system("cls");
+
+    printf("CARGANDO LA VENTA....\n\n");
 
     printf("Ingrese el cargo por servicio : ");
     scanf("%i", &A.monto);
 
     printf("Ingrese la fecha de la venta:\n");
-    printf("Dia:");
-    scanf("%d", &A.dia.dia);
-    printf("Mes:");
-    scanf("%d", &A.dia.mes);
+    while(flag!=1){
+        printf("Dia:");
+        scanf("%d", &A.dia.dia);
+        flag=validarDiaFecha(A.dia.dia);
+        if(flag!=1){
+            printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
+        }
+    }
+
+    while(flag1!=1){
+        printf("Mes:");
+        scanf("%d", &A.dia.mes);
+        flag1=validarMesFecha(A.dia.mes);
+        if(flag1!=1){
+            printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
+        }
+    }
+
     printf("Anio:");
-    scanf("%d", &A.dia.anio);
+    scanf("%i", &A.dia.anio);
 
-    printf("Ingrese el DNI del cliente: ");
-    fflush(stdin);
-    gets(A.idCliente);
+    while(flagC==0){
+        printf("Ingrese el DNI del cliente: ");
+        fflush(stdin);
+        gets(A.idCliente);
+        flagC=validarExistenciaCliente(A.id);
+        printf("%i", flagC);
+        if(flagC==0){
+            printf("DNI invalido, vuelva a cargarlo.\n");
+        }
+    }
 
-    printf("Ingrese el DNI del empleado: ");
-    fflush(stdin);
-    gets(A.idEmpleado);
-
-    printf("Ingrese el metodo de pago: ");
-    fflush(stdin);
-    gets(A.metodo);
-
-    A.estado=1;
-
-    printf("Ingrese la id del ticket: ");
-    scanf("%i", &A.id);
+    while(flagE==0){
+        printf("Ingrese el DNI del empleado: ");
+        fflush(stdin);
+        gets(A.idEmpleado);
+        flagE=validarExistenciaEmpleado(A.idEmpleado);
+    }
 
     printf("Ingrese el viaje por ID\n\n");
     int id;
@@ -327,6 +411,15 @@ stTickets CargarTicket()
     printf("ID: ");
     scanf("%d", &id);
     A.viaje=buscarViajePorID(id);
+
+    printf("Ingrese el metodo de pago: ");
+    fflush(stdin);
+    gets(A.metodo);
+
+    A.estado=1;
+
+    int idR=generarIdRandom();
+    A.id=idR;
 
     return A;
 }
@@ -346,6 +439,13 @@ void cargarArchivoVentas()
             A = CargarTicket();
 
             fwrite(&A, sizeof(stTickets), 1, buf);
+            system("pause");
+            system("cls");
+            printf("Ticket cargado exitosamente.\n");
+            MostrarTicket(A);
+
+            system("pause");
+            system("cls");
 
             printf("¿Quiere seguir cargando Tickets?\n");
             fflush(stdin);
@@ -374,7 +474,7 @@ void MostrarTicket(stTickets A)
     printf("EMAIL: codetravel@gmail.com\n");
     printf("\n");
 
-    printf("                           Ticket: # %i\n", A.id);
+    printf("                         Ticket: # %i\n", A.id);
     printf("****************************************\n");
     printf("\n");
     printf("DNI DEL EMPLEADO: %s.\n", A.idEmpleado);
@@ -455,73 +555,52 @@ void modificarVenta(int id)
 stTickets modificarDatosTicket(stTickets aux)
 {
 
-char control = 's';
+    int op=0;
+        do{
+        printf("\nQue desea modificar?\n\n");
+        printf("1. Valor agregado.\n");
+        printf("2. Fecha.\n");
+        printf("3. DNI del cliente.\n");
+        printf("4. DNI del empleado.\n");
+        printf("5. Viaje.\n");
+        printf("6. Metodo de pago.\n");
+        printf("7. ID.\n");
+        printf("8. Salir.\n");
+        scanf("%i", &op);
+        switch(op){
+    case 1:
+        aux = ModificarMontoTicket(aux);
+        break;
+    case 2:
+        aux=ModificarFechaTicket(aux);
+        break;
+    case 3:
+        aux=ModificarIdDelClienteEnTicket(aux);
+        break;
+    case 4:
+        aux=ModificarIdDelEmpleadoEnTicket(aux);
+        break;
+    case 5:
+        aux=modificarViajeT(aux);
+        break;
+    case 6:
+        aux=ModificarMetodoDePago(aux);
+        break;
+    case 7:
+        aux=ModificarIdTicket(aux);
+    case 8:
+        system("cls");
+        break;
+    default:
+        printf("No existe la opcion.\n");
+        break;
+        }}while(op!=8);
 
-        printf("1. Desea modificar el monto?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = ModificarMontoTicket(aux);
-        }
-
-        printf("2. Desea modificar fecha?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = ModificarFechaTicket(aux);
-        }
-
-        printf("3. Desea modificar el metodo de pago?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = ModificarMetodoDePago(aux);
-        }
-
-        printf("4. Desea modificar el DNI del cliente?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = ModificarIdDelClienteEnTicket(aux);
-        }
-
-        printf("5. Desea modificar DNI del empleado?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = ModificarIdDelEmpleadoEnTicket(aux);
-        }
-
-        printf("6. Desea mdificar id del ticket?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = ModificarIdTicket(aux);
-        }
-
-        printf("7. Desea modificar el viaje?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarViajeT(aux);
-        }
-
-        printf("Asi quedo modificado el ticket \n");
+        printf("Asi quedo modificado el ticket: \n");
         MostrarTicket(aux);
+        system("pause");
+        system("cls");
+
         return aux;
 }
 
@@ -567,8 +646,9 @@ stTickets ModificarIdDelClienteEnTicket(stTickets A)
 
 stTickets ModificarIdTicket(stTickets A)
 {
-    printf("Ingrese la nueva id del ticket: ");
-    scanf("%i",&A.id);
+    int idRandom;
+    idRandom=generarIdRandom();
+    A.id=idRandom;
 
     return A;
 }
@@ -596,6 +676,7 @@ stTickets modificarViajeT(stTickets A)
 }
 
 ///Dar Baja Venta//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void darBajaVenta(int idTicket)
 {
     stTickets aux;
@@ -683,7 +764,7 @@ FILE *buf;
 buf = fopen(archVentas, "rb");
 
 if(buf){
-       while(fread(&A, sizeof(stTickets), 1, buf) && flag == 0)
+       while(fread(&A, sizeof(stTickets), 1, buf)>0)
         {
             if(strcmpi(A.idCliente, dniC) == 0)
                 {

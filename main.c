@@ -106,8 +106,6 @@ int main()
             case 2:
                 {
                     int option;
-                    system("pause");
-                    system("cls");
                     printf("Ingrese su tipo de usuario:\n\n");
                     printf("1. Empleado\n");
                     printf("2. Cliente\n");

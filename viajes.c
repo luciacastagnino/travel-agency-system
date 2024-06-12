@@ -308,20 +308,49 @@ stViaje cargarViaje()
     gets(A.destino);
 
     printf("Ingrese la fecha de partida:\n");
-    printf("Dia:");
-    scanf("%d", &A.fechaP.dia);
-    printf("Mes:");
-    scanf("%d", &A.fechaP.mes);
+    while(flag!=1){
+        printf("Dia:");
+        scanf("%d", &A.fechaP.dia);
+        flag=validarDiaFecha(A.fechaP.dia);
+        if(flag!=1){
+            printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
+        }
+    }
+
+    while(flag1!=1){
+        printf("Mes:");
+        scanf("%d", &A.fechaP.mes);
+        flag1=validarMesFecha(A.fechaP.mes);
+        if(flag1!=1){
+            printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
+        }
+    }
+
     printf("Anio:");
     scanf("%i", &A.fechaP.anio);
 
+
     printf("Ingrese la fecha de regreso:\n");
-    printf("Dia:");
-    scanf("%d", &A.fechaR.dia);
-    printf("Mes:");
-    scanf("%d", &A.fechaR.mes);
+        while(flag!=1){
+        printf("Dia:");
+        scanf("%d", &A.fechaR.dia);
+        flag=validarDiaFecha(A.fechaR.dia);
+        if(flag!=1){
+            printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
+        }
+    }
+
+    while(flag1!=1){
+        printf("Mes:");
+        scanf("%d", &A.fechaR.mes);
+        flag1=validarMesFecha(A.fechaR.mes);
+        if(flag1!=1){
+            printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
+        }
+    }
+
     printf("Anio:");
-    scanf("%d", &A.fechaR.anio);
+    scanf("%i", &A.fechaR.anio);
 
     printf("Ingrese la duracion del viaje (dias):\n");
     scanf("%d", &A.duracion);
@@ -441,79 +470,61 @@ void modificarViaje (int id){
 stViaje modificarDatosViaje(stViaje aux)
 {
 
-char control = 's';
+        int op=0;
+        do{
+        printf("\nQue desea modificar?\n\n");
+        printf("1. ID.\n");
+        printf("2. Destino.\n");
+        printf("3. Fecha de partida.\n");
+        printf("4. Fecha de regreso.\n");
+        printf("5. Duracion.\n");
+        printf("6. Transporte.\n");
+        printf("7. Precio.\n");
+        printf("8. Salir.\n");
+        scanf("%i", &op);
+        switch(op){
+    case 1:
+        do {
 
-       do {
-        printf("1. Desea modificar el ID? (s/n)\n");
-        fflush(stdin);
-        scanf(" %c", &control);
-
-        if(control == 's') {
             do {
                 aux = modificarIdV(aux);
                 if (verificarIDViaje(aux.id)) {
                     printf("El ID del viaje ya existe. Ingrese un ID diferente:\n");
                 }
             } while (verificarIDViaje(aux.id));
-        }
-    } while (control == 's' && verificarIDViaje(aux.id));
 
-
-        printf("2. Desea modificar el destino?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarDestinoV(aux);
-        }
-
-        printf("3. Desea modificar la fecha de partida?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s'){
-            aux = modificarFechaPartidaV(aux);
-        }
-
-        printf("4. Desea modificar la fecha de regreso?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s'){
-
-            aux=modificarFechaRegresoV(aux);
-        }
-
-        printf("5. Desea modificar la duracion?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarDuracionV(aux);
-        }
-
-        printf("6. Desea modificar el transporte?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarTransporteV(aux);
-        }
-
-        printf("7. Desea modificar el precio?.\n");
-        fflush(stdin);
-        scanf("%c", &control);
-
-        if(control=='s')
-        {
-            aux = modificarPrecioV(aux);
-        }
+        }while (verificarIDViaje(aux.id));
+        break;
+    case 2:
+        aux = modificarDestinoV(aux);
+        break;
+    case 3:
+        modificarFechaPartidaV(aux);
+        break;
+    case 4:
+        aux=modificarFechaRegresoV(aux);
+        break;
+    case 5:
+        aux = modificarDuracionV(aux);
+        break;
+    case 6:
+        aux = modificarTransporteV(aux);
+        break;
+    case 7:
+        aux = modificarPrecioV(aux);
+    case 8:
+        system("cls");
+        break;
+    default:
+        printf("No existe la opcion.\n");
+        break;
+        }}while(op!=8);
 
         printf("Asi quedo modificado el viaje: \n");
         mostrarViaje(aux);
+        system("pause");
+        system("cls");
+
         return aux;
 }
 

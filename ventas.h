@@ -24,7 +24,7 @@ stViaje viaje;
 }stTickets;
 
 ///PROTOTIPOS VENTAS//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+int generarIdRandom ();
 stTickets CargarTicket();
 void MostrarTicket(stTickets A);
 void cargarArchivoVentas();

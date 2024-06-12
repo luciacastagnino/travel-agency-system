@@ -36,6 +36,8 @@ case 3:
     menuPerfilAdmin(nYa);
     break;
 case 4:
+    printf("Cerrando sesion...\n");
+    system("pause");
     system("cls");
     break;
     }
@@ -885,6 +887,8 @@ case 4:
     menuVentasEmpleado();
     break;
 case 5:
+    printf("Cerrando sesion...\n");
+    system("pause");
     system("cls");
     break;
     }
@@ -1132,7 +1136,6 @@ void menuViajesEmpleado (){
     printf("4. Modificar datos del viaje.\n");
     printf("5. Buscar un viaje\n");
     printf("6. Filtrar viajes\n");
-    //falta llamar calendario
     printf("7. Dar de baja viaje.\n");
     printf("8. Atras\n");
     scanf("%i", &op);
@@ -1510,7 +1513,8 @@ case 3:
     menuComprasCliente();
     break;
 case 4:
-    printf("Volviendo a la pantalla de login/registro...\n");
+    printf("Cerrando sesion...\n");
+    system("pause");
     system("cls");
     break;
 default:

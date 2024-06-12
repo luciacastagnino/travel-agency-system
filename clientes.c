@@ -272,8 +272,6 @@ void MostrarArregloCliente(stCliente A[], int validos){
 
 int i;
 
-printf("El contenido del arreglo:\n");
-
 for(i=0; i<validos; i++){
     mostrarCliente(A[i]);
     }
