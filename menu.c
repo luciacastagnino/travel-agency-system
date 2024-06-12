@@ -20,20 +20,20 @@ void menuAdmin(char nYa[]){
 
     do{
     printf("MENU PRINCIPAL:\n\n");
-    printf("1. ABMCL\n");
-    printf("2. Registro\n");
-    printf("3. Perfil\n");
+    printf("1. Perfil\n");
+    printf("2. ABMCL\n");
+    printf("3. Registro\n");
     printf("4. Atras\n");
     scanf("%i", &op);
     switch(op){
 case 1:
-    menuABMCL();
+    menuPerfilAdmin(nYa);
     break;
 case 2:
-    menuRegistroAdmin();
+    menuABMCL();
     break;
 case 3:
-    menuPerfilAdmin(nYa);
+    menuRegistroAdmin();
     break;
 case 4:
     printf("Cerrando sesion...\n");
