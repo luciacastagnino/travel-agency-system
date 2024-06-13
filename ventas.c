@@ -301,6 +301,7 @@ int generarIdRandom (){
         do{
         int min=10000, max=99999;
         idRandom = rand()%(max-min+1)+min;
+        rewind(buf);
          while(fread(&A, sizeof(stTickets), 1, buf)>0 && flag==0){
             if(A.id!=idRandom){
                 flag=1;

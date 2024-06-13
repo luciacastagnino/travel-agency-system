@@ -95,17 +95,17 @@
 	"viajes.h"
 	"ordenamientos.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\calendario.c
+1718318898 source:c:\users\acer\desktop\utn\tp-final-prog\calendario.c
 	"calendario.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"viajes.h"
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\calendario.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\calendario.h
 	"viajes.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\clientes.c
+1718319574 source:c:\users\acer\desktop\utn\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
@@ -113,31 +113,31 @@
 	"ordenamientos.h"
 	"validaciones.h"
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\pila.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\pila.h
 	<stdio.h>
 	<malloc.h>
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\clientes.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\clientes.h
 	"viajes.h"
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\viajes.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\viajes.h
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.h
 	"empleados.h"
 	"clientes.h"
 	"viajes.h"
 	"ventas.h"
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\empleados.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\empleados.h
 	"pila.h"
 	"viajes.h"
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\ventas.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\ventas.h
 	"viajes.h"
 	"clientes.h"
 	"empleados.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\empleados.c
+1718319668 source:c:\users\acer\desktop\utn\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -145,7 +145,7 @@
 	"ordenamientos.h"
 	"validaciones.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\main.c
+1718318898 source:c:\users\acer\desktop\utn\tp-final-prog\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -159,9 +159,9 @@
 	"admin.h"
 	"validaciones.h"
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\menu.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\menu.h
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
+1718320252 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -175,7 +175,7 @@
 	"admin.h"
 	"menu.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.c
+1718318898 source:c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -185,10 +185,10 @@
 	"viajes.h"
 	"ventas.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\pila.c
+1718318898 source:c:\users\acer\desktop\utn\tp-final-prog\pila.c
 	"pila.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
+1718320088 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
 	"ventas.h"
 	<stdio.h>
 	<stdlib.h>
@@ -201,7 +201,7 @@
 	<time.h>
 	"validaciones.h"
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
+1718319668 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -572,7 +572,7 @@
 
 1718312203 d:\bren\utn\tp-final-prog\validaciones.h
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\admin.c
+1718319668 source:c:\users\acer\desktop\utn\tp-final-prog\admin.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -582,9 +582,9 @@
 	"admin.h"
 	"validaciones.h"
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\admin.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\admin.h
 
-1718311448 c:\users\acer\desktop\utn\tp-final-prog\validaciones.h
+1718318898 c:\users\acer\desktop\utn\tp-final-prog\validaciones.h
 
 1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\home.c
 	<stdio.h>
@@ -601,7 +601,7 @@
 
 1718311448 c:\users\acer\desktop\utn\tp-final-prog\home.h
 
-1718311448 source:c:\users\acer\desktop\utn\tp-final-prog\validaciones.c
+1718318898 source:c:\users\acer\desktop\utn\tp-final-prog\validaciones.c
 	"validaciones.h"
 	"clientes.h"
 	"empleados.h"

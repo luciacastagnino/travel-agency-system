@@ -710,7 +710,7 @@ case 3:
     break;
 case 4:
             printf("LISTA DE VENTAS \n\n");
-            mostrarOrdenIDActivosV();
+            mostrarOrdenIDActivosT();
 
             printf("Ingrese la ID de la venta a modificar:\n");
             fflush(stdin);

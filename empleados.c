@@ -559,6 +559,7 @@ stEmpleado modificarDatosEmpleado(stEmpleado aux){
 
         int op=0;
         do{
+        mostrarEmpleado(aux);
         printf("\nQue desea modificar?\n\n");
         printf("1. Nombre y apellido.\n");
         printf("2. DNI.\n");

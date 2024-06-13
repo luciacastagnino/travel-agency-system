@@ -295,6 +295,7 @@ stAdmin modificarDatosAdmin(stAdmin aux){
 
         int op=0;
         do{
+        mostrarAdmin(aux);
         printf("\nQue desea modificar?\n\n");
         printf("1. Nombre y apellido.\n");
         printf("2. DNI.\n");
