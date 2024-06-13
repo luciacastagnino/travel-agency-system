@@ -19,7 +19,7 @@ int lenghtContrasenia(char contrasenia[]){
 int lenghtDNI(char dni[]){
 
     int flag=0;
-    if(strlen(dni)>7){
+    if(strlen(dni)<10){
         flag=1;
     }
     return flag;

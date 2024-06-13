@@ -275,7 +275,7 @@ void mostrarArregloEmpleadosRecursiva(stEmpleado A[], int validos, int i){
 stEmpleado cargarEmpleado(){
 
     stEmpleado A;
-    char telefono[10], dni[10];
+    char telefono[11], dni[10];
     int flag=0, flag1=0, flagTel=0, flagDni=0;
 
     system("cls");
@@ -361,33 +361,33 @@ stEmpleado cargarEmpleado(){
 
 
 
-void cargarArchivoEmpleado()
-{
-    stEmpleado A;
-    char control = 's';
-
-    FILE* buff;
-    buff = fopen(archEmpleado, "ab");
-
-    if(buff)
-    {
-        while(control == 's')
-        {
-            A = cargarEmpleado();
-
-            fwrite(&A, sizeof(stEmpleado), 1, buff);
-
-            printf("¿Quiere seguir cargando empleados?\n");
-            fflush(stdin);
-            scanf("%c", &control);
-        }
-        fclose(buff);
-    }
-    else
-    {
-        printf("El archivo no pudo abrirse\n");
-    }
-}
+//void cargarArchivoEmpleado()
+//{
+//    stEmpleado A;
+//    char control = 's';
+//
+//    FILE* buff;
+//    buff = fopen(archEmpleado, "ab");
+//
+//    if(buff)
+//    {
+//        while(control == 's')
+//        {
+//            A = cargarEmpleado();
+//
+//            fwrite(&A, sizeof(stEmpleado), 1, buff);
+//
+//            printf("¿Quiere seguir cargando empleados?\n");
+//            fflush(stdin);
+//            scanf("%c", &control);
+//        }
+//        fclose(buff);
+//    }
+//    else
+//    {
+//        printf("El archivo no pudo abrirse\n");
+//    }
+//}
 
 ///Mostrar Empleado/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
