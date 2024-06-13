@@ -429,7 +429,7 @@
 
 1718298773 d:\bren\utn\tp-final-prog\viajes.h
 
-1718297073 source:d:\bren\utn\tp-final-prog\clientes.c
+1718302642 source:d:\bren\utn\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
@@ -441,7 +441,7 @@
 	<stdio.h>
 	<malloc.h>
 
-1718302097 d:\bren\utn\tp-final-prog\clientes.h
+1718302644 d:\bren\utn\tp-final-prog\clientes.h
 	"viajes.h"
 
 1718050683 d:\bren\utn\tp-final-prog\ordenamientos.h
@@ -475,7 +475,7 @@
 
 1718299617 d:\bren\utn\tp-final-prog\menu.h
 
-1718299554 source:d:\bren\utn\tp-final-prog\menu.c
+1718302762 source:d:\bren\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -489,7 +489,7 @@
 	"admin.h"
 	"menu.h"
 
-1718050683 source:d:\bren\utn\tp-final-prog\ordenamientos.c
+1718302329 source:d:\bren\utn\tp-final-prog\ordenamientos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

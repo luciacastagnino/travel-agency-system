@@ -351,7 +351,7 @@ case 4:
             system("pause");
             system("cls");
 
-            modificarCliente(nYa);
+            modificarClienteEaux(nYa);
     break;
 case 5:
             printf("Si desea buscar al cliente por nombre y apellido Ingrese 1.\n\n");
