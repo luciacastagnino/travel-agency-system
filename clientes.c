@@ -284,6 +284,9 @@ stCliente cargarCliente()
     char dni[10], telefono[10];
     int flag=0, flag1=0, flagDni=0, flagTel=0;
 
+    system("cls");
+    printf("CARGANDO CLIENTE...\n");
+
     printf("Ingrese el nombre y apellido del cliente\n");
     fflush(stdin);
     gets(A.nYa);

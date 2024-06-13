@@ -327,6 +327,8 @@ stTickets CargarTicket()
     printf("Ingrese el cargo por servicio : ");
     scanf("%i", &A.monto);
 
+    printf("\n");
+
     printf("Ingrese la fecha de la venta:\n");
     while(flag!=1){
         printf("Dia:");
@@ -349,6 +351,8 @@ stTickets CargarTicket()
     printf("Anio:");
     scanf("%i", &A.dia.anio);
 
+    printf("\n");
+
     while(flagC==0){
         printf("Ingrese el DNI del cliente: ");
         fflush(stdin);
@@ -360,6 +364,8 @@ stTickets CargarTicket()
         strcpy(A.idCliente, dni);
         }
     }
+
+    printf("\n");
 
     while(flagE==0){
         printf("Ingrese el DNI del empleado: ");
@@ -373,12 +379,16 @@ stTickets CargarTicket()
         }
     }
 
+    printf("\n");
+
     printf("Ingrese el viaje por ID\n\n");
     int id;
     mostrarArchivoViaje();
     printf("ID: ");
     scanf("%d", &id);
     A.viaje=buscarViajePorID(id);
+
+    printf("\n");
 
     printf("Ingrese el metodo de pago: ");
     fflush(stdin);

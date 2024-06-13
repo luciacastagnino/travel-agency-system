@@ -278,6 +278,9 @@ stEmpleado cargarEmpleado(){
     char telefono[10], dni[10];
     int flag=0, flag1=0, flagTel=0, flagDni=0;
 
+    system("cls");
+    printf("CARGANDO EMPLEADO...\n");
+
     printf("Ingrese el nombre y apellido del empleado\n");
     fflush(stdin);
     gets(A.nYa);

@@ -295,6 +295,9 @@ stViaje cargarViaje()
     stViaje A;
     int flag=0, flag1=0, flagr=0, flagr1=0;
 
+    system ("cls");
+    printf("CARGANDO VIAJE...\n\n");
+
     do {
         printf("Ingrese el ID del viaje\n");
         fflush(stdin);
@@ -305,9 +308,13 @@ stViaje cargarViaje()
         }
     }while (verificarIDViaje(A.id));
 
+    printf("\n");
+
     printf("Ingrese el destino\n");
     fflush(stdin);
     gets(A.destino);
+
+    printf("\n");
 
     printf("Ingrese la fecha de partida:\n");
     while(flag!=1){
@@ -331,6 +338,7 @@ stViaje cargarViaje()
     printf("Anio:");
     scanf("%i", &A.fechaP.anio);
 
+    printf("\n");
 
     printf("Ingrese la fecha de regreso:\n");
         while(flagr!=1){
@@ -354,12 +362,18 @@ stViaje cargarViaje()
     printf("Anio:");
     scanf("%i", &A.fechaR.anio);
 
+    printf("\n");
+
     printf("Ingrese la duracion del viaje (dias):\n");
     scanf("%d", &A.duracion);
+
+    printf("\n");
 
     printf("Ingrese el transporte\n");
     fflush(stdin);
     gets(A.transporte);
+
+    printf("\n");
 
     printf("Ingrese el precio del viaje:\n");
     fflush(stdin);
@@ -501,7 +515,7 @@ stViaje modificarDatosViaje(stViaje aux)
         aux = modificarDestinoV(aux);
         break;
     case 3:
-        modificarFechaPartidaV(aux);
+        aux=modificarFechaPartidaV(aux);
         break;
     case 4:
         aux=modificarFechaRegresoV(aux);
