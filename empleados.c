@@ -463,7 +463,7 @@ stEmpleado modificarFechaNE(stEmpleado A){
 stEmpleado modificarTelE(stEmpleado A)
 {
     int flagTel=0;
-    char telefono[10];
+    char telefono[11];
 
     while(flagTel==0){
         printf("Ingrese su numero de telefono celular:\n");
