@@ -915,17 +915,22 @@ stTickets A;
 
 FILE *buf;
 buf = fopen(archVentas, "rb");
+int flag =0;
 
 if(buf){
           while(fread(&A, sizeof(stTickets), 1, buf)> 0)
           {
             if(A.viaje.id == id)
                 {
+                    flag = 1;
                     encontrarClienteDni(A.idCliente);
                 }
           }
 
     fclose(buf);
+    if (flag == 0){
+            printf("El ID ingresado no fue encontrado\n");
+        }
 }
 else{
     printf("El archivo no se pudo abrir\n");

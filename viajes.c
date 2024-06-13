@@ -4,6 +4,7 @@
 #include <string.h>
 #include "viajes.h"
 #include "ordenamientos.h"
+#include "validaciones.h"
 
 ///VIAJES EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///calcular registros//////////////
@@ -312,7 +313,7 @@ stViaje cargarViaje()
     while(flag!=1){
         printf("Dia:");
         scanf("%d", &A.fechaP.dia);
-        flag=validarDiaFecha(A.fechaP.dia);
+        flag= validarDiaFecha(A.fechaP.dia);
         if(flag!=1){
             printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
         }
@@ -321,7 +322,7 @@ stViaje cargarViaje()
     while(flag1!=1){
         printf("Mes:");
         scanf("%d", &A.fechaP.mes);
-        flag1=validarMesFecha(A.fechaP.mes);
+        flag1= validarMesFecha(A.fechaP.mes);
         if(flag1!=1){
             printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
         }
