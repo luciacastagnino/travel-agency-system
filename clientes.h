@@ -46,6 +46,9 @@ stCliente modificarTelC(stCliente A);
 stCliente modificarDomicilioC(stCliente A);
 stCliente modificarContraseniaC (stCliente A);
 
+stCliente modificarDatosClienteEmpleado(stCliente aux);
+void modificarClienteEaux (char nYa[30]);
+
 ///Dar Baja Cliente//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void darBajaCliente (char nYa[30]);
 stCliente darBajaC(stCliente aux);

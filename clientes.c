@@ -514,6 +514,83 @@ stCliente modificarDatosCliente(stCliente aux)
 
         return aux;
 }
+///EMPLEADO MODIFICA CLIENTE////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void modificarClienteEaux (char nYa[30]){
+
+    stCliente aux;
+    int flag = 0;
+    int pos=0;
+
+    FILE* buf;
+    buf = fopen(archCliente, "r+b");
+
+    if(buf){
+        while((fread(&aux, sizeof(stCliente), 1, buf)>0)&& flag==0){
+            if(strcmpi(aux.nYa, nYa) == 0){
+                flag = 1;
+            }else{
+                pos++;
+            }
+        }
+        fseek(buf, sizeof(stCliente) * pos, SEEK_SET);
+        fread(&aux, sizeof(stCliente), 1, buf);
+
+        aux = modificarDatosClienteEmpleado(aux);
+
+        fseek(buf, sizeof(stCliente)* (-1), SEEK_CUR);
+        fwrite(&aux, sizeof(stCliente), 1, buf);
+        fclose(buf);
+    }
+}
+
+stCliente modificarDatosClienteEmpleado(stCliente aux)
+{
+
+        int op=0;
+        do{
+        printf("\nQue desea modificar?\n\n");
+        printf("1. Nombre y apellido.\n");
+        printf("2. DNI.\n");
+        printf("3. Fecha de nacimiento.\n");
+        printf("4. Genero.\n");
+        printf("5. Telefono.\n");
+        printf("6. Domicilio.\n");
+        printf("8. Salir.\n");
+        scanf("%i", &op);
+        switch(op){
+    case 1:
+        aux = modificarNyAC(aux);
+        break;
+    case 2:
+        aux=modificarDniC(aux);
+        break;
+    case 3:
+        aux=modificarFechaNacC(aux);
+        break;
+    case 4:
+        aux=modificarGeneroC(aux);
+        break;
+    case 5:
+        aux=modificarTelC(aux);
+        break;
+    case 6:
+        aux=modificarDomicilioC(aux);
+        break;
+    case 7:
+        system("cls");
+        break;
+    default:
+        printf("No existe la opcion.\n");
+        break;
+        }}while(op!=8);
+
+        printf("Asi quedo modificado el cliente: \n");
+        mostrarCliente(aux);
+        system("pause");
+        system("cls");
+
+        return aux;
+}
 
 stCliente modificarNyAC(stCliente A)
 {
