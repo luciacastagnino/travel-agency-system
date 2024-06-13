@@ -10,7 +10,7 @@ char nYa[30];
 char dni[10];
 stViajeFecha fechaN;
 char contrasenia[30];
-char tel[10];
+char tel[11];
 int sueldo;
 char puesto[20];
 int estado;

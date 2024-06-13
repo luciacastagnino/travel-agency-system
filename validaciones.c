@@ -28,7 +28,7 @@ int lenghtDNI(char dni[]){
 int lenghtTelefono(char telefono[]){
 
     int flag=0;
-    if(strlen(telefono)>9){
+    if(strlen(telefono)<11){
         flag=1;
     }
     return flag;

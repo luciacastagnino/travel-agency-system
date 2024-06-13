@@ -890,7 +890,7 @@ void registrarEmpleado()
 {
 
     FILE *buf;
-    buf=fopen(archEmpleado, "ab");
+    buf=fopen(archEmpleado, "wb");
     stEmpleado A;
 
     if(buf){
