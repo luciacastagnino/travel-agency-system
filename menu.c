@@ -25,6 +25,8 @@ void menuAdmin(char nYa[]){
     printf("3. Registro\n");
     printf("4. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
     menuPerfilAdmin(nYa);
@@ -51,8 +53,6 @@ void menuGestionAdmin (){
 
     int op;
     do{
-    system("pause");
-    system("cls");
     printf("MENU DE GESTION DE USUARIOS\n\n");
     printf("1. Empleados\n");
     printf("2. Clientes\n");
@@ -60,6 +60,8 @@ void menuGestionAdmin (){
     printf("4. Ventas\n");
     printf("5. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
     menuGestionEmpleado();
@@ -88,8 +90,6 @@ void menuGestionEmpleado(){
     int op=0, opcion=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("0. Ver la lista de empleados.\n");
     printf("1. Ver lista de empleados activos.\n");
@@ -101,6 +101,8 @@ void menuGestionEmpleado(){
     printf("7. Dar de baja empleado.\n");
     printf("8. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 0:
             printf("Ingrese una opcion.\n\n");
@@ -259,8 +261,6 @@ void menuGestionCliente(){
     int op=0, opcion=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("0. Ver la lista de clientes.\n");
     printf("1. Ver lista de clientes activos.\n");
@@ -272,6 +272,8 @@ void menuGestionCliente(){
     printf("7. Dar de baja cliente.\n");
     printf("8. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 0:
             printf("Ingrese una opcion.\n\n");
@@ -446,8 +448,6 @@ void menuGestionViajes(){
     int op=0, opcion=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("0. Ver la lista de viajes.\n");
     printf("1. Ver lista de viajes activos.\n");
@@ -459,6 +459,8 @@ void menuGestionViajes(){
     printf("7. Dar de baja viaje.\n");
     printf("8. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 0:
             system("pause");
@@ -628,8 +630,6 @@ void menuGestionVentas(){
     int op=0, opcion=0, id=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("0. Ver la lista de ventas.\n");
     printf("1. Ver lista de ventas activos.\n");
@@ -643,6 +643,8 @@ void menuGestionVentas(){
     printf("9. Dar de baja viaje.\n");
     printf("10. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 0:
             printf("Ingrese una opcion.\n\n");
@@ -819,12 +821,12 @@ void menuRegistroAdmin(){
 
     int op;
     do{
-    system("pause");
-    system("cls");
     printf("MENU REGISTRO OTRO ADMINISTRADOR:\n\n");
     printf("1. Agregar administrador.\n");
     printf("2. Atras.\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
     registrarAdmin();
@@ -846,6 +848,8 @@ void menuPerfilAdmin(char nYa[]){
     printf("2. Modificar perfil.\n");
     printf("3. Atras.\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
     mostrarPerfilAdmin(nYa);
@@ -874,6 +878,8 @@ void menuEmpleados(char nYa[]){
     printf("4. Ventas\n");
     printf("5. Salir\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
     menuPerfilEmpleado(nYa);
@@ -910,6 +916,8 @@ void menuPerfilEmpleado (char nYa[])
     printf("3. Darse de baja.\n");
     printf("4. Atras.\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
     case 1:
         encontrarEmpleadoN(nYa);
@@ -939,8 +947,6 @@ void menuClienteEmpleado (){
     int op=0, opcion=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("0. Ver la lista de clientes.\n");
     printf("1. Ver lista de clientes activos.\n");
@@ -952,6 +958,8 @@ void menuClienteEmpleado (){
     printf("7. Dar de baja cliente.\n");
     printf("8. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 0:
             printf("Ingrese una opcion.\n\n");
@@ -1128,8 +1136,6 @@ void menuViajesEmpleado (){
     int op=0, opcion=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("0. Ver la lista de viajes.\n");
     printf("1. Ver lista de viajes activos.\n");
@@ -1141,6 +1147,8 @@ void menuViajesEmpleado (){
     printf("7. Dar de baja viaje.\n");
     printf("8. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 0:
             printf("Ingrese una opcion.\n\n");
@@ -1309,8 +1317,6 @@ void menuVentasEmpleado (){
     int op=0, opcion=0, id=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("0. Ver la lista de ventas.\n");
     printf("1. Ver lista de ventas activos.\n");
@@ -1324,6 +1330,8 @@ void menuVentasEmpleado (){
     printf("9. Dar de baja viaje.\n");
     printf("10. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 0:
             printf("Ingrese una opcion.\n\n");
@@ -1507,6 +1515,8 @@ void menuClientes(char nYa[]){
     printf("3. Compras\n");
     printf("4. Salir\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
     menuPerfilCliente(nYa);
@@ -1542,6 +1552,8 @@ void menuPerfilCliente (char nYa[]){
     printf("3. Darse de baja.\n");
     printf("4. Atras.\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
     case 1:
         encontrarClienteN(nYa);
@@ -1570,14 +1582,14 @@ void menuViajesCliente ()
     int op=0, opcion=0, id=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("1. Ver la lista de viajes.\n");
     printf("2. Buscar un viaje\n");
     printf("3. Filtrar viajes\n");
     printf("4. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -1656,12 +1668,12 @@ void menuComprasCliente (){
     int op=0;
 
     do{
-    system("pause");
-    system("cls");
     printf("\nIngrese una opcion.\n\n");
     printf("1. Ver compras\n");
     printf("2. Atras\n");
     scanf("%i", &op);
+    system("pause");
+    system("cls");
     switch(op){
 case 1:
             printf("\n");

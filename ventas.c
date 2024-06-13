@@ -535,6 +535,9 @@ stTickets modificarDatosTicket(stTickets aux)
 {
 
     int op=0;
+
+        MostrarTicket(aux);
+
         do{
         printf("\nQue desea modificar?\n\n");
         printf("1. Valor agregado.\n");
@@ -546,6 +549,8 @@ stTickets modificarDatosTicket(stTickets aux)
         printf("7. ID.\n");
         printf("8. Salir.\n");
         scanf("%i", &op);
+        system("pause");
+        system("cls");
         switch(op){
     case 1:
         aux = ModificarMontoTicket(aux);

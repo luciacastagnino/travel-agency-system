@@ -294,14 +294,19 @@ void modificarAdmin (char nYa[]){
 stAdmin modificarDatosAdmin(stAdmin aux){
 
         int op=0;
-        do{
+
         mostrarAdmin(aux);
+
+        do{
+
         printf("\nQue desea modificar?\n\n");
         printf("1. Nombre y apellido.\n");
         printf("2. DNI.\n");
         printf("3. Contrasenia.\n");;
         printf("4. Salir.\n");
         scanf("%i", &op);
+        system("pause");
+        system("cls");
         switch(op){
     case 1:
         aux = modificarnYaA(aux);

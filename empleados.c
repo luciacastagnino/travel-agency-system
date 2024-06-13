@@ -558,8 +558,10 @@ void modificarEmpleado (char nYa[30]){
 stEmpleado modificarDatosEmpleado(stEmpleado aux){
 
         int op=0;
-        do{
+
         mostrarEmpleado(aux);
+
+        do{
         printf("\nQue desea modificar?\n\n");
         printf("1. Nombre y apellido.\n");
         printf("2. DNI.\n");
@@ -570,6 +572,8 @@ stEmpleado modificarDatosEmpleado(stEmpleado aux){
         printf("7. Contrasenia.\n");
         printf("8. Salir.\n");
         scanf("%i", &op);
+        system("pause");
+        system("cls");
         switch(op){
     case 1:
         aux = modificarNyAE(aux);

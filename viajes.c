@@ -487,8 +487,11 @@ stViaje modificarDatosViaje(stViaje aux)
 {
 
         int op=0;
-        do{
+
         mostrarViaje(aux);
+
+        do{
+
         printf("\nQue desea modificar?\n\n");
         printf("1. ID.\n");
         printf("2. Destino.\n");
@@ -499,6 +502,8 @@ stViaje modificarDatosViaje(stViaje aux)
         printf("7. Precio.\n");
         printf("8. Salir.\n");
         scanf("%i", &op);
+        system("pause");
+        system("cls");
         switch(op){
     case 1:
         do {
