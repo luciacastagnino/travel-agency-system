@@ -648,7 +648,7 @@ stTickets modificarViajeT(stTickets A)
     fflush(stdin);
     scanf("%d", &id);
 
-    A.viaje = encontrarViajeId(id);
+    A.viaje = buscarViajePorID(id);
 
     return A;
 }

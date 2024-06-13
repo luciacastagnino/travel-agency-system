@@ -561,10 +561,14 @@ case 5:
             fflush(stdin);
             scanf("%d", &id);
 
+            stViaje A;
+
             system("pause");
             system("cls");
 
-            encontrarViajeId(id);
+            A= buscarViajePorID(id);
+            mostrarViaje(A);
+
     break;
 case 6:
             printf("Si desea filtrar el/los viaje/s por el destino, ingrese 1.\n\n");
@@ -1237,10 +1241,13 @@ case 5:
             fflush(stdin);
             scanf("%d", &id);
 
+            stViaje A;
+
             system("pause");
             system("cls");
 
-            encontrarViajeId(id);
+            A= buscarViajePorID(id);
+            mostrarViaje(A);
     break;
 case 6:
             printf("Si desea filtrar el/los viaje/s por el destino, ingrese 1.\n\n");
@@ -1600,10 +1607,13 @@ case 2:
             fflush(stdin);
             scanf("%d", &id);
 
+            stViaje A;
+
             system("pause");
             system("cls");
 
-            encontrarViajeId(id);
+            A= buscarViajePorID(id);
+            mostrarViaje(A);
     break;
 case 3:
             printf("Si desea filtrar el/los viaje/s por el destino, ingrese 1.\n\n");

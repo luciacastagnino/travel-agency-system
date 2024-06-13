@@ -673,30 +673,31 @@ stViaje darBajaVJ(stViaje aux)
 
 ///BUSCAR VIAJE///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-stViaje encontrarViajeId(int id)
-{
-stViaje A;
-int flag = 0;
-
-FILE *bufViaje;
-bufViaje = fopen(archViaje, "rb");
-
-if(bufViaje){
-       while(fread(&A, sizeof(stViaje), 1, bufViaje)>0 && flag == 0)
-        {
-            if(A.id == id)
-                {
-                    flag = 1;
-                }
-        }
-
-    fclose(bufViaje);
-}
-else{
-    printf("El archivo no se pudo abrir\n");
-}
-return A;
-}
+//void encontrarViajeId(int id)
+//{
+//stViaje A;
+//int flag = 0;
+//
+//FILE *bufViaje;
+//bufViaje = fopen(archViaje, "rb");
+//
+//if(bufViaje){
+//       while((fread(&A, sizeof(stViaje), 1, bufViaje)>0) && (flag == 0))
+//        {
+//            if(A.id == id)
+//                {
+//                    flag = 1;
+//                    mostrarViaje(A);
+//                }
+//        }
+//
+//    fclose(bufViaje);
+//}
+//else{
+//    printf("El archivo no se pudo abrir\n");
+//}
+////return A;
+//}
 
 ///FILTRAR VIAJES///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Filtrar Viaje por Transporte
@@ -775,27 +776,33 @@ if(buff){
 
 ///Buscar el ID para cargarlo en el cliente
 
-stViaje buscarViajePorID(int id){
+stViaje buscarViajePorID(int id)
+{
     stViaje A;
     int flag = 0;
+    FILE *bufViaje = fopen(archViaje, "rb");
 
-    do {
-        FILE *bufViaje = fopen(archViaje, "rb");
-        if (bufViaje) {
-            while (fread(&A, sizeof(stViaje), 1, bufViaje)>0 && flag == 0) {
-                if (A.id == id) {
+    if (bufViaje) {
+            while ((fread(&A, sizeof(stViaje), 1, bufViaje)>0) && (flag == 0))
+             {
+                if (A.id == id)
+                {
                     flag = 1;
+                    break;
                 }
             }
-            fclose(bufViaje);
+
+    fclose(bufViaje);
+    }
+    else{
+            printf("El archivo no pudo abrirse\n");
         }
 
-        if (flag == 0) {
+    if (flag == 0) {
             printf("ID de viaje no encontrado. Por favor, ingrese un ID valido:\n");
             scanf("%d", &id);
+            return buscarViajePorID(id);
         }
-
-    } while (flag == 0);
 
     return A;
 }
