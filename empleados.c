@@ -274,19 +274,32 @@ void mostrarArregloEmpleadosRecursiva(stEmpleado A[], int validos, int i){
 stEmpleado cargarEmpleado(){
 
     stEmpleado A;
-
-    int flag=0, flag1=0;
+    char telefono[10], dni[10];
+    int flag=0, flag1=0, flagTel=0, flagDni=0;
 
     printf("Ingrese el nombre y apellido del empleado\n");
     fflush(stdin);
     gets(A.nYa);
 
+    printf("\n");
+
     A=cargarContraseniaEmpleado(A);
 
+    printf("\n");
 
-    printf("Ingrese su DNI.\n");
-    fflush(stdin);
-    gets(A.dni);
+    while(flagDni==0){
+        printf("Ingrese el DNI:\n");
+        fflush(stdin);
+        gets(dni);
+        flagDni=lenghtDNI(dni);
+        if(flagDni==0){
+            printf("El DNI es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.dni, dni);
+        }
+    }
+
+    printf("\n");
 
     printf("Ingrese su fecha de nacimiento:\n");
 
@@ -311,13 +324,27 @@ stEmpleado cargarEmpleado(){
     printf("Anio:");
     scanf("%i", &A.fechaN.anio);
 
-    printf("Ingrese su numero de telefono:\n");
-    fflush(stdin);
-    gets(A.tel);
+    printf("\n");
+
+    while(flagTel==0){
+        printf("Ingrese su numero de telefono celular:\n");
+        fflush(stdin);
+        gets(telefono);
+        flagTel=lenghtTelefono(telefono);
+        if(flagTel==0){
+            printf("El telefono es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.tel, telefono);
+        }
+    }
+
+    printf("\n");
 
     printf("Ingrese su sueldo:\n");
     fflush(stdin);
     scanf("%i", &A.sueldo);
+
+    printf("\n");
 
     printf("Ingrese su puesto de trabajo:\n");
     fflush(stdin);
@@ -384,9 +411,20 @@ stEmpleado modificarNyAE(stEmpleado A)
 
 stEmpleado modificarDniE(stEmpleado A)
 {
-    printf("Ingrese el nuevo DNI:\n");
-    fflush(stdin);
-    gets(A.dni);
+    int flagDni=0;
+    char dni[10];
+
+    while(flagDni==0){
+        printf("Ingrese el DNI:\n");
+        fflush(stdin);
+        gets(dni);
+        flagDni=lenghtDNI(dni);
+        if(flagDni==0){
+            printf("El DNI es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.dni, dni);
+        }
+    }
 
     return A;
 }
@@ -423,9 +461,20 @@ stEmpleado modificarFechaNE(stEmpleado A){
 
 stEmpleado modificarTelE(stEmpleado A)
 {
-    printf("Ingrese el nuevo nro de telefono:\n");
-    fflush(stdin);
-    gets(A.tel);
+    int flagTel=0;
+    char telefono[10];
+
+    while(flagTel==0){
+        printf("Ingrese su numero de telefono celular:\n");
+        fflush(stdin);
+        gets(telefono);
+        flagTel=lenghtTelefono(telefono);
+        if(flagTel==0){
+            printf("El telefono es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.tel, telefono);
+        }
+    }
 
     return A;
 }
@@ -847,7 +896,7 @@ void registrarEmpleado()
         A=cargarEmpleado();
         fwrite(&A, sizeof(stEmpleado), 1, buf);
         fclose(buf);
-        printf("Empleado registrado con exito.\n");
+        printf("\nEmpleado registrado con exito.\n\n");
     }else{
         printf("No se pudo abrir el archivo.\n");
     }

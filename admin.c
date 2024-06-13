@@ -49,16 +49,31 @@ stAdmin cargarContraseniaAdmin(stAdmin A){
 stAdmin cargarAdmin(){
 
     stAdmin A;
+    char dni[10];
+    int flagDni=0;
 
     printf("Ingrese su nombre y apellido:\n");
     fflush(stdin);
     gets(A.nYa);
 
+    printf("\n");
+
     A=cargarContraseniaAdmin(A);
 
-    printf("Ingrese su DNI:\n");
-    fflush(stdin);
-    gets(A.dni);
+    printf("\n");
+
+    while(flagDni==0){
+        printf("Ingrese su DNI:\n");
+        fflush(stdin);
+        gets(dni);
+        flagDni=lenghtDNI(dni);
+        if(flagDni==0){
+            printf("El DNI es muy corto. Ingrese uno mas largo.\n");
+        }else{
+            strcpy(A.dni, dni);
+        }
+    }
+
 
     A.estado=1;
 
@@ -75,7 +90,7 @@ void registrarAdmin() {
         A=cargarAdmin();
         fwrite(&A, sizeof(stAdmin), 1, buf);
         fclose(buf);
-        printf("Administrador registrado con exito.\n");
+        printf("\nAdministrador registrado con exito.\n\n");
     }else{
         printf("No se pudo abrir el archivo.\n");
     }
@@ -205,9 +220,20 @@ stAdmin modificarnYaA(stAdmin A){
 
 stAdmin modificarDniA(stAdmin A){
 
-    printf("Ingrese el nuevo DNI:\n");
-    fflush(stdin);
-    gets(A.dni);
+    int flagDni=0;
+    char dni[10];
+
+    while(flagDni==0){
+        printf("Ingrese su DNI:\n");
+        fflush(stdin);
+        gets(dni);
+        flagDni=lenghtDNI(dni);
+        if(flagDni==0){
+            printf("El DNI es muy corto. Ingrese uno mas largo.\n");
+        }else{
+            strcpy(A.dni, dni);
+        }
+    }
 
     return A;
 }

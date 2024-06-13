@@ -281,19 +281,34 @@ for(i=0; i<validos; i++){
 stCliente cargarCliente()
 {
     stCliente A;
-    int flag=0, flag1=0;
+    char dni[10], telefono[10];
+    int flag=0, flag1=0, flagDni=0, flagTel=0;
 
     printf("Ingrese el nombre y apellido del cliente\n");
     fflush(stdin);
     gets(A.nYa);
 
+    printf("\n");
+
     A=cargarContraseniaCliente(A);
 
-    printf("Ingrese el DNI del cliente\n");
-    fflush(stdin);
-    gets(A.dni);
+    printf("\n");
 
-    printf("Ingrese su fecha de nacimiento:\n");
+     while(flagDni==0){
+        printf("Ingrese el DNI:\n");
+        fflush(stdin);
+        gets(dni);
+        flagDni=lenghtDNI(dni);
+        if(flagDni==0){
+            printf("El DNI es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.dni, dni);
+        }
+    }
+
+    printf("\n");
+
+    printf("Ingrese la fecha de nacimiento:\n");
 
     while(flag!=1){
         printf("Dia:");
@@ -316,7 +331,9 @@ stCliente cargarCliente()
     printf("Anio:");
     scanf("%i", &A.fechaN.anio);
 
-    printf("Ingrese el genero del cliente M/F (En mayuscula)\n");
+    printf("\n");
+
+    printf("Ingrese el genero M/F (En mayuscula)\n");
     fflush(stdin);
     scanf("%c", &A.genero);
 
@@ -326,9 +343,21 @@ stCliente cargarCliente()
         scanf("%c", &A.genero);
     }
 
-    printf("Ingrese el numero de telefono del cliente\n");
-    fflush(stdin);
-    gets(A.tel);
+    printf("\n");
+
+     while(flagTel==0){
+        printf("Ingrese su numero de telefono celular:\n");
+        fflush(stdin);
+        gets(telefono);
+        flagTel=lenghtTelefono(telefono);
+        if(flagTel==0){
+            printf("El telefono es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.tel, telefono);
+        }
+    }
+
+    printf("\n");
 
     printf("Ingrese el domicilio del cliente\n");
     A.dom = cargarDomicilio();
@@ -436,7 +465,7 @@ void modificarCliente (char nYa[30]){
 stCliente modificarDatosCliente(stCliente aux)
 {
 
-         int op=0;
+        int op=0;
         do{
         printf("\nQue desea modificar?\n\n");
         printf("1. Nombre y apellido.\n");
@@ -535,18 +564,40 @@ stCliente modificarGeneroC(stCliente A)
 
 stCliente modificarDniC(stCliente A)
 {
-    printf("Ingrese la nueva fecha de nacimiento:\n");
-    fflush(stdin);
-    gets(A.dni);
+    int flagDni=0;
+    char dni[10];
+
+    while(flagDni==0){
+        printf("Ingrese el DNI:\n");
+        fflush(stdin);
+        gets(dni);
+        flagDni=lenghtDNI(dni);
+        if(flagDni==0){
+            printf("El DNI es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.dni, dni);
+        }
+    }
 
     return A;
 }
 
 stCliente modificarTelC(stCliente A)
 {
-    printf("Ingrese la nueva fecha de nacimiento:\n");
-    fflush(stdin);
-    gets(A.tel);
+    int flagTel=0;
+    char telefono[10];
+
+    while(flagTel==0){
+        printf("Ingrese su numero de telefono celular:\n");
+        fflush(stdin);
+        gets(telefono);
+        flagTel=lenghtTelefono(telefono);
+        if(flagTel==0){
+            printf("El telefono es muy corto. Vuelva a ingresarlo.\n");
+        }else{
+            strcpy(A.tel, telefono);
+        }
+    }
 
     return A;
 }
@@ -671,35 +722,37 @@ stDomicilio modificarDomicilio(stDomicilio A)
 {
     char control = 'n';
 
-    printf("Desea cambiar la calle?\n");
-    fflush(stdin);
-    scanf("%c", &control);
-
-    if(control == 's'){
-       	printf("Ingrese la calle para modificar la anterior: \n");
+    int op=0;
+        do{
+        printf("\nQue desea modificar?\n\n");
+        printf("1. Calle.\n");
+        printf("2. Numero.\n");
+        printf("3. Localidad.\n");
+        printf("4. Salir.\n");
+        scanf("%i", &op);
+        switch(op){
+    case 1:
+        printf("Ingrese la calle: \n");
 	    fflush(stdin);
 	    gets(A.calle);
-    }
-
-    printf("Desea cambiar el numero de calle?\n");
-    fflush(stdin);
-    scanf("%c", &control);
-
-    if(control == 's'){
-        printf("Ingrese el numero de calle para modificar la anterior: \n");
+        break;
+    case 2:
+        printf("Ingrese el numero de calle: \n");
 	    fflush(stdin);
 	    scanf("%i", &A.num);
-    }
-
-    printf("Desea cambiar la localidad?\n");
-    fflush(stdin);
-    scanf("%c", &control);
-
-    if(control == 's'){
-    printf("Ingrese la localidad para modificar la anterior: \n");
-	fflush(stdin);
-	gets(A.localidad);
-    }
+        break;
+    case 3:
+        printf("Ingrese la localidad para modificar la anterior: \n");
+        fflush(stdin);
+        gets(A.localidad);
+        break;
+    case 4:
+        system("cls");
+        break;
+    default:
+        printf("No existe la opcion.\n");
+        break;
+        }}while(op!=4);
 
 	return A;
 }
@@ -870,7 +923,7 @@ void registrarCliente() {
         A=cargarCliente();
         fwrite(&A, sizeof(stCliente), 1, buf);
         fclose(buf);
-        printf("Cliente registrado con exito.\n");
+        printf("\nCliente registrado con exito.\n\n");
     }else{
         printf("No se pudo abrir el archivo.\n");
     }

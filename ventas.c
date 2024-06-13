@@ -880,7 +880,7 @@ void mostrarCalculo()
 
     float suma= sumarVentas(A, validos);
 
-    printf("El total de ventas es: %.2f\n", suma);
+    printf("\nLa recaudacion total de las ventas es: $%.2f\n\n", suma);
 }
 
 void mostrarGanancias()
@@ -903,7 +903,7 @@ void mostrarGanancias()
 
     total= suma-rta;
 
-    printf("Ganancias: %.2f\n", total);
+    printf("\nLas ganancias obtenidas son: $%.2f\n\n", total);
 }
 
 ///Filtrar Cliente por Viaje

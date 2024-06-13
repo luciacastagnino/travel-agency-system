@@ -804,7 +804,8 @@ int verificarIDViaje(int id){
     return encontrado;
 }
 
-//Verificar que el ID ingresado en modificar exista
+///Verificar que el ID ingresado en modificar exista
+
 int verificarIDNoExiste(int id) {
     stViaje A;
     int encontrado = 0;
@@ -823,7 +824,3 @@ int verificarIDNoExiste(int id) {
 
     return !encontrado;
 }
-
-
-/// FUNCIONES AUXILIARES ////////////////////////
-/// calcular duracion del viaje

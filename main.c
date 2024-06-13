@@ -57,22 +57,20 @@ int main()
         printf("3. Salir del sistema.\n");
         fflush(stdin);
         scanf("%d", &op);
-
+        system("cls");
 
         switch (op) {
             case 1:
                 do {
-                    system("pause");
-                    system("cls");
                     printf("\nIngrese su tipo de usuario:\n\n");
                     printf("1. Empleado\n");
                     printf("2. Cliente\n");
                     printf("3. Salir\n");
                     scanf("%i", &opcion);
-                    system("pause");
                     system("cls");
                     switch (opcion){
                         case -1:
+                            printf("INICIO DE SESION:\n\n");
                             admin=iniciarSesionAdmin();
                             system("pause");
                             system("cls");
@@ -80,6 +78,7 @@ int main()
                             menuAdmin(admin.nYa);
                             break;
                         case 1:
+                            printf("INICIO DE SESION:\n\n");
                             empleado=iniciarSesionEmpleado();
                             system("pause");
                             system("cls");
@@ -87,6 +86,7 @@ int main()
                             menuEmpleados(empleado.nYa);
                             break;
                         case 2:
+                            printf("INICIO DE SESION:\n\n");
                             cliente=iniciarSesionCliente();
                             system("pause");
                             system("cls");
@@ -111,11 +111,17 @@ int main()
                     printf("2. Cliente\n");
                     printf("3. Salir\n");
                     scanf("%i", &option);
-
+                    system("cls");
                     if (option==1) {
+                        printf("REGISTRO DE CLIENTE:\n\n");
                         registrarEmpleado();
+                        system("pause");
+                        system("cls");
                     } else if (option==2) {
+                        printf("REGISTRO DE CLIENTE:\n\n");
                         registrarCliente();
+                        system("pause");
+                        system("cls");
                     }
                     break;
                 }

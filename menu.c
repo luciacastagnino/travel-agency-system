@@ -634,8 +634,8 @@ void menuABMCLventas(){
     printf("4. Modificar datos de la venta.\n");
     printf("5. Buscar una venta\n");
     printf("6. Filtrar ventas\n");
-    printf("7. Calcular cantidad de ventas que realizo un empleado.\n");
-    printf("8. Calcular ganancias.\n");
+    printf("7. Recaudacion total.\n");
+    printf("8. Ganancias.\n");
     printf("9. Dar de baja viaje.\n");
     printf("10. Atras\n");
     scanf("%i", &op);
@@ -782,6 +782,12 @@ case 6:
             }
     break;
 case 7:
+            mostrarCalculo();
+    break;
+case 8:
+            mostrarGanancias();
+    break;
+case 9:
             mostrarOrdenIDActivosT();
             printf("Ingrese la ID del ticket que desea dar de baja: \n");
             fflush(stdin);
@@ -791,12 +797,6 @@ case 7:
             system("cls");
 
             darBajaVenta(id);
-    break;
-case 8:
-
-    break;
-case 9:
-
     break;
 case 10:
     system("cls");
@@ -1314,8 +1314,8 @@ void menuVentasEmpleado (){
     printf("4. Modificar datos de la venta.\n");
     printf("5. Buscar una venta\n");
     printf("6. Filtrar ventas\n");
-    printf("7. Calcular cantidad de ventas que realizo un empleado.\n"); // no se si iria
-    printf("8. Calcular ganancias.\n"); // no se si iria
+    printf("7. Recaudacion total.\n");
+    printf("8. Ganancias.\n");
     printf("9. Dar de baja viaje.\n");
     printf("10. Atras\n");
     scanf("%i", &op);
@@ -1462,6 +1462,12 @@ case 6:
             }
     break;
 case 7:
+            mostrarCalculo();
+    break;
+case 8:
+            mostrarGanancias();
+    break;
+case 9:
             mostrarOrdenIDActivosT();
             printf("Ingrese la ID del ticket que desea dar de baja: \n");
             fflush(stdin);
@@ -1471,12 +1477,6 @@ case 7:
             system("cls");
 
             darBajaVenta(id);
-    break;
-case 8:
-
-    break;
-case 9:
-
     break;
 case 10:
     system("cls");
