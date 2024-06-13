@@ -527,7 +527,7 @@
 	"ordenamientos.h"
 	"validaciones.h"
 
-1718312203 source:d:\bren\utn\tp-final-prog\empleados.c
+1718314690 source:d:\bren\utn\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -562,7 +562,7 @@
 
 1718312203 d:\bren\utn\tp-final-prog\admin.h
 
-1718312203 source:d:\bren\utn\tp-final-prog\validaciones.c
+1718314329 source:d:\bren\utn\tp-final-prog\validaciones.c
 	"validaciones.h"
 	"clientes.h"
 	"empleados.h"

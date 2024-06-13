@@ -297,7 +297,7 @@ stEmpleado cargarEmpleado(){
         gets(dni);
         flagDni= lenghtDNI(dni);
         if(flagDni==0){
-            printf("El DNI es muy corto. Vuelva a ingresarlo.\n");
+            printf("El DNI es muy largo. Vuelva a ingresarlo.\n");
         }else{
             strcpy(A.dni, dni);
         }
