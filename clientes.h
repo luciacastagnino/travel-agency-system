@@ -16,7 +16,7 @@ char contrasenia[30];
 stViajeFecha fechaN;
 char genero;
 char dni[10];
-char tel[10];
+char tel[11];
 stDomicilio dom;
 stViaje v;
 int estado;
