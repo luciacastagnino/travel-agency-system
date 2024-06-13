@@ -441,7 +441,7 @@
 	<stdio.h>
 	<malloc.h>
 
-1718297073 d:\bren\utn\tp-final-prog\clientes.h
+1718302097 d:\bren\utn\tp-final-prog\clientes.h
 	"viajes.h"
 
 1718050683 d:\bren\utn\tp-final-prog\ordenamientos.h
@@ -524,7 +524,7 @@
 	"ordenamientos.h"
 	"validaciones.h"
 
-1718301596 source:d:\bren\utn\tp-final-prog\empleados.c
+1718302145 source:d:\bren\utn\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -559,7 +559,7 @@
 
 1718299162 d:\bren\utn\tp-final-prog\admin.h
 
-1718297074 source:d:\bren\utn\tp-final-prog\validaciones.c
+1718301984 source:d:\bren\utn\tp-final-prog\validaciones.c
 	"validaciones.h"
 	"clientes.h"
 	"empleados.h"

@@ -585,7 +585,7 @@ stCliente modificarDniC(stCliente A)
 stCliente modificarTelC(stCliente A)
 {
     int flagTel=0;
-    char telefono[10];
+    char telefono[11];
 
     while(flagTel==0){
         printf("Ingrese su numero de telefono celular:\n");
@@ -720,7 +720,6 @@ void mostrarDomicilio(stDomicilio A)
 
 stDomicilio modificarDomicilio(stDomicilio A)
 {
-    char control = 'n';
 
     int op=0;
         do{
@@ -957,7 +956,6 @@ stCliente iniciarSesionCliente() {
     buf = fopen(archCliente, "rb");
     char dni[10];
     char contrasenia[20];
-    char contrasenia2[20];
     stCliente A;
     int flag=0;
 

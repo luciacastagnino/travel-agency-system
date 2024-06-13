@@ -175,7 +175,7 @@ void ordenamientoInserccionEmpleado (stEmpleado* A, int cantRegistrosE){
 
 
     while(i < cantRegistrosE - 1){
-        stEmpleado aux = A[i];
+        //stEmpleado aux = A[i];
         insertarEmpleado(A, i, A[i+1]);
         i++;
     }
@@ -204,7 +204,6 @@ void ordenamientoInserccionCliente (stCliente* A, int cantRegistrosC){
 
 
     while(i < cantRegistrosC - 1){
-        stCliente aux = A[i];
         insertarCliente(A, i, A[i+1]);
         i++;
     }
@@ -235,7 +234,6 @@ void ordenamientoInserccion (stViaje* A, int cantRegistrosV){
 
 
     while(i < cantRegistrosV - 1){
-        stViaje aux = A[i];
         insertar(A, i, A[i+1]);
         i++;
     }
@@ -264,7 +262,6 @@ void ordenamientoInserccionTicket(stTickets* A, int cantRegistrosT)
 
 
     while(i < cantRegistrosT - 1){
-        stTickets aux = A[i];
         insertarTicket(A, i, A[i+1]);
         i++;
     }
