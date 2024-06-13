@@ -158,9 +158,9 @@
 	"admin.h"
 	"validaciones.h"
 
-1718140661 c:\users\acer\desktop\utn\tp-final-prog\menu.h
+1718292271 c:\users\acer\desktop\utn\tp-final-prog\menu.h
 
-1718244094 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
+1718292258 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -187,7 +187,7 @@
 1718140661 source:c:\users\acer\desktop\utn\tp-final-prog\pila.c
 	"pila.h"
 
-1718232108 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
+1718244289 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
 	"ventas.h"
 	<stdio.h>
 	<stdlib.h>

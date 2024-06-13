@@ -21,7 +21,7 @@ void menuAdmin(char nYa[]){
     do{
     printf("MENU PRINCIPAL:\n\n");
     printf("1. Perfil\n");
-    printf("2. ABMCL\n");
+    printf("2. Gestion de usuarios\n");
     printf("3. Registro\n");
     printf("4. Atras\n");
     scanf("%i", &op);
@@ -30,7 +30,7 @@ case 1:
     menuPerfilAdmin(nYa);
     break;
 case 2:
-    menuABMCL();
+    menuGestionAdmin();
     break;
 case 3:
     menuRegistroAdmin();
@@ -45,15 +45,15 @@ case 4:
 
 }
 
-/// MENU ABMCL ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// MENU DE GESTION DE USUARIOS //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void menuABMCL (){
+void menuGestionAdmin (){
 
     int op;
     do{
     system("pause");
     system("cls");
-    printf("MENU ABMCL\n\n");
+    printf("MENU DE GESTION DE USUARIOS\n\n");
     printf("1. Empleados\n");
     printf("2. Clientes\n");
     printf("3. Viajes\n");
@@ -62,16 +62,16 @@ void menuABMCL (){
     scanf("%i", &op);
     switch(op){
 case 1:
-    menuABMCLempleado();
+    menuGestionEmpleado();
     break;
 case 2:
-    menuABMCLcliente();
+    menuGestionCliente();
     break;
 case 3:
-    menuABMCLviajes();
+    menuGestionViajes();
     break;
 case 4:
-    menuABMCLventas();
+    menuGestionVentas();
     break;
 case 5:
     printf("Volviendo a la pantalla de login/registro...\n");
@@ -83,7 +83,7 @@ default:
     }}while(op!=5);
 }
 
-void menuABMCLempleado(){
+void menuGestionEmpleado(){
 
     int op=0, opcion=0;
 
@@ -254,7 +254,7 @@ default:
 
 }
 
-void menuABMCLcliente(){
+void menuGestionCliente(){
 
     int op=0, opcion=0;
 
@@ -441,7 +441,7 @@ default:
 
 }
 
-void menuABMCLviajes(){
+void menuGestionViajes(){
 
     int op=0, opcion=0, id=0;
 
@@ -619,7 +619,7 @@ default:
 
 }
 
-void menuABMCLventas(){
+void menuGestionVentas(){
 
     int op=0, opcion=0, id=0;
 
@@ -1297,7 +1297,7 @@ default:
 
 }
 
-/// MENU VIAJES EMPLEADO ////////////////////////////
+/// MENU VENTAS EMPLEADO ////////////////////////////
 
 void menuVentasEmpleado (){
 
@@ -1641,7 +1641,7 @@ default:
 
 }
 
-/// MENU VIAJE CLIENTE ///////////////////////////////////
+/// MENU COMPRAS CLIENTE ///////////////////////////////////
 
 void menuComprasCliente (){
 
