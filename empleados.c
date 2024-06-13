@@ -404,6 +404,7 @@ void mostrarEmpleado (stEmpleado A)
 }
 
 ///Modificar Empleado///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 stEmpleado modificarNyAE(stEmpleado A)
 {
     printf("Ingrese el nuevo nombre y apellido:\n");
@@ -616,7 +617,7 @@ FILE *buff;
 buff = fopen(archEmpleado, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stEmpleado), 1, buff) && flag == 0)
+       while(fread(&A, sizeof(stEmpleado), 1, buff)>0 && flag == 0)
         {
             if(strcmpi(A.nYa, N) ==0)
             {
@@ -642,7 +643,7 @@ FILE *buff;
 buff = fopen(archEmpleado, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stEmpleado), 1, buff) && flag == 0)
+       while(fread(&A, sizeof(stEmpleado), 1, buff)>0 && flag == 0)
         {
             if(strcmpi(A.dni, D) == 0)
                 {
@@ -670,7 +671,7 @@ void filtrarEmpleadoPuesto(char P[10]){
     buff = fopen(archEmpleado, "rb");
 
     if(buff){
-       while(fread(&A, sizeof(stEmpleado), 1, buff))
+       while(fread(&A, sizeof(stEmpleado), 1, buff)>0)
         {
             if(strcmpi(A.puesto, P) == 0)
                 {
@@ -699,7 +700,7 @@ FILE *buff;
 buff = fopen(archEmpleado, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stEmpleado), 1, buff))
+       while(fread(&A, sizeof(stEmpleado), 1, buff)>0)
         {
             if(A.estado == E)
                 {
@@ -728,7 +729,7 @@ void mostrarArchivoEmpleado()
 
     if(buff)
     {
-        while(fread(&A, sizeof(stEmpleado), 1, buff))
+        while(fread(&A, sizeof(stEmpleado), 1, buff)>0)
         {
             mostrarEmpleado(A);
         }
@@ -935,7 +936,6 @@ stEmpleado iniciarSesionEmpleado(){
     stEmpleado A;
     char dni[10];
     char contrasenia[20];
-    //char contrasenia2[20];
     int flag=0;
 
     if(buf){

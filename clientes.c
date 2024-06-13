@@ -777,7 +777,7 @@ stDomicilio cargarDomicilio()
 	gets(A.calle);
 
 	printf("Ingrese numero de calle: \n");
-            fflush(stdin);
+    fflush(stdin);
 	scanf("%i", &A.num);
 
 	printf("Ingrese localidad: \n");
@@ -847,7 +847,7 @@ FILE *buff;
 buff = fopen(archCliente, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stCliente), 1, buff) && flag == 0)
+       while(fread(&A, sizeof(stCliente), 1, buff)>0 && flag == 0)
         {
             if(strcmpi(A.nYa, N) ==0)
             {
@@ -875,7 +875,7 @@ FILE *buf;
 buf = fopen(archCliente, "rb");
 
 if(buf){
-       while(fread(&A, sizeof(stCliente), 1, buf) && flag == 0)
+       while(fread(&A, sizeof(stCliente), 1, buf)>0 && flag == 0)
         {
             if(strcmpi(A.dni, D) == 0)
                 {
@@ -906,7 +906,7 @@ FILE *buff;
 buff = fopen(archCliente, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stCliente), 1, buff))
+       while(fread(&A, sizeof(stCliente), 1, buff)>0)
         {
            if(A.genero == G)
                 {
@@ -934,7 +934,7 @@ FILE *buff;
 buff = fopen(archCliente, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stCliente), 1, buff))
+       while(fread(&A, sizeof(stCliente), 1, buff)>0)
         {
             if(A.estado == E)
                 {

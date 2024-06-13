@@ -488,7 +488,7 @@ void mostrarArchivoVentas()
 
     if(buff)
     {
-        while(fread(&A, sizeof(stTickets), 1, buff))
+        while(fread(&A, sizeof(stTickets), 1, buff)>0)
         {
             MostrarTicket(A);
         }
@@ -713,7 +713,7 @@ FILE *buff;
 buff = fopen(archVentas, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stTickets), 1, buff) && flag == 0)
+       while(fread(&A, sizeof(stTickets), 1, buff)>0 && flag == 0)
         {
             if(A.id == id)
             {
@@ -772,7 +772,7 @@ FILE *buff;
 buff = fopen(archVentas, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stTickets), 1, buff))
+       while(fread(&A, sizeof(stTickets), 1, buff)>0)
         {
            if(strcmpi(A.idEmpleado, dniE) == 0)
                 {
@@ -800,7 +800,7 @@ FILE *buff;
 buff = fopen(archVentas, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stTickets), 1, buff))
+       while(fread(&A, sizeof(stTickets), 1, buff)>0)
         {
             if(strcmpi(A.metodo, met) == 0)
                 {
@@ -827,7 +827,7 @@ FILE *buff;
 buff = fopen(archVentas, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stTickets), 1, buff))
+       while(fread(&A, sizeof(stTickets), 1, buff)>0)
         {
            if(A.viaje.id == ID)
                 {

@@ -682,7 +682,7 @@ FILE *bufViaje;
 bufViaje = fopen(archViaje, "rb");
 
 if(bufViaje){
-       while(fread(&A, sizeof(stViaje), 1, bufViaje) && flag == 0)
+       while(fread(&A, sizeof(stViaje), 1, bufViaje)>0 && flag == 0)
         {
             if(A.id == id)
                 {
@@ -707,7 +707,7 @@ void filtrarViajeTransporte(char T[10]){
     FILE *buff = fopen(archViaje, "rb");
 
     if (buff) {
-        while (fread(&A, sizeof(stViaje), 1, buff)) {
+        while (fread(&A, sizeof(stViaje), 1, buff)>0) {
             if (strcmpi(A.transporte, T) == 0) {
                 mostrarViaje(A);
                 encontrado = 1;
@@ -730,7 +730,7 @@ void filtrarViajeDestino(char D[10]){
     FILE *buff = fopen(archViaje, "rb");
 
     if (buff) {
-        while (fread(&A, sizeof(stViaje), 1, buff)) {
+        while (fread(&A, sizeof(stViaje), 1, buff)>0) {
             if (strcmpi(A.destino, D) == 0) {
                 mostrarViaje(A);
                 encontrado = 1;
@@ -755,7 +755,7 @@ FILE *buff;
 buff = fopen(archViaje, "rb");
 
 if(buff){
-       while(fread(&A, sizeof(stViaje), 1, buff))
+       while(fread(&A, sizeof(stViaje), 1, buff)>0)
         {
             if(A.estado == E)
                 {
@@ -782,7 +782,7 @@ stViaje buscarViajePorID(int id){
     do {
         FILE *bufViaje = fopen(archViaje, "rb");
         if (bufViaje) {
-            while (fread(&A, sizeof(stViaje), 1, bufViaje) && flag == 0) {
+            while (fread(&A, sizeof(stViaje), 1, bufViaje)>0 && flag == 0) {
                 if (A.id == id) {
                     flag = 1;
                 }
@@ -808,7 +808,7 @@ int verificarIDViaje(int id){
 
     FILE *bufViaje = fopen(archViaje, "rb");
     if (bufViaje) {
-        while (fread(&A, sizeof(stViaje), 1, bufViaje) && !encontrado) {
+        while (fread(&A, sizeof(stViaje), 1, bufViaje)>0 && !encontrado) {
             if (A.id == id) {
                 encontrado = 1;
             }
@@ -827,7 +827,7 @@ int verificarIDNoExiste(int id) {
 
     FILE *bufViaje = fopen(archViaje, "rb");
     if (bufViaje) {
-        while (fread(&A, sizeof(stViaje), 1, bufViaje) && !encontrado) {
+        while (fread(&A, sizeof(stViaje), 1, bufViaje)>0 && !encontrado) {
             if (A.id == id) {
                 encontrado = 1;
             }
