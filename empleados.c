@@ -330,8 +330,8 @@ stEmpleado cargarEmpleado(){
     while(flagTel==0){
         printf("Ingrese su numero de telefono celular:\n");
         fflush(stdin);
-        gets(A.tel);
-        flagTel= lenghtTelefono(A.tel);
+        gets(telefono);
+        flagTel= lenghtTelefono(telefono);
         if(flagTel==0){
             printf("El telefono es muy corto. Vuelva a ingresarlo.\n");
         }else{
