@@ -124,7 +124,7 @@ stAdmin iniciarSesionAdmin() {
     buf = fopen(archAdmin, "rb");
     char dni[10];
     char contrasenia[20];
-    char contrasenia2[20];
+    //char contrasenia2[20];
     stAdmin A;
     int flag=0;
 
@@ -138,9 +138,9 @@ stAdmin iniciarSesionAdmin() {
         printf("\nIngrese contrasenia:\n");
         fflush(stdin);
         gets(contrasenia);
-        A=busquedaAdminInicioSesion(dni, contrasenia);
+        A= busquedaAdminInicioSesion(dni, contrasenia);
 
-        if((strcmp(A.dni, dni)==0) && strcmp(A.contrasenia, contrasenia)==0){
+        if((strcmp(A.dni, dni)==0) && strcmpi(A.contrasenia, contrasenia)==0){
             printf("\nInicio de sesion exitoso.\n\n");
             flag=1;
         }else{

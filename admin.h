@@ -23,7 +23,7 @@ void registroAdministrador();
 stAdmin cargarAdmin();
 void cargarArchivoAdmin();
 void mostrarAdmin (stAdmin A);
-
+void registrarAdmin();
 // perfil
 
 void mostrarPerfilAdmin (char nYa[]);

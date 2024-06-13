@@ -9,7 +9,7 @@
 #include "ordenamientos.h"
 #include "calendario.h"
 #include "admin.h"
-#include "home.h"
+#include "menu.h"
 
 
 /// MENU ADMIN //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -443,7 +443,7 @@ default:
 
 void menuGestionViajes(){
 
-    int op=0, opcion=0, id=0;
+    int op=0, opcion=0;
 
     do{
     system("pause");
@@ -813,8 +813,6 @@ default:
 
 void menuRegistroAdmin(){
 
-    stAdmin admin;
-
     int op;
     do{
     system("pause");
@@ -838,7 +836,6 @@ case 2:
 void menuPerfilAdmin(char nYa[]){
 
     int op;
-    stAdmin A;
     do{
     printf("MENU PERFIL:\n\n");
     printf("1. Ver perfil.\n");
@@ -897,7 +894,8 @@ case 5:
 
 /// MENU PERFIL EMPLEADO ////////////////////////////
 
-void menuPerfilEmpleado (char nYa[]){
+void menuPerfilEmpleado (char nYa[])
+{
 
     int op=0;
 
@@ -1123,7 +1121,7 @@ default:
 
 void menuViajesEmpleado (){
 
-    int op=0, opcion=0, id=0;
+    int op=0, opcion=0;
 
     do{
     system("pause");
@@ -1560,8 +1558,8 @@ void menuPerfilCliente (char nYa[]){
 
 /// MENU VIAJE CLIENTE ///////////////////////////////////
 
-void menuViajesCliente (){
-
+void menuViajesCliente ()
+{
     int op=0, opcion=0, id=0;
 
     do{
@@ -1645,7 +1643,7 @@ default:
 
 void menuComprasCliente (){
 
-    int op=0, opcion=0, id=0;
+    int op=0;
 
     do{
     system("pause");

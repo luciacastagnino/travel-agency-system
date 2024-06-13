@@ -70,6 +70,7 @@ void mostrarOrdenIDBajaV();
 void mostrarOrdenDestinoBajaV();
 
 void cargarArchivoViaje();
+//stViaje encontrarViajeId(int id);
 stViaje encontrarViajeId(int id);
 
 /// FUNCIONES AUXILIARES

@@ -13,6 +13,9 @@ void menuGestioncliente();
 void menuGestionViajes();
 void menuGestionVentas();
 
+void menuGestionEmpleado();
+void menuGestionCliente();
+
 // MENU REGISTRO ADMIN ///////////////////////////////////////////////////////////////////////////
 
 void menuRegistroAdmin();
@@ -24,6 +27,7 @@ void menuPerfilAdmin(char nYa[]);
 /// MENU EMPLEADOS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void menuEmpleados(char nYa[]);
+void menuPerfilEmpleado (char nYa[]);
 
 // MENU CLIENTE EMPLEADO ////////////////////////////
 

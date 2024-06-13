@@ -427,7 +427,7 @@
 1718297073 d:\bren\utn\tp-final-prog\calendario.h
 	"viajes.h"
 
-1718297074 d:\bren\utn\tp-final-prog\viajes.h
+1718298773 d:\bren\utn\tp-final-prog\viajes.h
 
 1718297073 source:d:\bren\utn\tp-final-prog\clientes.c
 	<stdio.h>
@@ -459,7 +459,7 @@
 	"clientes.h"
 	"empleados.h"
 
-1718297073 source:d:\bren\utn\tp-final-prog\main.c
+1718300132 source:d:\bren\utn\tp-final-prog\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -473,9 +473,9 @@
 	"admin.h"
 	"validaciones.h"
 
-1718297073 d:\bren\utn\tp-final-prog\menu.h
+1718299617 d:\bren\utn\tp-final-prog\menu.h
 
-1718297073 source:d:\bren\utn\tp-final-prog\menu.c
+1718299554 source:d:\bren\utn\tp-final-prog\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -487,7 +487,7 @@
 	"ordenamientos.h"
 	"calendario.h"
 	"admin.h"
-	"home.h"
+	"menu.h"
 
 1718050683 source:d:\bren\utn\tp-final-prog\ordenamientos.c
 	<stdio.h>
@@ -502,7 +502,7 @@
 1718050683 source:d:\bren\utn\tp-final-prog\pila.c
 	"pila.h"
 
-1718297074 source:d:\bren\utn\tp-final-prog\ventas.c
+1718298350 source:d:\bren\utn\tp-final-prog\ventas.c
 	"ventas.h"
 	<stdio.h>
 	<stdlib.h>
@@ -513,6 +513,7 @@
 	"ordenamientos.h"
 	"pila.h"
 	<time.h>
+	"validaciones.h"
 
 1718298113 source:d:\bren\utn\tp-final-prog\viajes.c
 	<stdio.h>
@@ -523,7 +524,7 @@
 	"ordenamientos.h"
 	"validaciones.h"
 
-1718297073 source:d:\bren\utn\tp-final-prog\empleados.c
+1718300799 source:d:\bren\utn\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -545,7 +546,7 @@
 
 1718139348 d:\bren\utn\tp-final-prog\home.h
 
-1718297073 source:d:\bren\utn\tp-final-prog\admin.c
+1718300211 source:d:\bren\utn\tp-final-prog\admin.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -555,7 +556,7 @@
 	"admin.h"
 	"validaciones.h"
 
-1718297073 d:\bren\utn\tp-final-prog\admin.h
+1718299162 d:\bren\utn\tp-final-prog\admin.h
 
 1718297074 source:d:\bren\utn\tp-final-prog\validaciones.c
 	"validaciones.h"

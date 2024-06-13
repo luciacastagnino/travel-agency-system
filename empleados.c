@@ -3,6 +3,7 @@
 #include <string.h>
 #include "empleados.h"
 #include "ordenamientos.h"
+#include "validaciones.h"
 
 ///EMPLEADOS EN ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///mostrar completo
@@ -291,7 +292,7 @@ stEmpleado cargarEmpleado(){
         printf("Ingrese el DNI:\n");
         fflush(stdin);
         gets(dni);
-        flagDni=lenghtDNI(dni);
+        flagDni= lenghtDNI(dni);
         if(flagDni==0){
             printf("El DNI es muy corto. Vuelva a ingresarlo.\n");
         }else{
@@ -329,8 +330,8 @@ stEmpleado cargarEmpleado(){
     while(flagTel==0){
         printf("Ingrese su numero de telefono celular:\n");
         fflush(stdin);
-        gets(telefono);
-        flagTel=lenghtTelefono(telefono);
+        gets(A.tel);
+        flagTel= lenghtTelefono(A.tel);
         if(flagTel==0){
             printf("El telefono es muy corto. Vuelva a ingresarlo.\n");
         }else{
@@ -893,7 +894,7 @@ void registrarEmpleado()
     stEmpleado A;
 
     if(buf){
-        A=cargarEmpleado();
+        A= cargarEmpleado();
         fwrite(&A, sizeof(stEmpleado), 1, buf);
         fclose(buf);
         printf("\nEmpleado registrado con exito.\n\n");
@@ -931,7 +932,7 @@ stEmpleado iniciarSesionEmpleado(){
     stEmpleado A;
     char dni[10];
     char contrasenia[20];
-    char contrasenia2[20];
+    //char contrasenia2[20];
     int flag=0;
 
     if(buf){
