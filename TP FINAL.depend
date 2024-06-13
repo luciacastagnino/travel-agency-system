@@ -429,7 +429,7 @@
 
 1718298773 d:\bren\utn\tp-final-prog\viajes.h
 
-1718302642 source:d:\bren\utn\tp-final-prog\clientes.c
+1718303294 source:d:\bren\utn\tp-final-prog\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
@@ -515,7 +515,7 @@
 	<time.h>
 	"validaciones.h"
 
-1718298113 source:d:\bren\utn\tp-final-prog\viajes.c
+1718303169 source:d:\bren\utn\tp-final-prog\viajes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -524,7 +524,7 @@
 	"ordenamientos.h"
 	"validaciones.h"
 
-1718302145 source:d:\bren\utn\tp-final-prog\empleados.c
+1718303387 source:d:\bren\utn\tp-final-prog\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
