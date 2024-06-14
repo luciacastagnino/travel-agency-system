@@ -544,8 +544,6 @@ stViaje modificarDatosViaje(stViaje aux)
 
         printf("Asi quedo modificado el viaje: \n");
         mostrarViaje(aux);
-        system("pause");
-        system("cls");
 
         return aux;
 }
@@ -669,9 +667,8 @@ stViaje darBajaVJ(stViaje aux)
         if(control=='s')
         {
             aux.estado = 0;
+            printf("El viaje esta siendo dado de baja...\n");
         }
-
-        printf("El viaje esta siendo dado de baja...\n");
 
         return aux;
 }

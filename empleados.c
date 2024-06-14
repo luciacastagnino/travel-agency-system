@@ -605,8 +605,6 @@ stEmpleado modificarDatosEmpleado(stEmpleado aux){
 
         printf("Asi quedo modificado el empleado: \n");
         mostrarEmpleado(aux);
-        system("pause");
-        system("cls");
 
         return aux;
 }
@@ -791,9 +789,9 @@ stEmpleado darBajaE(stEmpleado aux)
         if(control=='s')
         {
             aux.estado = 0;
+            printf("El empleado esta siendo dado de baja...\n");
         }
 
-        printf("El empleado esta siendo dado de baja...\n");
 
         return aux;
 }

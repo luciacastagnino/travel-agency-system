@@ -582,8 +582,6 @@ stTickets modificarDatosTicket(stTickets aux)
 
         printf("Asi quedo modificado el ticket: \n");
         MostrarTicket(aux);
-        system("pause");
-        system("cls");
 
         return aux;
 }
@@ -701,9 +699,9 @@ stTickets darBajaT(stTickets aux)
         if(control=='s')
         {
             aux.estado = 0;
+            printf("El ticket esta siendo dado de baja...\n");
         }
 
-        printf("El ticket esta siendo dado de baja...\n");
 
         return aux;
 }

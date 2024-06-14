@@ -123,6 +123,8 @@ case 0:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -142,6 +144,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese una opcion.\n\n");
@@ -161,6 +165,8 @@ case 2:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 3:
             registrarEmpleado();
@@ -168,6 +174,8 @@ case 3:
             system("cls");
             printf("LISTA DE EMPLEADOS\n\n");
             mostrarOrdenAlfabEActivo();
+            system("pause");
+            system("cls");
     break;
 case 4:
 
@@ -184,6 +192,8 @@ case 4:
             system("cls");
 
             modificarEmpleado(nYa);
+            system("pause");
+            system("cls");
     break;
 case 5:
             printf("Si desea buscar al empleado por nombre y apellido Ingrese 1.\n\n");
@@ -209,6 +219,9 @@ case 5:
 
                     encontrarEmpleadoDni(DNI);
                 }
+
+            system("pause");
+            system("cls");
     break;
 case 6:
             printf("Si desea filtrar el/los empleado/s por el puesto Ingrese 1.\n\n");
@@ -230,6 +243,9 @@ case 6:
                 scanf("%d", &E);
                 filtrarEmpleadoEstado(E);
             }
+
+            system("pause");
+            system("cls");
     break;
 case 7:
             printf("LISTA DE EMPLEADOS \n\n");
@@ -245,10 +261,12 @@ case 7:
             system("cls");
 
             darBajaEmpleado(nYaa);
+            system("pause");
+            system("cls");
     break;
 case 8:
-    printf("Si desea calcular los sueldos por el puesto Ingrese 1.\n\n");
-            printf("Si desea calcular el total de todos los sueldos Ingrese 2.\n\n");
+            printf("Si desea calcular los sueldos por el puesto, ingrese 1.\n\n");
+            printf("Si desea calcular el total de todos los sueldos, ingrese 2.\n\n");
             fflush(stdin);
             scanf("%d", &opcion);
             system("pause");
@@ -275,6 +293,8 @@ case 8:
 
                printf("Total de sueldos: %.2f\n", rta);
             }
+            system("pause");
+            system("cls");
     break;
 case 9:
     system("cls");
@@ -324,6 +344,8 @@ case 0:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -343,6 +365,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese una opcion.\n\n");
@@ -362,6 +386,8 @@ case 2:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 3:
             registrarCliente();
@@ -369,6 +395,8 @@ case 3:
             system("cls");
             printf("LISTA DE CLIENTES\n\n");
             mostrarOrdenAlfabCActivo();
+            system("pause");
+            system("cls");
     break;
 case 4:
 
@@ -385,6 +413,8 @@ case 4:
             system("cls");
 
             modificarClienteEaux(nYa);
+            system("pause");
+            system("cls");
     break;
 case 5:
             printf("Si desea buscar al cliente por nombre y apellido Ingrese 1.\n\n");
@@ -410,6 +440,8 @@ case 5:
 
                     encontrarClienteDni(DNI);
                 }
+                system("pause");
+                system("cls");
     break;
 case 6:
 
@@ -446,6 +478,8 @@ case 6:
                 scanf("%d", &ID);
                 filtrarClienteViaje(ID);
             }
+            system("pause");
+            system("cls");
     break;
 case 7:
             printf("LISTA DE CLIENTES \n\n");
@@ -461,7 +495,8 @@ case 7:
             system("cls");
 
             darBajaCliente(nYaa);
-
+            system("pause");
+            system("cls");
     break;
 case 8:
     system("cls");
@@ -494,8 +529,6 @@ void menuGestionViajes(){
     system("cls");
     switch(op){
 case 0:
-            system("pause");
-            system("cls");
             printf("Ingrese una opcion.\n\n");
             printf("1. Orden alfabetico.\n");
             printf("2. Orden por ID.\n");
@@ -517,6 +550,8 @@ case 0:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -540,6 +575,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese una opcion.\n\n");
@@ -559,6 +596,8 @@ case 2:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 3:
             cargarArchivoViaje();
@@ -566,6 +605,8 @@ case 3:
             system("cls");
             printf("LISTA DE VIAJES\n\n");
             mostrarOrdenIDActivosV();
+            system("pause");
+            system("cls");
     break;
 case 4:
             printf("LISTA DE VIAJES \n\n");
@@ -584,10 +625,9 @@ case 4:
         } while (idNoExiste);
 
 
+            modificarViaje(id);
             system("pause");
             system("cls");
-
-            modificarViaje(id);
     break;
 case 5:
             printf("Ingrese la ID del viaje que desea buscar: \n");
@@ -601,6 +641,8 @@ case 5:
 
             A= buscarViajePorID(id);
             mostrarViaje(A);
+            system("pause");
+            system("cls");
 
     break;
 case 6:
@@ -633,6 +675,8 @@ case 6:
                 scanf("%d", &E);
                 filtrarViajeEstado(E);
             }
+            system("pause");
+            system("cls");
     break;
 case 7:
             mostrarOrdenDestinoActivosV();
@@ -644,6 +688,8 @@ case 7:
             system("cls");
 
             darDeBajaViaje(id);
+            system("pause");
+            system("cls");
     break;
 case 8:
     system("cls");
@@ -671,7 +717,7 @@ void menuGestionVentas(){
     printf("6. Filtrar ventas\n");
     printf("7. Recaudacion total.\n");
     printf("8. Ganancias.\n");
-    printf("9. Dar de baja viaje.\n");
+    printf("9. Dar de baja venta.\n");
     printf("10. Atras\n");
     scanf("%i", &op);
     system("pause");
@@ -695,6 +741,8 @@ case 0:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -714,6 +762,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese una opcion.\n\n");
@@ -733,6 +783,8 @@ case 2:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 3:
             cargarArchivoVentas();
@@ -740,6 +792,8 @@ case 3:
             system("cls");
             printf("LISTA DE VENTAS\n\n");
             mostrarOrdenAlfabTActivo();
+            system("pause");
+            system("cls");
     break;
 case 4:
             printf("LISTA DE VENTAS \n\n");
@@ -753,6 +807,8 @@ case 4:
             system("cls");
 
             modificarVenta(id);
+            system("pause");
+            system("cls");
     break;
 case 5:
             printf("Si desea buscar la venta por el DNI del cliente, ingrese 1.\n\n");
@@ -786,6 +842,8 @@ case 5:
 
               encontrarVentaId(id);
             }
+            system("pause");
+            system("cls");
     break;
 case 6:
             printf("Si desea filtrar el/los ticket/s por el empleado que realizo la venta, ingrese 1.\n\n");
@@ -817,12 +875,18 @@ case 6:
                 scanf("%d", &E);
                 filtrarVentaViaje(E);
             }
+            system("pause");
+            system("cls");
     break;
 case 7:
             mostrarCalculo();
+            system("pause");
+            system("cls");
     break;
 case 8:
             mostrarGanancias();
+            system("pause");
+            system("cls");
     break;
 case 9:
             mostrarOrdenIDActivosT();
@@ -834,6 +898,8 @@ case 9:
             system("cls");
 
             darBajaVenta(id);
+            system("pause");
+            system("cls");
     break;
 case 10:
     system("cls");
@@ -952,12 +1018,18 @@ void menuPerfilEmpleado (char nYa[])
     switch(op){
     case 1:
         encontrarEmpleadoN(nYa);
+        system("pause");
+        system("cls");
         break;
     case 2:
         modificarEmpleado(nYa);
+        system("pause");
+        system("cls");
         break;
     case 3:
         darBajaEmpleado(nYa);
+        system("pause");
+        system("cls");
         break;
     case 4:
         printf("Volviendo a la pantalla de login/registro...\n");
@@ -1010,6 +1082,8 @@ case 0:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -1029,6 +1103,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese una opcion.\n\n");
@@ -1048,6 +1124,8 @@ case 2:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 3:
             registrarCliente();
@@ -1055,6 +1133,8 @@ case 3:
             system("cls");
             printf("LISTA DE CLIENTES\n\n");
             mostrarOrdenAlfabCActivo();
+            system("pause");
+            system("cls");
     break;
 case 4:
 
@@ -1071,6 +1151,8 @@ case 4:
             system("cls");
 
             modificarClienteEaux(nYa);
+            system("pause");
+            system("cls");
     break;
 case 5:
             printf("Si desea buscar al cliente por nombre y apellido Ingrese 1.\n\n");
@@ -1096,6 +1178,9 @@ case 5:
 
                     encontrarClienteDni(DNI);
                 }
+
+            system("pause");
+            system("cls");
     break;
 case 6:
 
@@ -1132,6 +1217,8 @@ case 6:
                 scanf("%d", &ID);
                 filtrarClienteViaje(ID);
             }
+            system("pause");
+            system("cls");
     break;
 case 7:
             printf("LISTA DE CLIENTES \n\n");
@@ -1147,7 +1234,8 @@ case 7:
             system("cls");
 
             darBajaCliente(nYaa);
-
+            system("pause");
+            system("cls");
     break;
 case 8:
     system("cls");
@@ -1203,6 +1291,8 @@ case 0:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -1226,6 +1316,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese una opcion.\n\n");
@@ -1245,6 +1337,8 @@ case 2:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 3:
             cargarArchivoViaje();
@@ -1252,6 +1346,8 @@ case 3:
             system("cls");
             printf("LISTA DE VIAJES\n\n");
             mostrarOrdenIDActivosV();
+            system("pause");
+            system("cls");
     break;
 case 4:
             printf("LISTA DE VIAJES \n\n");
@@ -1274,6 +1370,8 @@ case 4:
             system("cls");
 
             modificarViaje(id);
+            system("pause");
+            system("cls");
     break;
 case 5:
             printf("Ingrese la ID del viaje que desea buscar: \n");
@@ -1287,6 +1385,8 @@ case 5:
 
             A= buscarViajePorID(id);
             mostrarViaje(A);
+            system("pause");
+            system("cls");
     break;
 case 6:
             printf("Si desea filtrar el/los viaje/s por el destino, ingrese 1.\n\n");
@@ -1318,6 +1418,8 @@ case 6:
                 scanf("%d", &E);
                 filtrarViajeEstado(E);
             }
+            system("pause");
+            system("cls");
     break;
 case 7:
             mostrarOrdenDestinoActivosV();
@@ -1329,6 +1431,8 @@ case 7:
             system("cls");
 
             darDeBajaViaje(id);
+            system("pause");
+            system("cls");
     break;
 case 8:
     system("cls");
@@ -1382,6 +1486,8 @@ case 0:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 1:
             printf("Ingrese una opcion.\n\n");
@@ -1401,6 +1507,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese una opcion.\n\n");
@@ -1420,6 +1528,8 @@ case 2:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 3:
             cargarArchivoVentas();
@@ -1427,6 +1537,8 @@ case 3:
             system("cls");
             printf("LISTA DE VENTAS\n\n");
             mostrarOrdenAlfabTActivo();
+            system("pause");
+            system("cls");
     break;
 case 4:
             printf("LISTA DE VENTAS \n\n");
@@ -1440,6 +1552,8 @@ case 4:
             system("cls");
 
             modificarVenta(id);
+            system("pause");
+            system("cls");
     break;
 case 5:
             printf("Si desea buscar la venta por el DNI del cliente, ingrese 1.\n\n");
@@ -1473,6 +1587,9 @@ case 5:
 
               encontrarVentaId(id);
             }
+
+            system("pause");
+            system("cls");
     break;
 case 6:
             printf("Si desea filtrar el/los ticket/s por el empleado que realizo la venta, ingrese 1.\n\n");
@@ -1504,12 +1621,19 @@ case 6:
                 scanf("%d", &E);
                 filtrarVentaViaje(E);
             }
+
+            system("pause");
+            system("cls");
     break;
 case 7:
             mostrarCalculo();
+            system("pause");
+            system("cls");
     break;
 case 8:
             mostrarGanancias();
+            system("pause");
+            system("cls");
     break;
 case 9:
             mostrarOrdenIDActivosT();
@@ -1521,6 +1645,8 @@ case 9:
             system("cls");
 
             darBajaVenta(id);
+            system("pause");
+            system("cls");
     break;
 case 10:
     system("cls");
@@ -1588,12 +1714,18 @@ void menuPerfilCliente (char nYa[]){
     switch(op){
     case 1:
         encontrarClienteN(nYa);
+        system("pause");
+        system("cls");
         break;
     case 2:
         modificarCliente(nYa);
+        system("pause");
+        system("cls");
         break;
     case 3:
         darBajaCliente(nYa);
+        system("pause");
+        system("cls");
         break;
     case 4:
         system("cls");
@@ -1644,6 +1776,8 @@ case 1:
             }else{
                 printf("No existe la opcion.\n");
             }
+            system("pause");
+            system("cls");
     break;
 case 2:
             printf("Ingrese la ID del viaje que desea buscar: \n");
@@ -1657,6 +1791,8 @@ case 2:
 
             A= buscarViajePorID(id);
             mostrarViaje(A);
+            system("pause");
+            system("cls");
     break;
 case 3:
             printf("Si desea filtrar el/los viaje/s por el destino, ingrese 1.\n\n");
@@ -1680,6 +1816,8 @@ case 3:
                 gets(T);
                 filtrarViajeTransporte(T);
             }
+            system("pause");
+            system("cls");
     break;
 case 4:
     system("cls");
@@ -1717,7 +1855,8 @@ case 1:
             system("cls");
 
             encontrarVentaDNIC(dni);
-
+            system("pause");
+            system("cls");
     break;
 case 2:
     system("cls");

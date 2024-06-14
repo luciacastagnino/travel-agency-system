@@ -595,8 +595,6 @@ stCliente modificarDatosClienteEmpleado(stCliente aux)
 
         printf("Asi quedo modificado el cliente: \n");
         mostrarCliente(aux);
-        system("pause");
-        system("cls");
 
         return aux;
 }
@@ -762,9 +760,9 @@ stCliente darBajaC(stCliente aux)
         if(control=='s')
         {
             aux.estado = 0;
+            printf("El cliente esta siendo dado de baja...\n");
         }
 
-        printf("El cliente esta siendo dado de baja...\n");
 
         return aux;
 }
