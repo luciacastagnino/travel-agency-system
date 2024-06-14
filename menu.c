@@ -99,7 +99,8 @@ void menuGestionEmpleado(){
     printf("5. Buscar un empleado\n");
     printf("6. Filtrar empleados\n");
     printf("7. Dar de baja empleado.\n");
-    printf("8. Atras\n");
+    printf("8. Calcular sueldos\n");
+    printf("9. Atras\n");
     scanf("%i", &op);
     system("pause");
     system("cls");
@@ -246,6 +247,36 @@ case 7:
             darBajaEmpleado(nYaa);
     break;
 case 8:
+    printf("Si desea calcular los sueldos por el puesto Ingrese 1.\n\n");
+            printf("Si desea calcular el total de todos los sueldos Ingrese 2.\n\n");
+            fflush(stdin);
+            scanf("%d", &opcion);
+            system("pause");
+            system("cls");
+            if(opcion==1){
+               char P[20];
+               Pila A;
+               inicpila(&A);
+
+               printf("Ingrese el puesto que desea filtrar: \n");
+               fflush(stdin);
+               gets(P);
+
+               ArchivoToPilaEmpleadosFilt(&A, P);
+               float rta= sumarSueldos(A);
+
+               printf("Total %s: %.2f\n", P, rta);
+            }else{
+               Pila A;
+               inicpila(&A);
+
+               ArchivoToPilaEmpleados(&A);
+               float rta= sumarSueldos(A);
+
+               printf("Total de sueldos: %.2f\n", rta);
+            }
+    break;
+case 9:
     system("cls");
     break;
 default:
