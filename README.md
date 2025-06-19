@@ -26,12 +26,6 @@ Proyecto desarrollado en lenguaje C como trabajo final del primer cuatrimestre d
 - Pilas, matrices y funciones recursivas.  
 - Validaciones para evitar duplicados.  
 
-## ▶️ Cómo ejecutarlo
-
-1. Abrí el proyecto en Code::Blocks.  
-2. Compilá (F9).  
-3. Ejecutá el programa y usá el menú para navegar.
-
 ## 🔗 Repositorio
 
 Este proyecto fue realizado en equipo.  
@@ -67,12 +61,6 @@ This project was developed in C as the final assignment for the first semester o
 - Dynamic arrays and pointers.  
 - Stacks, matrices, and recursive functions.  
 - Input validation to prevent duplicates.  
-
-## ▶️ How to Run
-
-1. Open the project in Code::Blocks.  
-2. Compile (F9).  
-3. Run the program and use the menu to navigate.
 
 ## 🔗 Repository
 
