@@ -30,7 +30,7 @@ Proyecto desarrollado en lenguaje C como trabajo final del primer cuatrimestre d
 
 Este proyecto fue realizado en equipo.  
 Podés ver el repositorio original y el historial de commits acá:  
-👉 [Repositorio | Repository](https://github.com/Brenda2310/TP-FINAL-PROG)
+👉 [Repositorio](https://github.com/Brenda2310/TP-FINAL-PROG)
 
 ---
 
@@ -66,5 +66,5 @@ This project was developed in C as the final assignment for the first semester o
 
 This was a group project.  
 You can check the original GitHub repository and commit history here:  
-👉 [Repository | Repositorio](https://github.com/Brenda2310/TP-FINAL-PROG)
+👉 [Repository](https://github.com/Brenda2310/TP-FINAL-PROG)
 
